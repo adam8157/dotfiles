@@ -1,0 +1,26 @@
+# Offlineimap config file
+
+[general]
+ui = Quiet
+accounts = Gmail
+socktimeout = 60
+maxsyncaccounts = 1
+
+[Account Gmail]
+quick = 10
+autorefresh = 0.5
+localrepository = Gmail-Local
+remoterepository = Gmail-Remote
+
+[Repository Gmail-Local]
+type = Maildir
+localfolders = ~/documents/mails/gmail
+
+[Repository Gmail-Remote]
+type = Gmail
+remoteuser = adam8157@gmail.com
+remotepassfile = ~/.mutt/passwd
+sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+nametrans = lambda foldername: re.sub('^\[Gmail\]/', '', foldername)
+folderfilter = lambda foldername: foldername in ['INBOX', 'kernel-cn',
+	'kernelnewbies', '[Gmail]/Drafts', '[Gmail]/Spam','[Gmail]/Trash']

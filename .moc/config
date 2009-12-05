@@ -1,0 +1,52 @@
+# Configuration file for the MOC player.
+
+# Show file titles (title, author, album) instead of file names.
+ReadTags		= yes
+
+# Directory in which you store music files.
+MusicDir		= "/home/adam/music"
+
+# Turn on repeat.
+Repeat			= no
+
+# Turn on shuffle.
+Shuffle			= no
+
+# Turn on AutoNext.
+AutoNext		= yes
+
+# Sound driver.
+SoundDriver		= ALSA
+
+# ALSA mixer device.
+AlsaMixer 		= Master
+
+# Second ALSA mixer device.
+AlsaMixer2		= PCM
+
+# ALSA output device.
+AlsaDevice		= default
+
+# Show files with dot at the beginning?
+ShowHiddenFiles		= no
+
+# Start in the music directory if no arguments are given.
+StartInMusicDir		= no
+
+# Hide file name extensions.
+HideFileExtension	= no
+
+# Show file format in menu.
+ShowFormat		= yes
+
+# Show file time in menu. Possible options: yes, no, IfAvailable.
+ShowTime		= IfAvailable
+
+# Set the terminal title when running under xterm.
+SetXtermTitle		= no
+
+# Set the terminal title when running under screen.
+SetScreenTitle		= no
+
+# Display full paths instead of just file names in the playlist.
+PlaylistFullPaths	= no

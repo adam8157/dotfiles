@@ -1,0 +1,238 @@
+# MIME alternative
+unalternative_order *
+alternative_order text/html text/plain
+
+# Selecting headers
+ignore *
+unignore From Subject Date To CC BCC Reply-To X-PGP-Key-ID
+hdr_order From Subject Date To CC BCC Reply-To X-PGP-Key-ID
+
+# Display settings
+set index_format="%4C %Z %{%b %d} %?X?%X& ? %-18.18L [%4c] %s"
+set status_format="mutt-filter '-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]----%>-(%P)---'|"
+
+# Display status on the first line
+set status_on_top=yes
+
+# No record
+unset record
+
+# Set editor
+set editor="vim"
+
+# Use Maildir
+set mbox_type=Maildir
+
+# Set folder
+set folder="~/documents/mails/gmail"
+set spoolfile="+INBOX"
+set postponed="+Drafts"
+
+# Message cache
+set header_cache=~/.mutt/cache/header
+
+# Set sendmail
+set sendmail="pre-sendmail"
+
+# New mail
+set mark_old=no
+set beep_new=yes
+set check_new=yes
+mailboxes =INBOX =kernel-cn =kernelnewbies
+
+# Set timeout
+set timeout=30
+set mail_check=10
+
+# Quit without question
+set quit=ask-yes
+
+# Ask for a key after command
+set wait_key=yes
+
+# Decode the messages before pipe
+set pipe_decode=yes
+
+# Decode RFC2047-encoded MIME parameters
+set rfc2047_parameters=yes
+
+# Mailcap
+set mailcap_path=~/.mutt/mailcap
+mime_lookup application/octet-stream
+
+# Auto view
+auto_view application/msword application/pdf application/vnd.oasis.opendocument.text text/html
+
+# Message included in reply
+set include=yes
+
+# Pager view
+set resolve=yes
+set pager_stop=yes
+set menu_scroll=yes
+set pager_index_lines=6
+
+# Allow editing the headers
+set edit_headers=yes
+
+# To recognize reply messages
+set reply_regexp="^(re([\[0-9\]+])*|aw|回复|答复)[:：][ \t]*"
+
+# Include attachments in forward emails
+set mime_forward=yes
+set mime_forward_rest=yes
+
+# Traditional Fwd: subject
+set forward_format="Fwd: %s"
+
+# Show tildes at the end of mail
+set tilde=yes
+
+# Add Bcc header
+my_hdr Bcc: adam8157@gmail.com
+
+# Set From header
+set use_from=yes
+set reverse_name=yes
+set realname='Adam Lee'
+set reverse_realname=no
+set from='Adam Lee <adam8157@gmail.com>'
+
+# Set alternates addresses
+alternates '^adam8157@gmail.com$'
+
+# Alias file
+source ~/.mutt/alias
+set alias_file=~/.mutt/alias
+
+# Signature
+set signature=~/.mutt/signature
+
+# Set sort order
+set sort=reverse-threads
+set sort_aux=last-date-received
+
+# Mailing lists
+subscribe kernelnewbies@kernelnewbies.org kernel@vger.linux-kernel.cn
+
+# ---------------------GnuPG stuff-----------------------------------
+# Specify key
+set pgp_sign_as="2F39D84D"
+
+# PGP header
+my_hdr X-PGP-Key-ID: 2F39D84D
+
+# Autosign hook
+#send-hook ~A "set pgp_autosign"
+#send-hook ~u "set nopgp_autosign"
+
+# If attempt to verify PGP/MIME signatures
+set pgp_verify_sig=yes
+
+# Don't store unencrypted and unsigned mail
+set fcc_clear=no
+
+# Encrypt replies to messages which are encrypted
+set pgp_replyencrypt=yes
+
+# Automatically attempt to decrypt traditional PGP messages
+set pgp_auto_decode=yes
+
+# During these time you will not needed to enter passparse again
+set pgp_timeout=1800
+
+# Set PGP commands
+set pgp_decode_command="gpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
+set pgp_verify_command="gpg --status-fd=2 --no-verbose --quiet --batch --output - --verify %s %f"
+set pgp_decrypt_command="gpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
+set pgp_sign_command="gpg --no-verbose --batch --quiet --output - %?p?--passphrase-fd 0? --armor --detach-sign --textmode %?a?-u %a? %f"
+set pgp_clearsign_command="gpg --no-verbose --batch --quiet --output - %?p?--passphrase-fd 0? --armor --textmode --clearsign %?a?-u %a? %f"
+set pgp_encrypt_only_command="/usr/lib/mutt/pgpewrap gpg --encrypt-to 2F39D84D --charset utf8 --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
+set pgp_encrypt_sign_command="/usr/lib/mutt/pgpewrap gpg %?p?--passphrase-fd 0? --encrypt-to 2F39D84D --charset utf8 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
+set pgp_import_command="gpg --no-verbose --import %f"
+set pgp_export_command="gpg --no-verbose --export --armor %r"
+set pgp_verify_key_command="gpg --verbose --batch --fingerprint --check-sigs %r"
+set pgp_list_pubring_command="gpg --no-verbose --batch --quiet --with-colons --list-keys %r"
+set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --list-secret-keys %r"
+set pgp_getkeys_command="gpg --recv-keys %r > /dev/null 2>&1"
+
+# Pattern for good signature
+set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
+
+# ---------------------Key bindings----------------------------------
+bind attach i exit
+bind attach <space> view-attach
+bind browser i exit
+bind browser,index gg first-entry
+bind browser,index G last-entry
+bind browser,index,pager \cb previous-page
+bind browser,index,pager \cf next-page
+bind browser l select-entry
+bind browser <space> select-entry
+bind editor <space> noop
+bind index \cx sync-mailbox
+bind index j next-entry
+bind index k previous-entry
+bind index,pager L group-reply
+bind index,pager p search-opposite
+bind index,pager r group-reply
+bind index,pager R reply
+bind pager G bottom
+bind pager gg top
+bind pager j next-line
+bind pager k previous-line
+
+macro attach s "<save-entry><kill-line>~/downloads/<enter>a" "Save attachment"
+macro index \cr "<tag-pattern>.\n<tag-prefix><clear-flag>N<untag-pattern>.\n" "Mark all messages as read"
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index gs "<change-folder>=Spam<enter>" "Go to spam"
+macro index gt "<change-folder>=Trash<enter>" "Go to trash"
+macro index i '<change-folder>?<toggle-mailboxes>'
+macro index,pager H "<save-message>=INBOX<enter>" "Mark message as ham"
+macro index,pager S "<save-message>=Spam<enter>" "Mark message as spam"
+macro pager \cu |urlview\n "Call urlview"
+
+folder-hook . 'bind index,pager \cd noop'
+folder-hook 'Spam|Trash' 'bind index,pager \cd delete-thread'
+folder-hook . 'bind index,pager \ed noop'
+folder-hook 'Spam|Trash' 'bind index,pager \ed delete-subthread'
+folder-hook . 'macro index,pager d "<save-message>=Trash<enter>" "Mark message as trash"'
+folder-hook 'Spam|Trash' 'bind index,pager d delete-message'
+
+# ---------------------Color theme-----------------------------------
+color normal white default
+color attachment magenta default
+color hdrdefault cyan default
+color indicator brightblack white
+color markers blue default
+color signature cyan default
+color status brightcyan black
+color tilde blue default
+color tree red default
+
+color quoted green default
+color quoted1 yellow default
+color quoted2 red default
+color hdrdefault cyan default
+color header default magenta .*
+color header brightgreen blue ^(From|To|Cc|Subject):
+color signature cyan default
+
+color index green default ~p # To me
+color index blue default ~P # From me
+color index brightyellow default ~N # New
+color index brightgreen default "~N ~p" # New to me
+color index brightcyan default ~T # Tagged
+color index magenta default ~D # Deleted
+color index brightyellow blue ~F # Flaged
+
+color body red default "[!?]{3,}" # exclamation
+color body green default "^ *[-+*o] +" # list item
+color body brightgreen black "[;:]-*[)>(<|PD]" # :-) etc...
+color body red default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # email
+color body brightred default "(^| )[*_]+[-&[:alnum:]]+[*_]( |$)" # bold/underline
+color body yellow default "(ftp|http|https)://[\-\.\,/+=&%~_:?\#a-zA-Z0-9]+" # URL
+color body cyan default "[0-9]{1,2}:[0-9]{2}(:[0-9]{2})?( ?(AM|PM|am|pm))?( +[+-][0-9]{4})?"
+color body cyan default "(\(19|20\)?[0-9]{2}/[01]?[0-9]/[0123]?[0-9]|[0123]?[0-9][/.][01]?[0-9][/.]\(19|20\)?[0-9]{2})(( at)? +[0-9]{1,2}:[0-9]{2}(:[0-9]{2})?( ?(AM|PM|am|pm))?( +[+-][0-9]{4})?)?"
+color body cyan default "((Sun(day)?|Mon(day)?|Tue(sday)?|Wed(nesday)?|Thu(sday)?|Fri(day)?|Sat(urday)?),? +)?(Jan(uary)?|Feb(rary)?|Mar(ch)?|Apr(il)?|May|June?|July?|Aug(ust)?|Sep(ember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?)[ .]+[0-9]{1,2}(st|nd|rd|th)?,?( +(19|20)[0-9]{2}(,?( at)? [0-9]{1,2}:[0-9]{2}(:[0-9]{2})?( ?(AM|PM|am|pm))?( +[+-][0-9]{4})?)?)?"
+color body cyan default "((Sun(day)?|Mon(day)?|Tue(sday)?|Wed(nesday)?|Thu(sday)?|Fri(day)?|Sat(urday)?),? +)?[0-9]{1,2}(st|nd|rd|th)?[ .]+(Jan(uary)?|Feb(rary)?|Mar(ch)?|Apr(il)?|May|June?|July?|Aug(ust)?|Sep(ember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?),?( +(19|20)?[0-9]{2})?(( at)? [0-9]{1,2}:[0-9]{2}(:[0-9]{2})?( ?(AM|PM|am|pm))?( +[+-][0-9]{4})?)?"

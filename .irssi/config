@@ -1,0 +1,91 @@
+servers = (
+  {
+    address = "chat.freenode.net";
+    chatnet = "freenode";
+    port = "7000";
+    password = "adam8157:PASSWORD";
+    use_ssl = "yes";
+    ssl_verify = "yes";
+    autoconnect = "yes";
+  }
+);
+
+chatnets = {
+  freenode = {
+    type = "IRC";
+    nick = "adam8157";
+  };
+};
+
+channels = (
+  { name = "#debian"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#ubuntu-cn"; chatnet = "freenode"; autojoin = "yes"; }
+);
+
+settings = {
+  core = {
+    nick = "adam8157";
+    real_name = "Adam Lee";
+    user_name = "adam";
+    log_create_mode = "600";
+    log_timestamp = "%Y-%m-%d %H:%M ";
+    quit_message = "Take the red pill...";
+    recode = "yes";
+    recode_autodetect_utf8 = "yes";
+    recode_out_default_charset = "UTF-8";
+    recode_fallback = "GBK";
+    recode_transliterate = "yes";
+  };
+  "fe-common/core" = {
+    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
+    beep_when_away = "no";
+    autolog = "yes";
+    autolog_path = "~/.irssi/irclogs/$tag/$0.log";
+  };
+  "fe-text" = { actlist_sort = "refnum"; };
+  "irc/dcc" = { dcc_download_path = "~/downloads"; };
+  "perl/core/scripts" = { nicklist_automode = "screen"; };
+};
+
+aliases = {
+  C = "window close";
+  H = "help";
+  J = "join";
+  K = "kick";
+  M = "msg";
+  N = "nick";
+  Q = "quit";
+  T = "topic";
+  W = "whois";
+};
+
+keyboard = (
+  { key = "^F"; id = "command"; data = "nicklist scroll +10"; },
+  { key = "^B"; id = "command"; data = "nicklist scroll -10"; }
+);
+
+hilights = ( { text = "adam8157"; nick = "yes"; word = "yes"; } );
+
+windows = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian";
+        tag = "freenode";
+      }
+    );
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#ubuntu-cn";
+        tag = "freenode";
+      }
+    );
+  };
+};

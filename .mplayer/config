@@ -1,0 +1,82 @@
+#
+# MPlayer configuration file
+#
+
+[default]
+
+##################
+# video settings #
+##################
+
+# Specify default video driver (see -vo help for a list).
+vo=xv,x11
+
+# Start in fullscreen mode by default.
+#fs=yes
+
+# Enable software scaling (powerful CPU needed) for video output
+# drivers that do not support hardware scaling.
+zoom=yes
+
+# Keep the player window on top of all other windows.
+#ontop=yes
+
+##################
+# audio settings #
+##################
+
+# Specify default audio driver (see -ao help for a list).
+ao=alsa
+
+# Scales audio tempo without altering pitch.
+af=scaletempo
+
+# Force the use of the software mixer.
+softvol=yes
+
+# Set the maximum amplification level in percent.
+softvol-max=500
+
+#####################
+# Subtitle Settings #
+#####################
+
+# Turn on SSA/ASS subtitle rendering.
+ass=on
+
+# Specify the subtitle codepage.
+subcp=enca:zh:UTF-8
+
+# Tells MPlayer to handle the subtitle file as unicode.
+unicode=yes
+
+# Enables the usage of fontconfig managed fonts.
+fontconfig=yes
+
+# Determines the Fontconfig font pattern.
+font="Sans Serif"
+
+# Adjust matching fuzziness when searching for subtitles.
+sub-fuzziness=1
+
+# Set the scale coefficient to be used for fonts in the SSA/ASS renderer.
+ass-font-scale=1
+
+# Sets the autoscale mode.
+subfont-autoscale=3
+
+# Sets the autoscale coefficient of the OSD elements.
+subfont-osd-scale=2
+
+# Sets the subtitle text autoscale coefficient as percentage of the screen size.
+subfont-text-scale=5
+
+##################
+# other settings #
+##################
+
+# Drop frames to preserve audio/video sync.
+framedrop=yes
+
+# Turns off xscreensaver at startup and turns it on again on exit.
+stop-xscreensaver=no

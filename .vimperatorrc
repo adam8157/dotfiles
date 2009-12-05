@@ -1,0 +1,30 @@
+noremap j 5j
+noremap k 5k
+noremap J <C-d>
+noremap K <C-u>
+noremap <F11> gT
+noremap <F12> gt
+inoremap <F11> <Esc>gT
+inoremap <F12> <Esc>gt
+noremap <C-F11> :tabmove -1<CR>
+noremap <C-F12> :tabmove +1<CR>
+inoremap <C-F11> <Esc>:tabmove -1<CR>
+inoremap <C-F12> <Esc>:tabmove +1<CR>
+noremap <silent> <leader>a :set! extensions.autoproxy.proxyMode=auto<CR>:echo ':)'<CR>
+noremap <silent> <leader>g :set! extensions.autoproxy.proxyMode=global<CR>:echo ':D'<CR>
+noremap <silent> <leader>d :set! extensions.autoproxy.proxyMode=disabled<CR>:echo ':('<CR>
+
+ignorekeys add mail\.google\.com
+ignorekeys add www\.google\.com\/reader
+
+set newtab=all
+set complete=l
+set focuscontent
+set noscrollbars
+set showstatuslinks=2
+set toolbars=none,tabs
+set editor="xterm -e vim"
+set hintchars="hjklasdfgyuiopqwertnmzxcvb"
+
+set nextpattern=\\s*(下一页|下一张|下一篇|下页|后页)\\s*,\\bnext\\b,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b
+set previouspattern=\\s*(上一页|上一张|上一篇|上页|前页)\\s*,\\b(prev|previous)\\b,^<$,^(<<|«)$,^(<|«),(<|«)$

@@ -1,0 +1,7 @@
+[helpers]
+editor-cmd = vim
+diff-cmd = svndiff
+merge-tool-cmd = svnmerge
+
+[miscellany]
+global-ignores = tags cscope.* *.swp *.o *.so *.so.[0-9]* *.a *.pyc *.pyo
