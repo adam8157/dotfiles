@@ -1,0 +1,42 @@
+# Hardstatus line
+hardstatus alwayslastline
+hardstatus string "%{= R}[ %{=b b}%-w%{=rb db}%>%n %t%{-}%+w%{-b}%< %=%{R}][%{M}%D %M %d %{G}%c%{R}]"
+
+# Make the xterm scroller work in screen
+termcapinfo xterm* ti@:te@
+#dynamic title
+termcapinfo xterm* 'hs:ts=\E]2;:fs=\007:ds=\E]2;screen\007'
+ 
+# Automatically detach on hangup
+autodetach on
+
+# Refresh the display when exiting programs
+altscreen on
+
+# Define a large scrollback buffer
+defscrollback 1000
+
+# Set messages timeout to one second
+msgwait 1
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+
+# Start message:
+startup_message off
+
+# Utf-8 handling
+defutf8 on
+
+# bind F1  to select 1
+# bind F7  to detach screen session from this terminal
+# bind F8  to kill current screen window.
+# bind F9  to create a new screen
+# bind F10 to rename current screen window
+# bind F11 to move to previous window
+# bind F12 to move to next window
+bindkey -k k1 select 1
+bindkey -k k7 detach
+bindkey -k k8 kill
+bindkey -k k9 screen
+bindkey -k k; title
+bindkey -k F1 prev
+bindkey -k F2 next

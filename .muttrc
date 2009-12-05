@@ -1,0 +1,212 @@
+ignore *
+unignore From Subject Date To CC BCC Reply-To X-PGP-Key-ID
+hdr_order From Subject Date To CC BCC Reply-To X-PGP-Key-ID
+
+unalternative_order *
+alternative_order text/*
+
+set index_format="%S %(%m-%d) %-18.18L [%4c] %s"
+set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]----%>-(%P)---"
+set status_on_top
+
+set editor="vim"
+
+set record=""
+
+set folder=imaps://imap.gmail.com:993/
+set spoolfile=imaps://imap.gmail.com/INBOX
+set postponed=imaps://imap.gmail.com/[Gmail]/Drafts
+set trash=imaps://imap.gmail.com/[Gmail]/Trash
+
+set imap_user=adam8157
+
+set smtp_url=smtp://adam8157@smtp.gmail.com:587/
+set ssl_force_tls=yes
+
+source ~/.mutt/passwd
+
+set quit=ask-yes
+set wait_key=yes
+
+set mailcap_path=~/.mutt/mailcap
+auto_view text/html
+
+set include=yes
+set indent_str="> "
+
+set resolve=yes
+set edit_headers=yes
+set pager_index_lines=4
+set pager_stop
+
+# Include attachments in forward emails
+set mime_forward
+set mime_forward_rest
+
+# Traditional Fwd: subject
+set forw_format="Fwd: %s"
+
+# Show tildes at the end of mail
+set tilde=yes
+
+# Text width
+set wrap=-3
+
+# Set mail header
+set from='Adam Lee <adam8157@gmail.com>'
+# Set different from information when replying according to accounts
+set use_from
+set envelope_from=yes
+set realname='Adam Lee'
+set reverse_name=yes
+set reverse_realname=yes
+
+# Alias file
+source ~/.mutt/alias
+set alias_file=~/.mutt/alias
+
+# Charset settings
+set allow_8bit
+set charset="utf-8"
+set locale='utf-8'
+set rfc2047_parameters=yes
+
+# Mailing list
+#subscribe china@lists.uq.edu.au
+
+# Headers:
+my_hdr X-PGP-Key-ID: D15CA3BE
+
+# ---------------------GnuPG stuff-----------------------------------
+# %p    The empty string when no passphrase is needed,
+#       the string "PGPPASSFD=0" if one is needed.
+#       This is mostly used in conditional % sequences.
+# %f    Most PGP commands operate on a single file or a file
+#       containing a message.  %f expands to this file's name.
+# %s    When verifying signatures, there is another temporary file
+#       containing the detached signature.  %s expands to this
+#       file's name.
+# %a    In "signing" contexts, this expands to the value of the
+#       configuration variable $pgp_sign_as.  You probably need to
+#       use this within a conditional % sequence.
+# %r    In many contexts, mutt passes key IDs to pgp.  %r expands to
+#       a list of key IDs.
+#
+# Signature every outgoing mail by pgp
+set pgp_autosign=no
+set pgp_sign_as="D15CA3BE"
+# During these time you will not needed to enter passparse again
+set pgp_timeout=1800
+# Let you see pgp signature infomation
+set pgp_verify_sig=yes 
+set pgp_replyencrypt=yes
+# Don't store unencrypted and unsigned mail
+set fcc_clear=no
+
+# decode application/pgp
+set pgp_decode_command="gpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
+
+# verify a pgp/mime signature
+set pgp_verify_command="gpg --status-fd=2 --no-verbose --quiet --batch --output - --verify %s %f"
+
+# decrypt a pgp/mime attachment
+set pgp_decrypt_command="gpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
+
+# create a pgp/mime signed attachment
+set pgp_sign_command="gpg --no-verbose --batch --quiet --output - %?p?--passphrase-fd 0? --armor --detach-sign --textmode %?a?-u %a? %f"
+
+# create a application/pgp signed (old-style) message
+set pgp_clearsign_command="gpg --no-verbose --batch --quiet --output - %?p?--passphrase-fd 0? --armor --textmode --clearsign %?a?-u %a? %f"
+
+# create a pgp/mime encrypted attachment
+set pgp_encrypt_only_command="/usr/lib/mutt/pgpewrap gpg --encrypt-to D15CA3BE --charset utf8 --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
+
+# create a pgp/mime encrypted and signed attachment
+set pgp_encrypt_sign_command="/usr/lib/mutt/pgpewrap gpg %?p?--passphrase-fd 0? --encrypt-to D15CA3BE --charset utf8 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
+
+# import a key into the public key ring
+set pgp_import_command="gpg --no-verbose --import %f"
+
+# export a key from the public key ring
+set pgp_export_command="gpg --no-verbose --export --armor %r"
+
+# verify a key
+set pgp_verify_key_command="gpg --verbose --batch --fingerprint --check-sigs %r"
+
+# read in the public key ring
+set pgp_list_pubring_command="gpg --no-verbose --batch --quiet --with-colons --list-keys %r" 
+
+# read in the secret key ring
+set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --list-secret-keys %r" 
+
+# fetch keys
+set pgp_getkeys_command="gpg --recv-keys %r > /dev/null 2>&1"
+
+# pattern for good signature - may need to be adapted to locale!
+# OK, here's a version which uses gnupg's message catalog:
+# set pgp_good_sign="`gettext -d gnupg -s 'Good signature from "' | tr -d '"'`"
+# This version uses --status-fd messages
+set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
+
+# ---------------------key bindings----------------------------------
+bind    index   gg      first-entry
+bind    index   G       last-entry
+bind    index   \cf     next-page
+bind    index   \cb     previous-page
+bind    index   ,g      group-reply
+bind    pager   j       next-line
+bind    pager   k       previous-line
+bind    pager   <Up>    previous-line
+bind    pager   <Down>  next-line
+bind    pager   gg      top
+bind    pager   G       bottom
+bind    index   \Cx     sync-mailbox
+
+bind editor <space> noop
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
+macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
+macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
+macro index gs "<change-folder>=[Gmail]/Sent Mail<enter>" "Go to sent mail"
+macro index gp "<change-folder>=[Gmail]/Spam<enter>" "Go to spam"
+macro index gt "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
+macro index,pager H "<save-message>=INBOX<enter>" "mark message as ham"
+macro index,pager S "<save-message>=[Gmail]/Spam<enter>" "mark message as spam"
+macro index,pager T "<save-message>=[Gmail]/Trash<enter>" "mark message as trash"
+
+# ---------------------color theme-----------------------------------
+color normal    white default
+color attachment magenta default
+color hdrdefault cyan default
+color indicator brightblack white
+color markers   blue default
+color signature cyan default
+color status    brightcyan black 
+color tilde     blue default
+color tree      red default
+
+color quoted  green default
+color quoted1 yellow default
+color quoted2 red default
+color hdrdefault cyan default
+color header  default magenta .*
+color header   brightgreen blue ^(From|To|Cc|Subject|X-Bogosity):
+color signature cyan default
+
+color index green default ~p                 # To me
+color index blue default ~P                # From me 
+color index brightyellow default ~N          # New
+color index brightgreen default "~N ~p"     # New to me
+color index brightcyan default ~T               # Tagged
+color index magenta default ~D              # Deleted
+color index brightyellow blue ~F               # Flaged
+
+color body red default "[!?]{3,}" # exclamation
+color body green default "^ *[-+*o] +" # list item
+color body brightgreen black "[;:]-*[)>(<|PD]"     # :-) etc...
+color body red default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # email
+color body yellow default "(http|ftp)://[\-\.\,/+=&%~_:?\#a-zA-Z0-9]+" # URL
+color body brightred default "(^| )[*_]+[-&[:alnum:]]+[*_]( |$)" # bold/underline
+color body cyan default "[0-9]{1,2}:[0-9]{2}(:[0-9]{2})?( ?(AM|PM|am|pm))?( +[+-][0-9]{4})?"
+color body cyan default "(\(19|20\)?[0-9]{2}/[01]?[0-9]/[0123]?[0-9]|[0123]?[0-9][/.][01]?[0-9][/.]\(19|20\)?[0-9]{2})(( at)? +[0-9]{1,2}:[0-9]{2}(:[0-9]{2})?( ?(AM|PM|am|pm))?( +[+-][0-9]{4})?)?"
+color body cyan default "((Sun(day)?|Mon(day)?|Tue(sday)?|Wed(nesday)?|Thu(sday)?|Fri(day)?|Sat(urday)?),? +)?(Jan(uary)?|Feb(rary)?|Mar(ch)?|Apr(il)?|May|June?|July?|Aug(ust)?|Sep(ember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?)[ .]+[0-9]{1,2}(st|nd|rd|th)?,?( +(19|20)[0-9]{2}(,?( at)? [0-9]{1,2}:[0-9]{2}(:[0-9]{2})?( ?(AM|PM|am|pm))?( +[+-][0-9]{4})?)?)?"
+color body cyan default "((Sun(day)?|Mon(day)?|Tue(sday)?|Wed(nesday)?|Thu(sday)?|Fri(day)?|Sat(urday)?),? +)?[0-9]{1,2}(st|nd|rd|th)?[ .]+(Jan(uary)?|Feb(rary)?|Mar(ch)?|Apr(il)?|May|June?|July?|Aug(ust)?|Sep(ember)?|Oct(ober)?|Nov(ember)?|Dec(ember)?),?( +(19|20)?[0-9]{2})?(( at)? [0-9]{1,2}:[0-9]{2}(:[0-9]{2})?( ?(AM|PM|am|pm))?( +[+-][0-9]{4})?)?"

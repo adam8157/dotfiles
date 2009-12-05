@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+	<menu id="root-menu" label="Openbox">
+		<item label="Rox">
+			<action name="Execute">
+				<execute>
+					rox-filer
+				</execute>
+			</action>
+		</item>
+		<item label="Grun">
+			<action name="Execute">
+				<execute>
+					grun
+				</execute>
+			</action>
+		</item>
+		<item label="Xterm">
+			<action name="Execute">
+				<execute>
+					xterm
+				</execute>
+			</action>
+		</item>
+		<item label="Pidgin">
+			<action name="Execute">
+				<execute>
+					pidgin
+				</execute>
+			</action>
+		</item>
+		<item label="Firefox">
+			<action name="Execute">
+				<execute>
+					firefox
+				</execute>
+			</action>
+		</item>
+		<item label="Stardict">
+			<action name="Execute">
+				<execute>
+					stardict
+				</execute>
+			</action>
+		</item>
+		<item label="Alsamixer">
+			<action name="Execute">
+				<execute>
+					xterm -e alsamixer
+				</execute>
+			</action>
+		</item>
+		<item label="Virtualbox">
+			<action name="Execute">
+				<execute>
+					VirtualBox
+				</execute>
+			</action>
+		</item>
+		<separator/>
+		<menu id="root-menu-412738" label="System">
+			<item label="Halt">
+				<action name="Execute">
+					<execute>
+						xterm -e sudo halt
+					</execute>
+				</action>
+			</item>
+			<item label="Reboot">
+				<action name="Execute">
+					<execute>
+						xterm -e sudo reboot
+					</execute>
+				</action>
+			</item>
+			<item label="Suspend">
+				<action name="Execute">
+					<execute>
+						xterm -e sudo pm-suspend
+					</execute>
+				</action>
+			</item>
+			<item label="Hibernate">
+				<action name="Execute">
+					<execute>
+						xterm -e sudo pm-hibernate
+					</execute>
+				</action>
+			</item>
+		</menu>
+		<separator/>
+		<menu id="root-menu-892546" label="Manager">
+			<item label="Exit">
+				<action name="Exit"/>
+			</item>
+			<item label="Restart">
+				<action name="Restart"/>
+			</item>
+			<item label="Obconf">
+				<action name="Execute">
+					<execute>
+						obconf
+					</execute>
+				</action>
+			</item>
+			<item label="Obmenu">
+				<action name="Execute">
+					<execute>
+						python2.5 /usr/bin/obmenu
+					</execute>
+				</action>
+			</item>
+			<item label="Reconfigure">
+				<action name="Reconfigure"/>
+			</item>
+		</menu>
+		<!--<separator />-->
+		<!--<menu id="Debian" />-->
+		<!--<separator />-->
+		<!--<menu id="client-list-menu" />-->
+	</menu>
+</openbox_menu>

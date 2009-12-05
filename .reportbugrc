@@ -1,0 +1,21 @@
+# reportbug preferences file
+# character encoding: UTF-8
+# Version of reportbug this preferences file was written by
+reportbug_version "4.8"
+# default operating mode: one of: novice, standard, advanced, expert
+mode expert
+# default user interface
+ui text
+# offline setting - comment out to be online
+#offline
+# name and email setting (if non-default)
+realname "Adam Lee"
+email "adam8157@gmail.com"
+# If nothing else works, remove the # at the beginning
+# of the following three lines:
+no-cc
+header "X-Debbugs-CC: adam8157@gmail.com"
+mta /usr/bin/msmtp
+#smtphost reportbug.debian.org
+# You can add other settings after this line.  See
+# /etc/reportbug.conf for a full listing of options.
