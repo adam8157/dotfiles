@@ -24,8 +24,19 @@ _show_all()
 	return 0
 }
 
+_show_key()
+{
+	local cur
+	COMPREPLY=()
+	cur=`_get_cword`
+    COMPREPLY=( $( compgen -W "$( gpg --list-keys 2>/dev/null | \
+                sed -ne 's@^pub.*/\([^ ]*\).*$@\1@p;s@^.*\(<\([^>]*\)>\).*$@\2@p')" -- "$cur" ))
+	return 0
+}
+
 complete -F _show_all $default ai aw
 complete -F _show_installed $default ap
+complete -F _show_key $default ge gi gs
 
 #alias
 alias ..='cd ..'
@@ -41,6 +52,10 @@ alias dc='dpkg -l |grep ^rc |awk "{print \$2}" |sudo xargs dpkg -P'
 #alias dial='sudo drcomd && drcomc login'
 alias dial='sudo pon dsl-provider'
 #alias hung='drcomc logout'
+alias ge='gpg --edit-key'
+alias gi='gpg --sign-key'
+alias gr='gpg --recv-keys'
+alias gs='gpg --send-keys'
 alias hung='sudo poff'
 alias irc='irssi'
 alias la='ls -A'

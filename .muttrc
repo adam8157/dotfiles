@@ -19,11 +19,10 @@ set postponed=imaps://imap.gmail.com/[Gmail]/Drafts
 set trash=imaps://imap.gmail.com/[Gmail]/Trash
 
 set imap_user=adam8157
+source ~/.mutt/passwd
 
 set smtp_url=smtp://adam8157@smtp.gmail.com:587/
 set ssl_force_tls=yes
-
-source ~/.mutt/passwd
 
 set quit=ask-yes
 set wait_key=yes
@@ -171,7 +170,7 @@ macro index gp "<change-folder>=[Gmail]/Spam<enter>" "Go to spam"
 macro index gt "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
 macro index,pager H "<save-message>=INBOX<enter>" "mark message as ham"
 macro index,pager S "<save-message>=[Gmail]/Spam<enter>" "mark message as spam"
-macro index,pager T "<save-message>=[Gmail]/Trash<enter>" "mark message as trash"
+macro index,pager d "<save-message>=[Gmail]/Trash<enter>" "mark message as trash"
 
 # ---------------------color theme-----------------------------------
 color normal    white default
