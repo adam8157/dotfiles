@@ -9,7 +9,6 @@ set backspace=eol,start,indent
 set backup
 
 " Set fileencodings
-set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,gbk
 
 " Set backup directory
