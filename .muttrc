@@ -17,12 +17,14 @@ set folder=imaps://imap.gmail.com:993/
 set spoolfile=imaps://imap.gmail.com/INBOX
 set postponed=imaps://imap.gmail.com/[Gmail]/Drafts
 set trash=imaps://imap.gmail.com/[Gmail]/Trash
-
+set smtp_url=smtp://adam8157@smtp.gmail.com:587/
+set imap_list_subscribed=yes
 set imap_user=adam8157
+set ssl_force_tls=yes
 source ~/.mutt/passwd
 
-set smtp_url=smtp://adam8157@smtp.gmail.com:587/
-set ssl_force_tls=yes
+set mail_check=90
+set timeout=15
 
 set quit=ask-yes
 set wait_key=yes
