@@ -1,3 +1,7 @@
+#xset
+xset -dpms
+xset b off
+
 #umask
 umask 077
 
