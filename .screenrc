@@ -1,3 +1,17 @@
+# Sessions
+screen
+screen mutt
+screen irssi
+
+# Start message
+startup_message off
+
+# Disable vbell
+vbell off
+
+# Utf-8 handling
+defutf8 on
+
 # Hardstatus line
 hardstatus alwayslastline
 hardstatus string "%{= R}[ %{=b b}%-w%{=rb db}%>%n %t%{-}%+w%{-b}%< %=%{R}][%{M}%D %M %d %{G}%c%{R}]"
@@ -7,17 +21,6 @@ autodetach on
 
 # Refresh the display when exiting programs
 altscreen on
-
-# Start message:
-startup_message off
-
-# Utf-8 handling
-defutf8 on
-
-# Sessions
-screen
-screen mutt
-screen irssi
 
 # bind F8  to kill current screen window.
 # bind F9  to create a new screen
