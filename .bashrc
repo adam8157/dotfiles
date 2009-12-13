@@ -40,7 +40,7 @@ complete -F _show_key $default ge gi gs
 
 #alias
 alias ..='cd ..'
-alias ac='sudo apt-get autoremove --purge && sudo apt-get clean'
+alias ac='sudo apt-get autoremove --purge && sudo apt-get clean && dpkg -l |grep ^rc |awk "{print \$2}" |sudo xargs dpkg -P'
 alias ad='sudo apt-get dist-upgrade'
 alias ai='sudo apt-get install'
 alias ap='sudo apt-get purge'
@@ -48,7 +48,6 @@ alias as='apt-cache search --names-only'
 alias au='sudo apt-get update && sudo apt-get upgrade'
 alias aw='apt-cache show'
 alias bt='rtorrent'
-alias dc='dpkg -l |grep ^rc |awk "{print \$2}" |sudo xargs dpkg -P'
 alias ge='gpg --edit-key'
 alias gi='gpg --sign-key'
 alias gr='gpg --recv-keys'
