@@ -1,5 +1,5 @@
 #history
-unset HISTFILE
+#unset HISTFILE
 
 #completion
 if [ -f /etc/bash_completion ]; then
@@ -49,19 +49,19 @@ alias au='sudo apt-get update && sudo apt-get upgrade'
 alias aw='apt-cache show'
 alias bt='rtorrent'
 alias dc='dpkg -l |grep ^rc |awk "{print \$2}" |sudo xargs dpkg -P'
-#alias dial='sudo drcomd && drcomc login'
-alias dial='sudo pon dsl-provider'
 alias ge='gpg --edit-key'
 alias gi='gpg --sign-key'
 alias gr='gpg --recv-keys'
 alias gs='gpg --send-keys'
-#alias hung='drcomc logout'
-alias hung='sudo poff'
 alias irc='irssi'
 alias la='ls -A'
 alias ll='ls -l'
 alias m='md5sum'
 alias ntp='sudo ntpdate pool.ntp.org && sudo hwclock --systohc'
+alias off='sudo poff'
+#alias off='drcomc logout'
+alias on='sudo pon dsl-provider'
+#alias on='sudo drcomd && drcomc login'
 alias s='sha1sum'
 alias sr='screen -R'
 alias x='startx'
