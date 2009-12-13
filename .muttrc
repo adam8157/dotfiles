@@ -30,7 +30,7 @@ set quit=ask-yes
 set wait_key=yes
 
 set mailcap_path=~/.mutt/mailcap
-auto_view text/html
+auto_view text/html application/pdf application/msword
 
 set include=yes
 set indent_str="> "
@@ -72,8 +72,12 @@ set charset="utf-8"
 set locale='utf-8'
 set rfc2047_parameters=yes
 
+# Set sort order
+set sort=reverse-threads
+set sort_aux=last-date-received
+
 # Mailing list
-#subscribe china@lists.uq.edu.au
+#subscribe debian-announce@lists.debian.org debian-news@lists.debian.org
 
 # Headers:
 my_hdr X-PGP-Key-ID: D15CA3BE
@@ -94,7 +98,7 @@ my_hdr X-PGP-Key-ID: D15CA3BE
 #       a list of key IDs.
 #
 # Signature every outgoing mail by pgp
-set pgp_autosign=no
+set pgp_autosign=yes
 set pgp_sign_as="D15CA3BE"
 # During these time you will not needed to enter passparse again
 set pgp_timeout=1800
