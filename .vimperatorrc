@@ -1,6 +1,4 @@
 " Map
-noremap <F11> gT
-noremap <F12> gt
 noremap J <C-d>
 noremap K <C-u>
 noremap <silent> <F2> :js toggle_bar() <CR>
