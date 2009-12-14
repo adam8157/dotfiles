@@ -1,6 +1,8 @@
 " Map
 noremap J <C-d>
 noremap K <C-u>
+noremap <F11> gT
+noremap <F12> gt
 noremap <silent> <F2> :js toggle_bar() <CR>
 
 " Enable AwesomeBar

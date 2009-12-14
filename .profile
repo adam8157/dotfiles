@@ -1,7 +1,10 @@
 #umask
 umask 077
 
-#path
+#variable
+export EDITOR=vim
+export VISUAL=vim
+export PAGER=less
 export PATH="$PATH:/home/adam/Scripts"
 
 #bashrc
