@@ -5,14 +5,6 @@ noremap <F11> gT
 noremap <F12> gt
 noremap <silent> <F2> :js toggle_bar() <CR>
 
-" Enable AwesomeBar
-set complete=l
-set wildoptions=auto
-
-set guioptions=r
-set showstatuslinks=2
-set editor=xterm\ -e\ vim
-
 " Javascript
 js<<EOF
 // Toggle bar
@@ -23,6 +15,16 @@ toggle_bar = function () {
     liberator.execute('set guioptions=' + toggle_status);
 }
 EOF
+
+" Options settings
+set guioptions=r
+set showstatuslinks=2
+set titlestring=Iceweasel
+set editor=xterm\ -e\ vim
+
+" Enable AwesomeBar
+set complete=l
+set wildoptions=auto
 
 set nextpattern=s*下一页|下一张|下一篇|下页|后页s*,^bnextb,\\bnext\\b,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b
 set previouspattern=s*上一页|上一张|上一篇|上页|前页s*,^bprev|previousb,\\bprev|previous\\b,^<$,^(<<|«)$,^(<|«),(<|«)$
