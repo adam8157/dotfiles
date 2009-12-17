@@ -273,9 +273,14 @@
         <execute>gmrun</execute>
       </action>
     </keybind>
-    <keybind key="W-f">
+    <keybind key="W-a">
       <action name="Execute">
-        <execute>firefox</execute>
+        <execute>xterm -e alsamixer</execute>
+      </action>
+    </keybind>
+    <keybind key="W-i">
+      <action name="Execute">
+        <execute>iceweasel</execute>
       </action>
     </keybind>
     <keybind key="W-l">
@@ -301,6 +306,11 @@
     <keybind key="W-t">
       <action name="Execute">
         <execute>mpc toggle</execute>
+      </action>
+    </keybind>
+    <keybind key="W-v">
+      <action name="Execute">
+        <execute>virtualbox</execute>
       </action>
     </keybind>
     <keybind key="W-x">
