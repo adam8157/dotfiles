@@ -122,8 +122,9 @@ bind    pager   <Down>  next-line
 bind    pager   gg      top
 bind    pager   G       bottom
 bind    index   \Cx     sync-mailbox
+macro   pager   \cu     |urlview\n
 
-bind editor <space> noop
+bind  editor <space> noop
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
 macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
