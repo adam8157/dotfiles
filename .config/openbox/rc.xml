@@ -293,6 +293,11 @@
         <execute>amixer -q sset Master toggle</execute>
       </action>
     </keybind>
+    <keybind key="W-p">
+      <action name="Execute">
+        <execute>pidgin</execute>
+      </action>
+    </keybind>
     <keybind key="W-r">
       <action name="Execute">
         <execute>rox-filer</execute>
