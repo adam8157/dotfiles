@@ -9,19 +9,23 @@ set index_format="%S %(%m-%d) %-18.18L [%4c] %s"
 set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]----%>-(%P)---"
 set status_on_top
 
+unset record
+unset folder
+
 set editor="vim"
 
-set record=""
+set spoolfile="imaps://imap.gmail.com/[Gmail]/All Mail"
+set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
+set smtp_url="smtp://adam8157@smtp.gmail.com:587/"
 
-set folder=imaps://imap.gmail.com:993/
-set spoolfile=imaps://imap.gmail.com/INBOX
-set postponed=imaps://imap.gmail.com/[Gmail]/Drafts
-set trash=imaps://imap.gmail.com/[Gmail]/Trash
-set smtp_url=smtp://adam8157@smtp.gmail.com:587/
-set imap_list_subscribed=yes
 set imap_user=adam8157
 set ssl_force_tls=yes
 source ~/.mutt/passwd
+set imap_list_subscribed=yes
+
+set header_cache=~/.mutt/cache/header
+set message_cachedir=~/.mutt/cache/message
+set message_cache_clean
 
 set mail_check=90
 set timeout=15
