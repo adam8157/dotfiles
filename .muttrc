@@ -10,10 +10,10 @@ set status_format="-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del
 set status_on_top
 
 unset record
-unset folder
 
 set editor="vim"
 
+set folder="imaps://imap.gmail.com:993/"
 set spoolfile="imaps://imap.gmail.com/[Gmail]/All Mail"
 set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
 set smtp_url="smtp://adam8157@smtp.gmail.com:587/"
