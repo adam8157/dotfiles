@@ -22,7 +22,7 @@ default_color  8f8f8f
 
 #font
 use_xft yes
-xftfont DejaVu Sans:pixelsize=10
+xftfont DejaVu Sans:pixelsize=11
 
 TEXT
 CPU: ${color e0e0e0}${cpu cpu0}%,${cpu cpu1}%${color} | MEM: ${color e0e0e0}$mem / $memmax${color} | TEMP: ${color e0e0e0}${acpitemp}°C${color} | UPTIME: ${color e0e0e0}${uptime_short}${color} | NET: ${color e0e0e0}${downspeed eth0}+ ${downspeed wlan0}↓ ${upspeed eth0}+ ${upspeed wlan0}↑${color} | VOL: ${color e0e0e0}${execi 3 echo `amixer get PCM|grep -o -m 1 '[0-9]*%'`} ${execi 3 echo `amixer get Master|grep -o -m 1 '\<on*f*\>' | tr a-z A-Z`}${color} | BAT: ${color e0e0e0}${battery}${color}
