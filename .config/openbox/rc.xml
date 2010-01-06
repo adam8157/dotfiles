@@ -812,14 +812,14 @@
   </application>
 
   # end of the example
--->
     <application name="xterm">
+      <position>
+        <x>center</x>
+        <y>center</y>
+      </position>
       <decor>no</decor>
     </application>
-    <application class="Iceweasel">
-      <desktop>1</desktop>
-      <maximized>true</maximized>
-    </application>
+-->
     <application class="VirtualBox">
       <desktop>2</desktop>
       <maximized>true</maximized>
