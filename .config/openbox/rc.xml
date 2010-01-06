@@ -231,6 +231,12 @@
       <action name="ToggleShowDesktop"/>
     </keybind>
     <!-- Keybindings for windows -->
+    <keybind key="A-F1">
+      <action name="ToggleDecorations"/>
+    </keybind>
+    <keybind key="A-F3">
+      <action name="ToggleMaximizeFull"/>
+    </keybind>
     <keybind key="A-F4">
       <action name="Close"/>
     </keybind>
@@ -807,5 +813,16 @@
 
   # end of the example
 -->
+    <application name="xterm">
+      <decor>no</decor>
+    </application>
+    <application class="Iceweasel">
+      <desktop>1</desktop>
+      <maximized>true</maximized>
+    </application>
+    <application class="VirtualBox">
+      <desktop>2</desktop>
+      <maximized>true</maximized>
+    </application>
   </applications>
 </openbox_config>
