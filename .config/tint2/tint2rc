@@ -75,7 +75,7 @@ clock_background_id = 0
 #---------------------------------------------
 # BATTERY
 #---------------------------------------------
-battery = 0
+battery = 1
 battery_low_status = 5
 battery_low_cmd = notify-send "battery low"
 bat1_font = sans 8
