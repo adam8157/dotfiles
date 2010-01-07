@@ -822,7 +822,6 @@
 -->
     <application class="VirtualBox">
       <desktop>2</desktop>
-      <maximized>true</maximized>
     </application>
   </applications>
 </openbox_config>
