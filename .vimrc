@@ -96,11 +96,14 @@ let Tlist_Sort_Type = "name"
 " Use right window
 let Tlist_Use_Right_Window = 1
 
+" Enable auto update
+let Tlist_Auto_Update = 1
+
 " Set compart format
 let Tlist_Compart_Format = 1
 
-" Set exist by window
-let Tlist_Exist_OnlyWindow = 1
+" Set exit by window
+let Tlist_Exit_OnlyWindow = 1
 
 " Disable auto close
 let Tlist_File_Fold_Auto_Close = 0
@@ -117,6 +120,9 @@ let Tlist_Enable_Fold_Column = 0
 
 " Paste toggle
 set pastetoggle=<F3>
+
+" Toggle Tlist
+noremap <F2> :Tlist<CR>
 
 " C's compile and run
 map <F5> :call CompileRunGcc()<CR>
