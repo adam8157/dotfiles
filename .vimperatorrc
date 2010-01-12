@@ -1,17 +1,31 @@
 " Map
+noremap a A
+noremap j 5j
+noremap k 5k
 noremap J <C-d>
 noremap K <C-u>
 noremap <F11> gT
 noremap <F12> gt
+noremap s :stop<CR>
+noremap <C-a> <C-v><C-a>
+noremap <C-c> <C-v><C-c>
+cnoremap <C-a> <C-v><C-a>
+cnoremap <C-c> <C-v><C-c>
+cnoremap <C-x> <C-v><C-x>
+cnoremap <C-v> <C-v><C-v>
+inoremap <C-a> <C-v><C-a>
+inoremap <C-c> <C-v><C-c>
+inoremap <C-x> <C-v><C-x>
+inoremap <C-v> <C-v><C-v>
 noremap <silent> <F2> :js toggle_bar() <CR>
 
 " Javascript
 js<<EOF
 // Toggle bar
-liberator.globalVariables['sx_gopt'] = 'mrT'
+liberator.globalVariables['sx_gopt'] = 'mT'
 toggle_bar = function () {
     toggle_status = liberator.globalVariables['sx_gopt'];
-    liberator.globalVariables['sx_gopt'] = (toggle_status == 'r'? 'mrT': 'r');
+    liberator.globalVariables['sx_gopt'] = (toggle_status == ''? 'mT': '');
     liberator.execute('set guioptions=' + toggle_status);
 }
 EOF
