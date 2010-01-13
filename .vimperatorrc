@@ -31,7 +31,7 @@ toggle_bar = function () {
 EOF
 
 " Options settings
-set guioptions=r
+set guioptions=
 set showstatuslinks=2
 set titlestring=Iceweasel
 set editor=xterm\ -e\ vim

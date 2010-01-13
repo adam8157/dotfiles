@@ -118,11 +118,14 @@ let Tlist_Enable_Fold_Column = 0
 " Super paste
 "inoremap <C-v> <esc>:set paste<cr>mui<C-R>+<esc>mv'uV'v=:set nopaste<cr>
 
-" Paste toggle
-set pastetoggle=<F3>
-
 " Toggle Tlist
 noremap <F2> :Tlist<CR>
+
+" TlistUpdate
+noremap <F3> :TlistUpdate<CR>
+
+" Paste toggle
+set pastetoggle=<F4>
 
 " C's compile and run
 map <F5> :call CompileRunGcc()<CR>
@@ -141,7 +144,7 @@ func! CompileRunGpp()
 endfunc
 
 " Open current directory
-map <F4> :e .<CR>
+map <F7> :e .<CR>
 
 " Use <space> to toggle fold
 set foldenable
