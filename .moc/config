@@ -314,7 +314,7 @@ CanStartInPlaylist	= yes
 #SetXtermTitle		= yes
 
 # Set the terminal title when running under screen.
-#SetScreenTitle		= yes
+SetScreenTitle		= no
 
 # Display full paths instead of just file names in the playlist.
 PlaylistFullPaths	= no
