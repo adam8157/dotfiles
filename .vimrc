@@ -44,6 +44,9 @@ set wildmenu
 " Search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Enable magic matching
+set magic
+
 " Show matching bracets
 set showmatch
 
