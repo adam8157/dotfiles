@@ -9,6 +9,9 @@ startup_message off
 # Disable vbell
 vbell off
 
+# Dynamic title
+shelltitle '$ |bash'
+
 # Utf-8 handling
 defutf8 on
 

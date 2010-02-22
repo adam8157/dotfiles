@@ -47,7 +47,6 @@ alias ap='sudo apt-get purge'
 alias as='apt-cache search --names-only'
 alias au='sudo apt-get update && sudo apt-get upgrade'
 alias aw='apt-cache show'
-alias bt='screen rtorrent'
 alias df='df -h'
 alias dt='dmesg | tail'
 alias ga='git add -A'
@@ -59,11 +58,9 @@ alias gr='gpg --recv-keys'
 alias gs='gpg --send-keys'
 alias hb='sudo pm-hibernate'
 alias ht='sudo halt'
-alias irc='screen irssi'
 alias la='ls -lA --color=auto'
 alias ll='ls -l --color=auto'
 alias m='md5sum'
-alias mail='screen mutt'
 alias ntp='sudo ntpdate pool.ntp.org && sudo hwclock --systohc'
 alias off='sudo poff'
 #alias off='drcomc logout'
@@ -75,3 +72,17 @@ alias sp='sudo pm-suspend'
 alias sr='screen -R'
 alias x='startx'
 alias ~='cd ~'
+
+#screen's title
+case $TERM in
+    screen*)
+        # This is the escape sequence ESC k \w ESC \
+        # Use path as title
+        PATHTITLE='\[\ek\W\]\[\e\\\]'
+        # Use program name as title
+        PROGRAMTITLE='\[\ek\]\[\e\\\]'
+        PS1="${PROGRAMTITLE}${PATHTITLE}${PS1}"
+        ;;
+    *)
+        ;;
+esac
