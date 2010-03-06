@@ -78,9 +78,9 @@ case $TERM in
     screen*)
         # This is the escape sequence ESC k \w ESC \
         # Use path as title
-        PATHTITLE='\[\ek\W\]\[\e\\\]'
+        PATHTITLE='\[\ek\W\e\\\]'
         # Use program name as title
-        PROGRAMTITLE='\[\ek\]\[\e\\\]'
+        PROGRAMTITLE='\[\ek\e\\\]'
         PS1="${PROGRAMTITLE}${PATHTITLE}${PS1}"
         ;;
     *)
