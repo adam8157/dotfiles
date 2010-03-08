@@ -19,6 +19,10 @@ defutf8 on
 hardstatus alwayslastline
 hardstatus string "%{= R}[ %{=b b}%-w%{=rb db}%>%n %t%{-}%+w%{-b}%< %=%{R}][%{M}%D %M %d %{G}%c%{R}]"
 
+# Keyboard binding
+bindkey -k F1 prev
+bindkey -k F2 next
+
 # Automatically detach on hangup
 autodetach on
 
@@ -27,14 +31,3 @@ terminfo xterm*|rxvt* ti@:te@
 
 # Refresh the display when exiting programs
 altscreen on
-
-# bind F8  to kill current screen window.
-# bind F9  to create a new screen
-# bind F10 to rename current screen window
-# bind F11 to move to previous window
-# bind F12 to move to next window
-#bindkey -k k8 kill
-#bindkey -k k9 screen
-#bindkey -k k; title
-bindkey -k F1 prev
-bindkey -k F2 next
