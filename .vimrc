@@ -119,7 +119,7 @@ let Tlist_Enable_Fold_Column = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Super paste
-"inoremap <C-v> <esc>:set paste<cr>mui<C-R>+<esc>mv'uV'v=:set nopaste<cr>
+inoremap <C-v> <esc>:set paste<cr>mui<C-R>+<esc>mv'uV'v=:set nopaste<cr>
 
 " Toggle Tlist
 noremap <F2> :Tlist<CR>
