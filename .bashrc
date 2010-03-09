@@ -76,7 +76,6 @@ alias ~='cd ~'
 #screen's title
 case $TERM in
     screen*)
-        # This is the escape sequence ESC k \w ESC \
         # Use path as title
         PATHTITLE='\[\ek\W\e\\\]'
         # Use program name as title
