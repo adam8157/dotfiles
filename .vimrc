@@ -93,6 +93,10 @@ set expandtab
 " CTags
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Auto finding
+set tags=tags;
+set autochdir
+
 " Sort by name
 let Tlist_Sort_Type = "name"
 
@@ -118,14 +122,11 @@ let Tlist_Enable_Fold_Column = 0
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Super paste
-inoremap <C-v> <esc>:set paste<cr>mui<C-R>+<esc>mv'uV'v=:set nopaste<cr>
-
 " Toggle Tlist
-noremap <F2> :Tlist<CR>
+nnoremap <silent> <F2> :Tlist<CR> :TlistUpdate<CR>
 
-" TlistUpdate
-noremap <F3> :TlistUpdate<CR>
+" Grep search tools
+nnoremap <F3> :Grep<CR>
 
 " Paste toggle
 set pastetoggle=<F4>
@@ -137,17 +138,6 @@ func! CompileRunGcc()
   exec "!gcc -Wall -g % -o %<"
   exec "! ./%<"
 endfunc
-
-" C++'s compile and run
-map <F6> :call CompileRunGpp()<CR>
-func! CompileRunGpp()
-  exec "w"
-  exec "!g++ -Wall -g % -o %<"
-  exec "! ./%<"
-endfunc
-
-" Open current directory
-map <F7> :e .<CR>
 
 " Use <space> to toggle fold
 set foldenable
