@@ -132,7 +132,7 @@ nnoremap <F3> :Grep<CR>
 set pastetoggle=<F4>
 
 " C's compile and run
-map <F5> :call CompileRunGcc()<CR>
+nnoremap <F5> :call CompileRunGcc()<CR>
 func! CompileRunGcc()
   exec "w"
   exec "!gcc -Wall -g % -o %<"
