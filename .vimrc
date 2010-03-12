@@ -37,7 +37,7 @@ syntax on
 " Show ruler
 set ruler
 
-" Turn on WiLd menu
+" Turn on Wild menu
 set wildmenu
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
