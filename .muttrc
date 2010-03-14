@@ -126,6 +126,7 @@ bind    pager   <Down>  next-line
 bind    pager   gg      top
 bind    pager   G       bottom
 bind    index   \Cx     sync-mailbox
+bind    index   D       delete-message
 macro   pager   \cu     |urlview\n
 
 bind  editor <space> noop
@@ -136,7 +137,7 @@ macro index gs "<change-folder>=[Gmail]/Spam<enter>" "Go to spam"
 macro index gt "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
 macro index,pager H "<save-message>=INBOX<enter>" "mark message as ham"
 macro index,pager S "<save-message>=[Gmail]/Spam<enter>" "mark message as spam"
-macro index,pager D "<save-message>=[Gmail]/Trash<enter>" "mark message as trash"
+macro index,pager d "<save-message>=[Gmail]/Trash<enter>" "mark message as trash"
 
 # ---------------------Color theme-----------------------------------
 color normal    white default
