@@ -126,7 +126,7 @@ let Tlist_Enable_Fold_Column = 0
 nnoremap <silent> <F2> :Tlist<CR> :TlistUpdate<CR>
 
 " Grep search tools
-nnoremap <F3> :Grep<CR>
+nnoremap <F3> :Rgrep<CR>
 
 " Paste toggle
 set pastetoggle=<F4>
