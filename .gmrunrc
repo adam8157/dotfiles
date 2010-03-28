@@ -6,8 +6,8 @@ TermExec = ${Terminal} -e
 AlwaysInTerm = ssh lftp vim man
 
 # Set window geometry (except height)
-Top = 300
-Left = 400
+Top = 200
+Left = 440
 Width = 400
 
 # History size
