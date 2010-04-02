@@ -85,15 +85,16 @@ my_hdr X-PGP-Key-ID: D15CA3BE
 
 # ---------------------GnuPG stuff-----------------------------------
 # Signature every outgoing mail by pgp
-set pgp_autosign=yes
+#set pgp_autosign=yes
 set pgp_sign_as="D15CA3BE"
-# During these time you will not needed to enter passparse again
-set pgp_timeout=1800
-# Let you see pgp signature infomation
-set pgp_verify_sig=yes 
-set pgp_replyencrypt=yes
+# If attempt to verify PGP/MIME signatures
+set pgp_verify_sig=no 
 # Don't store unencrypted and unsigned mail
 set fcc_clear=no
+# Encrypt replies to messages which are encrypted
+set pgp_replyencrypt=yes
+# During these time you will not needed to enter passparse again
+set pgp_timeout=1800
 
 # Set PGP commands
 set pgp_decode_command="gpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
