@@ -1,7 +1,7 @@
 # Sessions
-#screen
-#screen mutt
-#screen irssi
+screen
+screen -t mutt mutt
+screen -t irssi irssi
 
 # Start message
 startup_message off
