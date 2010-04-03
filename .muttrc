@@ -85,10 +85,10 @@ my_hdr X-PGP-Key-ID: D15CA3BE
 
 # ---------------------GnuPG stuff-----------------------------------
 # Signature every outgoing mail by pgp
-#set pgp_autosign=yes
+set pgp_autosign=yes
 set pgp_sign_as="D15CA3BE"
 # If attempt to verify PGP/MIME signatures
-set pgp_verify_sig=no 
+set pgp_verify_sig=yes
 # Don't store unencrypted and unsigned mail
 set fcc_clear=no
 # Encrypt replies to messages which are encrypted
