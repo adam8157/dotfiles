@@ -36,7 +36,7 @@ _show_key()
 
 complete -F _show_all $default ai aw
 complete -F _show_installed $default ap
-complete -F _show_key $default ge gi gs
+complete -F _show_key $default ge gs
 
 #alias
 alias ..='cd ..'
@@ -49,25 +49,25 @@ alias au='sudo apt-get update && sudo apt-get upgrade'
 alias aw='apt-cache show'
 alias cr='ctags -R --fields=+lS'
 alias df='df -h'
-alias dt='dmesg | tail'
+alias dt='dmesg | tail -n 20'
 alias ga='git add -A'
 alias gc='git commit -a'
 alias ge='gpg --edit-key'
-alias gi='gpg --sign-key'
 alias gp='git push'
 alias gr='gpg --recv-keys'
 alias gs='gpg --send-keys'
 alias hb='sudo pm-hibernate'
 alias ht='sudo halt'
+alias irc='screen -t irssi irssi'
 alias la='ls -lA --color=auto'
 alias ll='ls -l --color=auto'
 alias m='md5sum'
+alias mail='screen -t mutt mutt'
 alias ntp='sudo ntpdate pool.ntp.org && sudo hwclock --systohc'
 alias off='sudo poff'
-#alias off='drcomc logout'
 alias on='sudo pon dsl-provider'
-#alias on='sudo drcomd && drcomc login'
 alias rb='sudo reboot'
+alias bt='screen -t rtorrent rtorrent'
 alias s='sha1sum'
 alias sp='sudo pm-suspend'
 alias sr='screen -R'
