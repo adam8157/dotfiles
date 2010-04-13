@@ -27,7 +27,7 @@ bindkey -k F2 next
 autodetach on
 
 # Make the xterm scroller work in screen
-terminfo xterm*|rxvt* ti@:te@
+terminfo xterm* ti@:te@
 
 # Refresh the display when exiting programs
 altscreen on

@@ -122,6 +122,23 @@ let Tlist_Enable_Fold_Column = 0
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Tab navigation
+nnoremap tp :tabprevious<cr>
+nnoremap tn :tabnext<cr>
+nnoremap to :tabnew<cr>
+nnoremap tc :tabclose<cr>
+nnoremap gf <C-W>gf
+
+" Move among windows
+noremap <C-h>   <C-W>h
+noremap <C-l>  <C-W>l
+noremap <C-j>   <C-W>j
+noremap <C-k>   <C-W>k
+
+" Set Up and Down non-linewise
+noremap <Up> gk
+noremap <Down> gj
+
 " Toggle Tlist
 nnoremap <silent> <F2> :Tlist<CR> :TlistUpdate<CR>
 
@@ -143,7 +160,3 @@ endfunc
 set foldenable
 set foldmethod=manual
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
-
-" Set Up and Down non-linewise
-noremap <Up> gk
-noremap <Down> gj
