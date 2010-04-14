@@ -155,6 +155,7 @@ set pastetoggle=<F4>
 
 " Save & Make 
 nnoremap <F5> :w<CR> :make<CR>
+nnoremap <F6> :w<CR> :make %<<CR> :!./%<<CR>
 
 " Use <space> to toggle fold
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
