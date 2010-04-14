@@ -5,6 +5,11 @@
 " Set backspace
 set backspace=eol,start,indent
 
+" Lines folding
+set foldenable
+set foldnestmax=1
+set foldmethod=syntax
+
 " Turn backup on
 set backup
 
@@ -148,15 +153,8 @@ nnoremap <F3> :Rgrep<CR>
 " Paste toggle
 set pastetoggle=<F4>
 
-" C's compile and run
-nnoremap <F5> :call CompileRunGcc()<CR>
-func! CompileRunGcc()
-  exec "w"
-  exec "!gcc -Wall -g % -o %<"
-  exec "! ./%<"
-endfunc
+" Save & Make 
+nnoremap <F5> :w<CR> :make<CR>
 
 " Use <space> to toggle fold
-set foldenable
-set foldmethod=manual
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
