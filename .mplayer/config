@@ -1,8 +1,6 @@
-# Write your default config options here!
 ass=on
 ao=alsa
 zoom=yes
-ontop=yes
 vo=xv,x11
 subcp=cp936
 unicode=yes
