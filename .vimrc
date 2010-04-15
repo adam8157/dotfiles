@@ -128,24 +128,24 @@ let Tlist_Enable_Fold_Column = 0
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Tab navigation
-nnoremap tp :tabprevious<cr>
-nnoremap tn :tabnext<cr>
-nnoremap to :tabnew<cr>
-nnoremap tc :tabclose<cr>
+nnoremap tp :tabprevious<CR>
+nnoremap tn :tabnext<CR>
+nnoremap to :tabnew<CR>
+nnoremap tc :tabclose<CR>
 nnoremap gf <C-W>gf
 
 " Move among windows
-noremap <C-h>   <C-W>h
-noremap <C-l>  <C-W>l
-noremap <C-j>   <C-W>j
-noremap <C-k>   <C-W>k
+noremap <C-h> <C-W>h
+noremap <C-l> <C-W>l
+noremap <C-j> <C-W>j
+noremap <C-k> <C-W>k
 
 " Set Up and Down non-linewise
 noremap <Up> gk
 noremap <Down> gj
 
 " Toggle Tlist
-nnoremap <silent> <F2> :Tlist<CR> :TlistUpdate<CR>
+nnoremap <silent> <F2> :Tlist<CR>:TlistUpdate<CR>
 
 " Grep search tools
 nnoremap <F3> :Rgrep<CR>
@@ -154,8 +154,9 @@ nnoremap <F3> :Rgrep<CR>
 set pastetoggle=<F4>
 
 " Save & Make 
-nnoremap <F5> :w<CR> :make<CR>
-nnoremap <F6> :w<CR> :make %<<CR> :!./%<<CR>
+nnoremap <F5> :w<CR>:make<CR>
+nnoremap <F6> :w<CR>:make %< CC=gcc CFLAGS="-Wall -g -O2"<CR>:!./%<<CR>
+nnoremap <F7> :copen<CR>
 
 " Use <space> to toggle fold
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
