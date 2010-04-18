@@ -145,7 +145,7 @@ noremap <Up> gk
 noremap <Down> gj
 
 " Toggle Tlist
-nnoremap <silent> <F2> :Tlist<CR>:TlistUpdate<CR>
+nnoremap <silent> <F2> :TlistToggle<CR>:TlistUpdate<CR>
 
 " Grep search tools
 nnoremap <F3> :Rgrep<CR>
@@ -156,7 +156,8 @@ set pastetoggle=<F4>
 " Save & Make 
 nnoremap <F5> :w<CR>:make<CR>
 nnoremap <F6> :w<CR>:make %< CC=gcc CFLAGS="-Wall -g -O2"<CR>:!./%<<CR>
-nnoremap <F7> :copen<CR>
+nnoremap <F7> :botright copen<CR>
+nnoremap <F8> :cclose<CR>
 
 " Use <space> to toggle fold
 nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
