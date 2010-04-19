@@ -159,8 +159,8 @@ set pastetoggle=<F4>
 " Save & Make 
 nnoremap <F5> :w<CR>:make<CR>
 nnoremap <F6> :w<CR>:make %< CC=gcc CFLAGS="-Wall -g -O2"<CR>:!./%<<CR>
-nnoremap <F7> :botright copen<CR>
-nnoremap <F8> :cclose<CR>
+nnoremap <silent> <F7> :botright copen<CR>
+nnoremap <silent> <F8> :cclose<CR>
 
 " Use <space> to toggle fold
-nnoremap <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+nnoremap <silent> <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
