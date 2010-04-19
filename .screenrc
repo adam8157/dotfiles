@@ -1,5 +1,5 @@
 # Sessions
-screen
+#screen
 screen -t mutt mutt
 screen -t irssi irssi
 
@@ -9,25 +9,31 @@ startup_message off
 # Disable vbell
 vbell off
 
+# Disable login
+deflogin off
+
 # Dynamic title
 shelltitle '$ |bash'
 
+# Caption String
+caption always "%{= R}[ %{=b b}%-w%{=rb db}%>%n %t%{-}%+w%{-b}%< %=%{R}][%{M}%D %M %d %{G}%c%{R}]"
+
 # Utf-8 handling
 defutf8 on
-
-# Hardstatus line
-hardstatus alwayslastline
-hardstatus string "%{= R}[ %{=b b}%-w%{=rb db}%>%n %t%{-}%+w%{-b}%< %=%{R}][%{M}%D %M %d %{G}%c%{R}]"
 
 # Keyboard binding
 bindkey -k F1 prev
 bindkey -k F2 next
 
+# Set xterm's title
+hardstatus string "screen: %t"
+#termcapinfo xterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
+
 # Automatically detach on hangup
 autodetach on
 
 # Make the xterm scroller work in screen
-terminfo xterm* ti@:te@
+termcapinfo xterm* ti@:te@
 
 # Refresh the display when exiting programs
 altscreen on

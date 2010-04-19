@@ -75,14 +75,16 @@ alias sr='screen -R'
 alias x='startx'
 alias ~='cd ~'
 
-#screen's title
+#screen and xterm's dynamic title
 case $TERM in
     screen*)
-        # Use path as title
         PATHTITLE='\[\ek\W\e\\\]'
-        # Use program name as title
         PROGRAMTITLE='\[\ek\e\\\]'
         PS1="${PROGRAMTITLE}${PATHTITLE}${PS1}"
+        ;;
+    xterm*)
+        TITLEBAR='\[\e]0;\u@\h:\w\a\]'
+        PS1="${TITLEBAR}${PS1}"
         ;;
     *)
         ;;

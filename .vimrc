@@ -19,9 +19,6 @@ set fileencodings=ucs-bom,utf-8,gbk
 " Set backup directory
 set backupdir=$HOME/.vim/backup
 
-" Disable dynamic title
-set notitle
-
 " Set non-linewise display
 set display=lastline
 
