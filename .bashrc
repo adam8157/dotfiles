@@ -77,14 +77,17 @@ alias ~='cd ~'
 
 #screen and xterm's dynamic title
 case $TERM in
-    screen*)
-        PATHTITLE='\[\ek\W\e\\\]'
-        PROGRAMTITLE='\[\ek\e\\\]'
-        PS1="${PROGRAMTITLE}${PATHTITLE}${PS1}"
-        ;;
     xterm*)
+        # Set xterm's title
         TITLEBAR='\[\e]0;\u@\h:\w\a\]'
         PS1="${TITLEBAR}${PS1}"
+        ;;
+    screen*)
+        # Use path as title
+        PATHTITLE='\[\ek\W\e\\\]'
+        # Use program name as title
+        PROGRAMTITLE='\[\ek\e\\\]'
+        PS1="${PROGRAMTITLE}${PATHTITLE}${PS1}"
         ;;
     *)
         ;;
