@@ -25,6 +25,9 @@ set display=lastline
 " Disable VI compatible mode
 set nocompatible
 
+" Keep more backups for one file
+autocmd BufWritePre * let &backupext = strftime(".%Y-%m-%d-%H-%M-%S")
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
