@@ -21,7 +21,6 @@ set smtp_url="smtp://adam8157@smtp.gmail.com:587/"
 set imap_user=adam8157
 set ssl_force_tls=yes
 source ~/.mutt/passwd
-set imap_list_subscribed=yes
 
 set header_cache=~/.mutt/cache/header
 set message_cachedir=~/.mutt/cache/message
