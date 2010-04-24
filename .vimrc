@@ -26,7 +26,7 @@ set display=lastline
 set nocompatible
 
 " Keep more backups for one file
-autocmd BufWritePre * let &backupext = strftime(".%Y-%m-%d-%H-%M-%S")
+autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
@@ -127,6 +127,43 @@ let Tlist_File_Fold_Auto_Close = 0
 let Tlist_Enable_Fold_Column = 0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Cscope
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Use both cscope and ctag
+set cscopetag
+
+" Show msg when cscope db added
+set cscopeverbose
+
+" Use tags for definition search first
+set cscopetagorder=1
+
+" Use quickfix window to show cscope results
+set cscopequickfix=s-,c-,d-,i-,t-,e-
+
+" Cscope mappings
+nnoremap <C-w>\ :scs find c <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nnoremap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nnoremap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Use my own cscope mappings
+let g:autocscope_menus=0
+
+" Auto change the current working directory
+let g:NERDTreeChDirMode=2
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -161,6 +198,9 @@ nnoremap <F5> :w<CR>:make<CR>
 nnoremap <F6> :w<CR>:make %< CC=gcc CFLAGS="-Wall -g -O2"<CR>:!./%<<CR>
 nnoremap <silent> <F7> :botright copen<CR>
 nnoremap <silent> <F8> :cclose<CR>
+
+" NERDTreeToggle
+nnoremap <silent> <F9> :NERDTreeToggle<CR>
 
 " Use <space> to toggle fold
 nnoremap <silent> <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
