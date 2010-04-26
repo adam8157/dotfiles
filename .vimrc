@@ -10,6 +10,9 @@ set foldenable
 set foldnestmax=1
 set foldmethod=syntax
 
+" Dynamic title
+set title
+
 " Turn backup on
 set backup
 
@@ -24,6 +27,9 @@ set display=lastline
 
 " Disable VI compatible mode
 set nocompatible
+
+" Auto change current directory
+set autochdir
 
 " Keep more backups for one file
 autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
@@ -103,7 +109,6 @@ set expandtab
 
 " Auto finding
 set tags=tags;
-set autochdir
 
 " Sort by name
 let Tlist_Sort_Type = "name"
@@ -142,26 +147,15 @@ set cscopetagorder=1
 " Use quickfix window to show cscope results
 set cscopequickfix=s-,c-,d-,i-,t-,e-
 
-" Cscope mappings
-nnoremap <C-w>\ :scs find c <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nnoremap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nnoremap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Use my own cscope mappings
-let g:autocscope_menus=0
+let autocscope_menus=0
 
-" Auto change the current working directory
-let g:NERDTreeChDirMode=2
+" Auto change the root directory
+let NERDTreeChDirMode=2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -179,6 +173,17 @@ noremap <C-h> <C-W>h
 noremap <C-l> <C-W>l
 noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
+
+" Cscope mappings
+nnoremap <C-w>\ :scs find c <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
+nnoremap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nnoremap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 
 " Set Up and Down non-linewise
 noremap <Up> gk
