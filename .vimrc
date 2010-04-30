@@ -209,3 +209,11 @@ nnoremap <silent> <F9> :NERDTreeToggle<CR>
 
 " Use <space> to toggle fold
 nnoremap <silent> <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
+
+" Use xsel to access the x clipboard
+if $DISPLAY != '' && executable('xsel')
+    nnoremap <silent> "*y :'[,']!xsel -i -p -l /dev/null<CR>u
+    nnoremap <silent> "*p :r!xsel -p<CR>
+    nnoremap <silent> "+y :'[,']!xsel -i -b -l /dev/null<CR>u
+    nnoremap <silent> "+p :r!xsel -b<CR>
+endif
