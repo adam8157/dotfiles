@@ -31,6 +31,9 @@ set nocompatible
 " Auto change current directory
 set autochdir
 
+" Use absolute paths in sessions
+set sessionoptions-=curdir
+
 " Keep more backups for one file
 autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
 
