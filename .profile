@@ -3,7 +3,7 @@ umask 077
 
 #variable
 export EDITOR=vim
-export PATH="$PATH:/home/adam/Scripts:/home/adam/Projects/Arm/arm-linux-gcc/bin"
+export PATH="$PATH:/home/adam/Scripts"
 
 #bashrc
 if [ -f ~/.bashrc ];then
