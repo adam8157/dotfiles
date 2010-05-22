@@ -5,7 +5,7 @@ hdr_order From Subject Date To CC BCC Reply-To X-PGP-Key-ID
 unalternative_order *
 alternative_order text/*
 
-set index_format="%S %(%m-%d) %-18.18L [%4c] %s"
+set index_format="%4C %Z %{%b %d} %?X?%X& ? %-18.18L [%4c] %s"
 set status_format="mutt-filter '-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]----%>-(%P)---'|"
 set status_on_top
 
@@ -69,6 +69,9 @@ set reverse_realname=yes
 source ~/.mutt/alias
 set alias_file=~/.mutt/alias
 
+# Signature
+set signature=~/.mutt/signature
+
 # Charset settings
 set allow_8bit
 set charset="utf-8"
@@ -87,8 +90,10 @@ my_hdr X-PGP-Key-ID: D15CA3BE
 
 # ---------------------GnuPG stuff-----------------------------------
 # Signature every outgoing mail by pgp
-set pgp_autosign=yes
+#set pgp_autosign=yes
 set pgp_sign_as="D15CA3BE"
+send-hook ~A "set pgp_autosign"
+send-hook "~C linux-kernel@zh-kernel.org" "set nopgp_autosign"
 # If attempt to verify PGP/MIME signatures
 set pgp_verify_sig=yes
 # Don't store unencrypted and unsigned mail
@@ -129,7 +134,6 @@ bind    pager   <Down>  next-line
 bind    pager   gg      top
 bind    pager   G       bottom
 bind    index   \Cx     sync-mailbox
-bind    index   D       delete-message
 macro   pager   \cu     |urlview\n
 
 bind  editor <space> noop
@@ -138,9 +142,11 @@ macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
 macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
 macro index gs "<change-folder>=[Gmail]/Spam<enter>" "Go to spam"
 macro index gt "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
-macro index,pager H "<save-message>=INBOX<enter>" "mark message as ham"
-macro index,pager S "<save-message>=[Gmail]/Spam<enter>" "mark message as spam"
-macro index,pager d "<save-message>=[Gmail]/Trash<enter>" "mark message as trash"
+macro index,pager H "<save-message>=INBOX<enter>" "Mark message as ham"
+macro index,pager S "<save-message>=[Gmail]/Spam<enter>" "Mark message as spam"
+
+folder-hook . 'macro index,pager d "<save-message>=[Gmail]/Trash<enter>" "Mark message as trash"'
+folder-hook 'Trash' 'bind index,pager d delete-message'
 
 # ---------------------Color theme-----------------------------------
 color normal    white default
