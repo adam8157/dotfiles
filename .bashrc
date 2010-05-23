@@ -8,30 +8,30 @@ fi
 
 _show_installed()
 {
-	local cur
-	COMPREPLY=()
-	cur=`_get_cword`
-	COMPREPLY=( $( _comp_dpkg_installed_packages $cur ) )
-	return 0
+    local cur
+    COMPREPLY=()
+    cur=`_get_cword`
+    COMPREPLY=( $( _comp_dpkg_installed_packages $cur ) )
+    return 0
 }
 
 _show_all()
 {
-	local cur
-	COMPREPLY=()
-	cur=`_get_cword`
-	COMPREPLY=( $( apt-cache pkgnames $cur 2> /dev/null ) )
-	return 0
+    local cur
+    COMPREPLY=()
+    cur=`_get_cword`
+    COMPREPLY=( $( apt-cache pkgnames $cur 2> /dev/null ) )
+    return 0
 }
 
 _show_key()
 {
-	local cur
-	COMPREPLY=()
-	cur=`_get_cword`
+    local cur
+    COMPREPLY=()
+    cur=`_get_cword`
     COMPREPLY=( $( compgen -W "$( gpg --list-keys 2>/dev/null | \
-                sed -ne 's@^pub.*/\([^ ]*\).*$@\1@p;s@^.*\(<\([^>]*\)>\).*$@\2@p')" -- "$cur" ))
-	return 0
+        sed -ne 's@^pub.*/\([^ ]*\).*$@\1@p;s@^.*\(<\([^>]*\)>\).*$@\2@p')" -- "$cur" ))
+    return 0
 }
 
 complete -F _show_all $default ai aw
