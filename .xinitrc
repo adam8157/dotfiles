@@ -1,6 +1,10 @@
 #umask
 umask 077
 
+#xset
+xset s off
+xset dpms 0 0 0
+
 #ibus
 export XMODIFIERS="@im=ibus"
 export GTK_IM_MODULE="ibus"
