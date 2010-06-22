@@ -19,6 +19,9 @@ set backup
 " Set fileencodings
 set fileencodings=ucs-bom,utf-8,gbk
 
+" Display line number
+set number
+
 " Set backup directory
 set backupdir=$HOME/.vim/backup
 
@@ -179,14 +182,14 @@ noremap <C-k> <C-W>k
 
 " Cscope mappings
 nnoremap <C-w>\ :scs find c <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>
-nnoremap <C-\>i :cs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nnoremap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>s :scs find s <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>c :scs find c <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>t :scs find t <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>e :scs find e <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
+nnoremap <C-\>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+nnoremap <C-\>d :scs find d <C-R>=expand("<cword>")<CR><CR>
 
 " Set Up and Down non-linewise
 noremap <Up> gk
