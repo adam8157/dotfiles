@@ -291,7 +291,7 @@
     </keybind>
     <keybind key="W-l">
       <action name="Execute">
-        <execute>xlock -mode blank</execute>
+        <execute>xlock -mode blank -dpmsoff 5</execute>
       </action>
     </keybind>
     <keybind key="W-m">
