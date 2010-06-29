@@ -46,7 +46,7 @@ set edit_headers=yes
 set pager_index_lines=5
 set pager_stop
 
-set reply_regexp="^(re([\[0-9\]+])*|aw|回复|答复)(:[ \t]|：)"
+set reply_regexp="^(re([\[0-9\]+])*|aw|回复|答复)(:|：)[ \t]*"
 
 # Include attachments in forward emails
 set mime_forward
@@ -95,7 +95,7 @@ my_hdr X-PGP-Key-ID: D15CA3BE
 #set pgp_autosign=yes
 set pgp_sign_as="D15CA3BE"
 send-hook ~A "set pgp_autosign"
-send-hook "~C linux-kernel@zh-kernel.org" "set nopgp_autosign"
+send-hook ~u "set nopgp_autosign"
 # If attempt to verify PGP/MIME signatures
 set pgp_verify_sig=yes
 # Don't store unencrypted and unsigned mail
@@ -116,29 +116,29 @@ set pgp_encrypt_sign_command="/usr/lib/mutt/pgpewrap gpg %?p?--passphrase-fd 0? 
 set pgp_import_command="gpg --no-verbose --import %f"
 set pgp_export_command="gpg --no-verbose --export --armor %r"
 set pgp_verify_key_command="gpg --verbose --batch --fingerprint --check-sigs %r"
-set pgp_list_pubring_command="gpg --no-verbose --batch --quiet --with-colons --list-keys %r" 
-set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --list-secret-keys %r" 
+set pgp_list_pubring_command="gpg --no-verbose --batch --quiet --with-colons --list-keys %r"
+set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --list-secret-keys %r"
 set pgp_getkeys_command="gpg --recv-keys %r > /dev/null 2>&1"
 
 # Pattern for good signature
 set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
 
 # ---------------------Key bindings----------------------------------
-bind    index   gg      first-entry
-bind    index   G       last-entry
-bind    index   \cf     next-page
-bind    index   \cb     previous-page
-bind    index   ,g      group-reply
-bind    pager   j       next-line
-bind    pager   k       previous-line
-bind    pager   <Up>    previous-line
-bind    pager   <Down>  next-line
-bind    pager   gg      top
-bind    pager   G       bottom
-bind    index   \Cx     sync-mailbox
-macro   pager   \cu     |urlview\n
+bind index gg first-entry
+bind index G last-entry
+bind index \cf next-page
+bind index \cb previous-page
+bind pager j next-line
+bind pager k previous-line
+bind pager <Up> previous-line
+bind pager <Down> next-line
+bind pager gg top
+bind pager G bottom
+bind index \Cx sync-mailbox
+bind editor <space> noop
+bind index,pager L group-reply
 
-bind  editor <space> noop
+macro pager \cu |urlview\n
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
 macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
@@ -151,35 +151,35 @@ folder-hook . 'macro index,pager d "<save-message>=[Gmail]/Trash<enter>" "Mark m
 folder-hook 'Trash' 'bind index,pager d delete-message'
 
 # ---------------------Color theme-----------------------------------
-color normal    white default
+color normal white default
 color attachment magenta default
 color hdrdefault cyan default
 color indicator brightblack white
-color markers   blue default
+color markers blue default
 color signature cyan default
-color status    brightcyan black 
-color tilde     blue default
-color tree      red default
+color status brightcyan black
+color tilde blue default
+color tree red default
 
-color quoted  green default
+color quoted green default
 color quoted1 yellow default
 color quoted2 red default
 color hdrdefault cyan default
-color header  default magenta .*
-color header   brightgreen blue ^(From|To|Cc|Subject|X-Bogosity):
+color header default magenta .*
+color header brightgreen blue ^(From|To|Cc|Subject|X-Bogosity):
 color signature cyan default
 
-color index green default ~p                 # To me
-color index blue default ~P                # From me 
-color index brightyellow default ~N          # New
-color index brightgreen default "~N ~p"     # New to me
-color index brightcyan default ~T               # Tagged
-color index magenta default ~D              # Deleted
-color index brightyellow blue ~F               # Flaged
+color index green default ~p # To me
+color index blue default ~P # From me
+color index brightyellow default ~N # New
+color index brightgreen default "~N ~p" # New to me
+color index brightcyan default ~T # Tagged
+color index magenta default ~D # Deleted
+color index brightyellow blue ~F # Flaged
 
 color body red default "[!?]{3,}" # exclamation
 color body green default "^ *[-+*o] +" # list item
-color body brightgreen black "[;:]-*[)>(<|PD]"     # :-) etc...
+color body brightgreen black "[;:]-*[)>(<|PD]" # :-) etc...
 color body red default "[\-\.+_a-zA-Z0-9]+@[\-\.a-zA-Z0-9]+" # email
 color body yellow default "(http|ftp)://[\-\.\,/+=&%~_:?\#a-zA-Z0-9]+" # URL
 color body brightred default "(^| )[*_]+[-&[:alnum:]]+[*_]( |$)" # bold/underline
