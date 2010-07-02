@@ -19,9 +19,6 @@ set backup
 " Set fileencodings
 set fileencodings=ucs-bom,utf-8,gbk
 
-" Display line number
-set number
-
 " Set backup directory
 set backupdir=$HOME/.vim/backup
 
@@ -212,6 +209,9 @@ nnoremap <silent> <F8> :cclose<CR>
 
 " NERDTreeToggle
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
+
+" Toggle display line number
+nnoremap <silent> <F10> :set number!<CR>
 
 " Use <space> to toggle fold
 nnoremap <silent> <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
