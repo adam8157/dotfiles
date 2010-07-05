@@ -148,7 +148,7 @@ macro index,pager H "<save-message>=INBOX<enter>" "Mark message as ham"
 macro index,pager S "<save-message>=[Gmail]/Spam<enter>" "Mark message as spam"
 
 folder-hook . 'macro index,pager d "<save-message>=[Gmail]/Trash<enter>" "Mark message as trash"'
-folder-hook 'Trash' 'bind index,pager d delete-message'
+folder-hook 'Spam|Trash' 'bind index,pager d delete-message'
 
 # ---------------------Color theme-----------------------------------
 color normal white default
