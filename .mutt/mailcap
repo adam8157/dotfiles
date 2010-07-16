@@ -1,4 +1,3 @@
 text/html; w3m -dump -ppc 9 -I %{charset} -T text/html %s|uniq; copiousoutput
 application/pdf; pdftotext -enc UTF-8 %s /dev/stdout; copiousoutput
 application/msword; antiword %s|uniq; copiousoutput
-#application/msword; ooffice %s; test=test -n "$DISPLAY"
