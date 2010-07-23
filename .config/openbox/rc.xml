@@ -820,6 +820,9 @@
       <decor>no</decor>
     </application>
 -->
+    <application class="Firefox*">
+      <desktop>1</desktop>
+    </application>
     <application class="VirtualBox">
       <desktop>2</desktop>
     </application>
