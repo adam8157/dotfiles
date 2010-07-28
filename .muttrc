@@ -82,7 +82,7 @@ set realname='Adam Lee'
 set from='Adam Lee <adam8157@gmail.com>'
 
 # Set different from information
-alternates '*'
+alternates '.*'
 set reverse_name=yes
 set reverse_realname=yes
 
