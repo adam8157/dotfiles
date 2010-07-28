@@ -148,7 +148,7 @@ set cscopeverbose
 set cscopetagorder=1
 
 " Use quickfix window to show cscope results
-set cscopequickfix=s-,c-,d-,i-,t-,e-
+set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
@@ -181,12 +181,12 @@ noremap <C-k> <C-W>k
 nnoremap <C-w>\ :scs find c <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>s :scs find s <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>g :scs find g <C-R>=expand("<cword>")<CR><CR>
+nnoremap <C-\>d :scs find d <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>c :scs find c <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>t :scs find t <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>e :scs find e <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
 nnoremap <C-\>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
-nnoremap <C-\>d :scs find d <C-R>=expand("<cword>")<CR><CR>
 
 " Set Up and Down non-linewise
 noremap <Up> gk
