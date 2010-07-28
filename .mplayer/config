@@ -11,6 +11,7 @@
 # See the CONFIGURATION FILES section in the man page
 # for a detailed description of the syntax.
 
+[default]
 
 ##################
 # video settings #
@@ -155,7 +156,7 @@ subfont-text-scale=4
 #alang = en
 
 # Turns  off  xscreensaver at startup and turns it on again on exit.
-stop-xscreensaver=yes
+stop-xscreensaver=no
 
 
 ###################
