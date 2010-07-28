@@ -1,18 +1,26 @@
+# MIME Alternative
+unalternative_order *
+alternative_order text/*
+
+# Selecting headers
 ignore *
 unignore From Subject Date To CC BCC Reply-To X-PGP-Key-ID
 hdr_order From Subject Date To CC BCC Reply-To X-PGP-Key-ID
 
-unalternative_order *
-alternative_order text/*
-
+# Display settings
 set index_format="%4C %Z %{%b %d} %?X?%X& ? %-18.18L [%4c] %s"
 set status_format="mutt-filter '-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]----%>-(%P)---'|"
-set status_on_top
 
+# Display status on the first line
+set status_on_top =yes
+
+# No record
 unset record
 
+# Set editor
 set editor="vim"
 
+# Set folder
 set folder="imaps://imap.gmail.com:993/"
 set spoolfile="imaps://imap.gmail.com/[Gmail]/All Mail"
 set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
@@ -25,32 +33,42 @@ set ssl_force_tls=yes
 #set smtp_pass=
 source ~/.mutt/passwd
 
+# Message cache
 set header_cache=~/.mutt/cache/header
 set message_cachedir=~/.mutt/cache/message
-set message_cache_clean
+set message_cache_clean=yes
 
-set mail_check=90
+# Set timeout
 set timeout=15
+set mail_check=90
 
+# Quit without question
 set quit=ask-yes
+
+# Ask for a key after command
 set wait_key=yes
 
+# Auto view
 set mailcap_path=~/.mutt/mailcap
 auto_view text/html application/pdf application/msword
 
+# Message included in reply
 set include=yes
-set indent_str="> "
 
+# Pager view
 set resolve=yes
-set edit_headers=yes
+set pager_stop=yes
 set pager_index_lines=5
-set pager_stop
 
+# Allow editing the header
+set edit_headers=yes
+
+# To recognize reply messages
 set reply_regexp="^(re([\[0-9\]+])*|aw|回复|答复)(:|：)[ \t]*"
 
 # Include attachments in forward emails
-set mime_forward
-set mime_forward_rest
+set mime_forward=yes
+set mime_forward_rest=yes
 
 # Traditional Fwd: subject
 set forward_format="Fwd: %s"
@@ -58,12 +76,13 @@ set forward_format="Fwd: %s"
 # Show tildes at the end of mail
 set tilde=yes
 
-# Set mail header
-set from='Adam Lee <adam8157@gmail.com>'
-# Set different from information when replying according to accounts
-set use_from
-set envelope_from=yes
+# Set mail from header
+set use_from=yes
 set realname='Adam Lee'
+set from='Adam Lee <adam8157@gmail.com>'
+
+# Set different from information
+alternates '*'
 set reverse_name=yes
 set reverse_realname=yes
 
@@ -75,9 +94,6 @@ set alias_file=~/.mutt/alias
 set signature=~/.mutt/signature
 
 # Charset settings
-set allow_8bit
-set charset="utf-8"
-set locale='utf-8'
 set rfc2047_parameters=yes
 
 # Set sort order
@@ -87,21 +103,26 @@ set sort_aux=last-date-received
 # Mailing list
 subscribe debian-announce@lists.debian.org debian-devel-announce@lists.debian.org debian-news@lists.debian.org kernelnewbies@nl.linux.org linux-kernel@zh-kernel.org
 
-# Headers:
+# ---------------------GnuPG stuff-----------------------------------
+# Specify key
+set pgp_sign_as="D15CA3BE"
+
+# PGP header
 my_hdr X-PGP-Key-ID: D15CA3BE
 
-# ---------------------GnuPG stuff-----------------------------------
-# Signature every outgoing mail by pgp
-#set pgp_autosign=yes
-set pgp_sign_as="D15CA3BE"
+# Autosign hook
 send-hook ~A "set pgp_autosign"
 send-hook ~u "set nopgp_autosign"
+
 # If attempt to verify PGP/MIME signatures
 set pgp_verify_sig=yes
+
 # Don't store unencrypted and unsigned mail
 set fcc_clear=no
+
 # Encrypt replies to messages which are encrypted
 set pgp_replyencrypt=yes
+
 # During these time you will not needed to enter passparse again
 set pgp_timeout=1800
 
