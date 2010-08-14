@@ -27,7 +27,7 @@ Mp3IgnoreCRCErrors	= yes
 Repeat			= no
 
 # Turn on shuffle.
-Shuffle			= yes
+Shuffle			= no
 
 # Turn on AutoNext.
 AutoNext		= yes
