@@ -6,15 +6,6 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-_show_installed()
-{
-    local cur
-    COMPREPLY=()
-    cur=`_get_cword`
-    COMPREPLY=( $( _comp_dpkg_installed_packages $cur ) )
-    return 0
-}
-
 _show_all()
 {
     local cur
@@ -24,19 +15,17 @@ _show_all()
     return 0
 }
 
-_show_key()
+_show_installed()
 {
     local cur
     COMPREPLY=()
     cur=`_get_cword`
-    COMPREPLY=( $( compgen -W "$( gpg --list-keys 2>/dev/null | \
-        sed -ne 's@^pub.*/\([^ ]*\).*$@\1@p;s@^.*\(<\([^>]*\)>\).*$@\2@p')" -- "$cur" ))
+    COMPREPLY=( $( _comp_dpkg_installed_packages $cur ) )
     return 0
 }
 
 complete -F _show_all $default ai aw
 complete -F _show_installed $default ap
-complete -F _show_key $default ge gs
 
 #alias
 alias ..='cd ..'
@@ -55,11 +44,9 @@ alias du='du -sh'
 alias ga='git add -A'
 alias gc='git commit -a'
 alias gd='git difftool'
-alias ge='gpg --edit-key'
 alias gl='git log --graph'
 alias gp='git push'
-alias gr='gpg --recv-keys'
-alias gs='gpg --send-keys'
+alias gs='git status'
 alias hb='sudo pm-hibernate'
 alias ht='sudo halt'
 alias irc='screen -t irssi irssi'
