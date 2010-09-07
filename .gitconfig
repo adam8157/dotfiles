@@ -2,10 +2,10 @@
     name  = Adam Lee
     email = adam8157@gmail.com
 [color]
-    diff   = auto
     branch = auto
-    status = auto
+    diff   = auto
     grep   = auto
+    status = auto
 [push]
     default = matching
 [alias]
@@ -14,15 +14,19 @@
     c  = commit
     co = checkout
     d  = diff
-    des = describe --tags
+    de = describe --tags
+    dt = difftool
     l  = log
     lg = log --graph
     m  = merge
+    mt = mergetool
     pl = pull
     pu = push
     s  = status
     t  = tag
 [merge]
-	tool = vimdiff
+    tool = vimdiff
+[diff]
+    tool = vimdiff
 [github]
-	user = adam8157
+    user = adam8157
