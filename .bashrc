@@ -28,6 +28,7 @@ complete -F _show_all $default ai aw
 complete -F _show_installed $default ap
 
 #alias
+alias ~='cd ~'
 alias ..='cd ..'
 alias ac='sudo apt-get autoremove --purge && sudo apt-get clean && dpkg -l |grep ^rc |awk "{print \$2}" |sudo xargs dpkg -P'
 alias ad='sudo apt-get dist-upgrade'
@@ -47,23 +48,23 @@ alias gd='git difftool'
 alias gl='git log --graph'
 alias gp='git push'
 alias gs='git status'
+alias gu='git pull'
 alias hb='sudo pm-hibernate'
 alias ht='sudo halt'
 alias irc='screen -t irssi irssi'
 alias la='ls -lA --color=auto'
 alias lh='ls -lAh --color=auto'
 alias ll='ls -l --color=auto'
-alias m='md5sum'
 alias mail='screen -t mutt mutt'
+alias m='md5sum'
 alias ntp='sudo ntpdate pool.ntp.org && sudo hwclock --systohc'
 alias off='sudo poff'
 alias on='sudo pon dsl-provider'
 alias rb='sudo reboot'
-alias s='sha1sum'
 alias sp='sudo pm-suspend'
 alias sr='screen -R'
+alias s='sha1sum'
 alias x='startx'
-alias ~='cd ~'
 
 #screen and xterm's dynamic title
 case $TERM in

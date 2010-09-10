@@ -13,20 +13,16 @@
     b  = branch
     c  = commit
     co = checkout
-    d  = diff
+    d  = difftool
     de = describe --tags
-    dt = difftool
-    l  = log
-    lg = log --graph
-    m  = merge
-    mt = mergetool
+    l  = log --graph
+    m  = mergetool
     pl = pull
     pu = push
     s  = status
     t  = tag
-[merge]
-    tool = vimdiff
+    u  = rm -r --cached
 [diff]
     tool = vimdiff
-[github]
-    user = adam8157
+[merge]
+    tool = vimdiff
