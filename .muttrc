@@ -64,7 +64,7 @@ set pager_index_lines=5
 set edit_headers=yes
 
 # To recognize reply messages
-set reply_regexp="^(re([\[0-9\]+])*|aw|回复|答复)(:|：)[ \t]*"
+set reply_regexp="^(re([\[0-9\]+])*|aw|回复|答复)[:：][ \t]*"
 
 # Include attachments in forward emails
 set mime_forward=yes
