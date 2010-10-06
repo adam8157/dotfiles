@@ -17,9 +17,5 @@
 			<item label="Reconfigure">
 				<action name="Reconfigure"/>
 			</item>
-		<!--<separator />-->
-		<!--<menu id="Debian" />-->
-		<!--<separator />-->
-		<!--<menu id="client-list-menu" />-->
 	</menu>
 </openbox_menu>
