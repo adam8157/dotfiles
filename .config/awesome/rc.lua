@@ -223,8 +223,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, }, "F11", awful.tag.viewprev),
     awful.key({ modkey, }, "F12", awful.tag.viewnext),
     awful.key({ "Mod1" }, "F2", function () awful.util.spawn("gmrun") end),
-    awful.key({ "Mod1" }, "F3", function (c) c.fullscreen = not c.fullscreen end),
-    awful.key({ "Mod1" }, "F4", function (c) c:kill() end),
     awful.key({}, "Print", function () awful.util.spawn("scrot -s -b -e 'mv $f ~/Pictures/Shot/'") end),
     awful.key({}, "XF86AudioPlay", function () awful.util.spawn("moc toggle") end),
     awful.key({}, "XF86AudioStop", function () awful.util.spawn("mpc stop") end),
@@ -255,6 +253,11 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
     awful.key({ modkey,           }, "n",      function (c) c.minimized = not c.minimized    end),
+
+    -- Private
+    awful.key({ "Mod1" }, "F3", function (c) c.fullscreen = not c.fullscreen end),
+    awful.key({ "Mod1" }, "F4", function (c) c:kill() end),
+
     awful.key({ modkey,           }, "m",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
