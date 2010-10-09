@@ -34,10 +34,9 @@ theme_icons = awful.util.getdir("config") .. "/icons/"
 --theme.taglist_bg_focus = "#ff0000"
 
 -- Display the taglist squares
+--theme.tasklist_floating_icon =
 theme.taglist_squares_sel   = theme_icons .. "taglist/square_sel.png"
 theme.taglist_squares_unsel = theme_icons .. "taglist/square_unsel.png"
-
---theme.tasklist_floating_icon =
 
 -- Variables set for theming the menu:
 -- menu_[bg|fg]_[normal|focus]
