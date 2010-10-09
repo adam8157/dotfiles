@@ -11,6 +11,13 @@ require("naughty")
 -- Themes define colours, icons, and wallpapers
 beautiful.init(awful.util.getdir("config") .. "/theme.lua")
 
+--Naughty config
+naughty.config.default_preset.font             = "sans 16"
+naughty.config.default_preset.position         = "bottom_right"
+naughty.config.default_preset.fg               = beautiful.fg_focus
+naughty.config.default_preset.bg               = beautiful.bg_focus
+naughty.config.default_preset.border_color     = beautiful.border_focus
+
 -- This is used later as the default terminal and editor to run.
 terminal = "xterm"
 editor = "vim"
