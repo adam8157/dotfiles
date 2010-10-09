@@ -38,6 +38,10 @@ set header_cache=~/.mutt/cache/header
 set message_cachedir=~/.mutt/cache/message
 set message_cache_clean=yes
 
+# New Mail
+set beep_new=yes
+set check_new=yes
+
 # Set timeout
 set timeout=15
 set mail_check=90
