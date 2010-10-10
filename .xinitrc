@@ -11,20 +11,33 @@ export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
 ibus-daemon -x -r -d
 
+#xmodmap
+#xmodmap ~/.xmodmaprc
+
 #xresources
-xrdb -load ~/.Xresources
+xrdb ~/.Xresources
 
 #conky
 conky &
 
-#wallpaper
-#hsetroot -fill ~/.Wallpaper
+WINDOW_MANAGER=awesome
+#WINDOW_MANAGER=openbox
 
-#tint2
-#tint2 &
+if [ "$WINDOW_MANAGER" = "awesome" ]
+then
+    #cursor
+    #sleep 5 && xsetroot -cursor_name left_ptr &
 
-#openbox
-#exec openbox
+    #awesome
+    exec awesome
+elif [ "$WINDOW_MANAGER" = "openbox" ]
+then
+    #wallpaper
+    hsetroot -fill ~/.Wallpaper
 
-#awesome
-exec awesome
+    #tint2
+    tint2 &
+
+    #openbox
+    exec openbox
+fi
