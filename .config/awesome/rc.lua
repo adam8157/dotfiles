@@ -216,6 +216,7 @@ globalkeys = awful.util.table.join(
     -- Private
     awful.key({ modkey, }, "b", function () mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible end),
     awful.key({ modkey, }, "i", function () awful.util.spawn("iceweasel") end),
+    awful.key({ modkey, }, "r", function () awful.util.spawn("rox-filer") end),
     awful.key({ modkey, }, "v", function () awful.util.spawn("virtualbox") end),
     awful.key({ modkey, }, "Up", function () awful.util.spawn("amixer -q sset PCM 10%+ unmute") end),
     awful.key({ modkey, }, "Down", function () awful.util.spawn("amixer -q sset PCM 10%- unmute") end),
@@ -237,7 +238,7 @@ globalkeys = awful.util.table.join(
     awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset PCM 10%+ unmute") end),
 
     -- Prompt
-    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+    --awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
 
     awful.key({ modkey }, "x",
               function ()
@@ -342,14 +343,18 @@ awful.rules.rules = {
     --   properties = { tag = tags[1][2] } },
 
     -- Private
-    { rule = { class = "gmrun" },
-      properties = { floating = true } },
-    { rule = { class = "Pidgin" },
+    { rule = { class = "Gmrun" },
       properties = { floating = true } },
     { rule = { class = "Iceweasel" },
       properties = { tag = tags[1][2] } },
-    { rule = { class = "VirtualBox" },
+    { rule = { class = "Pidgin" },
+      properties = { floating = true, tag = tags[1][5] } },
+    { rule = { class = "Rox" },
       properties = { tag = tags[1][3] } },
+    { rule = { class = "Smplayer" },
+      properties = { tag = tags[1][4] } },
+    { rule = { class = "VirtualBox" },
+      properties = { tag = tags[1][9] } },
 }
 -- }}}
 
