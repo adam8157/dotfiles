@@ -224,12 +224,11 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, }, "F5", function () awful.util.spawn("xterm -e alsamixer") end),
     awful.key({ modkey, }, "F6", function () awful.util.spawn("amixer -q sset Master toggle") end),
     awful.key({ modkey, }, "F7", function () awful.util.spawn("mpc toggle") end),
-    awful.key({ modkey, }, "F8", function () awful.util.spawn("scrot -s -b -e 'mv $f ~/Pictures/Shot/'") end),
     awful.key({ modkey, }, "F11", awful.tag.viewprev),
     awful.key({ modkey, }, "F12", awful.tag.viewnext),
     awful.key({ "Mod1" }, "F2", function () awful.util.spawn("gmrun") end),
     awful.key({}, "Print", function () awful.util.spawn("scrot -s -b -e 'mv $f ~/Pictures/Shot/'") end),
-    awful.key({}, "XF86AudioPlay", function () awful.util.spawn("moc toggle") end),
+    awful.key({}, "XF86AudioPlay", function () awful.util.spawn("mpc toggle") end),
     awful.key({}, "XF86AudioStop", function () awful.util.spawn("mpc stop") end),
     awful.key({}, "XF86AudioPrev", function () awful.util.spawn("mpc prev") end),
     awful.key({}, "XF86AudioNext", function () awful.util.spawn("mpc next") end),
@@ -266,6 +265,12 @@ clientkeys = awful.util.table.join(
             c.maximized_vertical   = not c.maximized_vertical
         end),
     awful.key({ "Mod1" }, "F4", function (c) c:kill() end),
+    awful.key({ modkey, "Control" }, "Up",    function () awful.client.moveresize(  0, -20,   0,   0) end),
+    awful.key({ modkey, "Control" }, "Down",  function () awful.client.moveresize(  0,  20,   0,   0) end),
+    awful.key({ modkey, "Control" }, "Left",  function () awful.client.moveresize(-20,   0,   0,   0) end),
+    awful.key({ modkey, "Control" }, "Right", function () awful.client.moveresize( 20,   0,   0,   0) end),
+    awful.key({ modkey, "Control" }, "Prior", function () awful.client.moveresize(-20, -20,  40,  40) end),
+    awful.key({ modkey, "Control" }, "Next",  function () awful.client.moveresize( 20,  20, -40, -40) end),
 
     awful.key({ modkey,           }, "m",
         function (c)
