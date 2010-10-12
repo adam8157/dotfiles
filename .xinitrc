@@ -20,17 +20,8 @@ xrdb ~/.Xresources
 #conky
 conky &
 
-WINDOW_MANAGER=awesome
-#WINDOW_MANAGER=openbox
-
-if [ "$WINDOW_MANAGER" = "awesome" ]
-then
-    #cursor
-    #sleep 5 && xsetroot -cursor_name left_ptr &
-
-    #awesome
-    exec awesome
-elif [ "$WINDOW_MANAGER" = "openbox" ]
+#window manager
+if [ "$WM" = "openbox" ]
 then
     #wallpaper
     hsetroot -fill ~/.Wallpaper
@@ -40,4 +31,10 @@ then
 
     #openbox
     exec openbox
+else
+    #cursor
+    xsetroot -cursor_name left_ptr
+
+    #awesome
+    exec awesome
 fi
