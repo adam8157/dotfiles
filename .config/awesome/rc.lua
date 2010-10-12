@@ -11,7 +11,7 @@ require("naughty")
 -- Themes define colours, icons, and wallpapers
 beautiful.init(awful.util.getdir("config") .. "/theme.lua")
 
---Naughty config
+-- Private naughty config
 naughty.config.default_preset.font             = "sans 16"
 naughty.config.default_preset.position         = "bottom_right"
 naughty.config.default_preset.fg               = beautiful.fg_focus
@@ -39,11 +39,7 @@ layouts =
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
     awful.layout.suit.tile.top,
-    --awful.layout.suit.spiral,
-    --awful.layout.suit.spiral.dwindle,
     awful.layout.suit.max,
-    --awful.layout.suit.max.fullscreen,
-    --awful.layout.suit.magnifier,
     awful.layout.suit.floating
 }
 -- }}}
@@ -57,30 +53,18 @@ for s = 1, screen.count() do
 end
 -- }}}
 
--- {{{ Menu
--- Create a laucher widget and a main menu
-myawesomemenu = {
-   { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awful.util.getdir("config") .. "/rc.lua" },
-   { "restart", awesome.restart },
-   { "quit", awesome.quit }
-}
-
-mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
-                                  }
-                        })
-
-mylauncher = awful.widget.launcher({ image = image(beautiful.awesome_icon),
-                                     menu = mymainmenu })
--- }}}
-
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" })
 
 -- Create a systray
 mysystray = widget({ type = "systray" })
+
+-- Private decoration
+myicon = widget({ type = "imagebox" })
+myicon.image = image(beautiful.awesome_icon)
+myspace = widget({ type = "textbox" })
+myspace.text = "  "
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -145,12 +129,12 @@ for s = 1, screen.count() do
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
-            mylauncher,
+            myspace,
+            mylayoutbox[s],
             mytaglist[s],
             mypromptbox[s],
             layout = awful.widget.layout.horizontal.leftright
         },
-        mylayoutbox[s],
         mytextclock,
         s == 1 and mysystray or nil,
         mytasklist[s],
@@ -161,7 +145,6 @@ end
 
 -- {{{ Mouse bindings
 root.buttons(awful.util.table.join(
-    awful.button({ }, 3, function () mymainmenu:toggle() end),
     awful.button({ }, 4, awful.tag.viewnext),
     awful.button({ }, 5, awful.tag.viewprev)
 ))
@@ -169,8 +152,6 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
-    awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
-    awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
 
     awful.key({ modkey,           }, "j",
@@ -183,7 +164,6 @@ globalkeys = awful.util.table.join(
             awful.client.focus.byidx(-1)
             if client.focus then client.focus:raise() end
         end),
-    awful.key({ modkey,           }, "w", function () mymainmenu:show({keygrabber=true}) end),
 
     -- Layout manipulation
     awful.key({ modkey, "Shift"   }, "j", function () awful.client.swap.byidx(  1)    end),
@@ -191,13 +171,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "j", function () awful.screen.focus_relative( 1) end),
     awful.key({ modkey, "Control" }, "k", function () awful.screen.focus_relative(-1) end),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto),
-    awful.key({ modkey,           }, "Tab",
-        function ()
-            awful.client.focus.history.previous()
-            if client.focus then
-                client.focus:raise()
-            end
-        end),
 
     -- Standard program
     awful.key({ modkey,           }, "Return", function () awful.util.spawn(terminal) end),
@@ -213,11 +186,13 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
-    -- Private
+    -- Private global keys
     awful.key({ modkey, }, "b", function () mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible end),
     awful.key({ modkey, }, "i", function () awful.util.spawn("iceweasel") end),
     awful.key({ modkey, }, "r", function () awful.util.spawn("rox-filer") end),
+    awful.key({ modkey, }, "p", function () awful.util.spawn("pidgin") end),
     awful.key({ modkey, }, "v", function () awful.util.spawn("virtualbox") end),
+    awful.key({ modkey, }, "x", function () awful.util.spawn("xterm") end),
     awful.key({ modkey, }, "Up", function () awful.util.spawn("amixer -q sset PCM 10%+ unmute") end),
     awful.key({ modkey, }, "Down", function () awful.util.spawn("amixer -q sset PCM 10%- unmute") end),
     awful.key({ modkey, }, "F1", function () awful.util.spawn("xlock -mode blank -dpmsoff 5 -font -misc-fixed-*-*-*-*-20-*-*-*-*-*-*") end),
@@ -227,30 +202,25 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, }, "F11", awful.tag.viewprev),
     awful.key({ modkey, }, "F12", awful.tag.viewnext),
     awful.key({ "Mod1" }, "F2", function () awful.util.spawn("gmrun") end),
-    awful.key({}, "Print", function () awful.util.spawn("scrot -s -b -e 'mv $f ~/Pictures/Shot/'") end),
+    awful.key({ "Mod1" }, "Tab",
+        function ()
+            awful.client.focus.history.previous()
+            if client.focus then
+                client.focus:raise()
+            end
+        end),
+    awful.key({}, "Print", function () awful.util.spawn_with_shell("scrot -s -b -e 'mv $f ~/Pictures/Shot/'") end),
     awful.key({}, "XF86AudioPlay", function () awful.util.spawn("mpc toggle") end),
     awful.key({}, "XF86AudioStop", function () awful.util.spawn("mpc stop") end),
     awful.key({}, "XF86AudioPrev", function () awful.util.spawn("mpc prev") end),
     awful.key({}, "XF86AudioNext", function () awful.util.spawn("mpc next") end),
     awful.key({}, "XF86AudioMute", function () awful.util.spawn("amixer -q sset Master toggle") end),
     awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset PCM 10%- unmute") end),
-    awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset PCM 10%+ unmute") end),
+    awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset PCM 10%+ unmute") end)
 
-    -- Prompt
-    --awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
-
-    awful.key({ modkey }, "x",
-              function ()
-                  awful.prompt.run({ prompt = "Run Lua code: " },
-                  mypromptbox[mouse.screen].widget,
-                  awful.util.eval, nil,
-                  awful.util.getdir("cache") .. "/history_eval")
-              end)
 )
 
 clientkeys = awful.util.table.join(
-    awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
-    awful.key({ modkey, "Shift"   }, "c",      function (c) c:kill()                         end),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
@@ -258,7 +228,7 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
     awful.key({ modkey,           }, "n",      function (c) c.minimized = not c.minimized    end),
 
-    -- Private
+    -- Private client keys
     awful.key({ "Mod1" }, "F3",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
@@ -270,13 +240,8 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "Left",  function () awful.client.moveresize(-20,   0,   0,   0) end),
     awful.key({ modkey, "Control" }, "Right", function () awful.client.moveresize( 20,   0,   0,   0) end),
     awful.key({ modkey, "Control" }, "Prior", function () awful.client.moveresize(-20, -20,  40,  40) end),
-    awful.key({ modkey, "Control" }, "Next",  function () awful.client.moveresize( 20,  20, -40, -40) end),
+    awful.key({ modkey, "Control" }, "Next",  function () awful.client.moveresize( 20,  20, -40, -40) end)
 
-    awful.key({ modkey,           }, "m",
-        function (c)
-            c.maximized_horizontal = not c.maximized_horizontal
-            c.maximized_vertical   = not c.maximized_vertical
-        end)
 )
 
 -- Compute the maximum number of digit we need, limited to 9
@@ -335,19 +300,13 @@ awful.rules.rules = {
                      border_color = beautiful.border_normal,
                      focus = true,
                      keys = clientkeys,
-                     size_hints_honor = false,      -- remove terminal margin
                      buttons = clientbuttons } },
-    { rule = { class = "MPlayer" },
-      properties = { floating = true } },
-    { rule = { class = "pinentry" },
-      properties = { floating = true } },
-    { rule = { class = "gimp" },
-      properties = { floating = true } },
-    -- Set Firefox to always map on tags number 2 of screen 1.
-    -- { rule = { class = "Firefox" },
-    --   properties = { tag = tags[1][2] } },
 
-    -- Private
+    -- Private rules
+    { rule = { },
+      properties = { size_hints_honor = false } },
+    { rule = { class = "Gimp" },
+      properties = { floating = true, tag = tags[1][6] } },
     { rule = { class = "Gmrun" },
       properties = { floating = true } },
     { rule = { class = "Iceweasel" },
