@@ -209,7 +209,7 @@ globalkeys = awful.util.table.join(
                 client.focus:raise()
             end
         end),
-    awful.key({}, "Print", function () awful.util.spawn_with_shell("scrot -s -b -e 'mv $f ~/Pictures/Shot/'") end),
+    awful.key({}, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/Pictures/Shot/'") end),
     awful.key({}, "XF86AudioPlay", function () awful.util.spawn("mpc toggle") end),
     awful.key({}, "XF86AudioStop", function () awful.util.spawn("mpc stop") end),
     awful.key({}, "XF86AudioPrev", function () awful.util.spawn("mpc prev") end),
