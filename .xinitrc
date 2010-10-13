@@ -9,7 +9,7 @@ xset dpms 0 0 0
 export XMODIFIERS="@im=ibus"
 export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
-ibus-daemon -x -r -d
+ibus-daemon -x -r -d &
 
 #xmodmap
 #xmodmap ~/.xmodmaprc
@@ -19,6 +19,10 @@ xrdb ~/.Xresources
 
 #conky
 conky &
+
+#touchpad
+synclient TapButton1=1
+syndaemon -i 2 -k -d &
 
 #window manager
 if [ "$WM" = "openbox" ]
