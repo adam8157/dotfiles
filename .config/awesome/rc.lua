@@ -311,6 +311,8 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "Iceweasel" },
       properties = { tag = tags[1][2] } },
+    { rule = { class = "MPlayer" },
+      properties = { floating = true } },
     { rule = { class = "Pidgin" },
       properties = { floating = true, tag = tags[1][5] } },
     { rule = { class = "Rox" },
