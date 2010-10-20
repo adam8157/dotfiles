@@ -33,7 +33,7 @@ termcapinfo xterm* ti@:te@
 # Refresh the display when exiting programs
 altscreen on
 
-# Sessions (Must be placed at the end of screenrc)
-screen
-screen -t mutt mutt
-screen -t irssi irssi
+# Sessions (Placed at the end of screenrc will be better)
+#screen
+#screen -t mutt mutt
+#screen -t irssi irssi
