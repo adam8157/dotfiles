@@ -80,6 +80,12 @@ ao=alsa
 # Specify the mixer device.
 #mixer = /dev/mixer
 
+# Force the use of the software mixer.
+softvol=yes
+
+# Set the maximum amplification level in percent.
+softvol-max=200
+
 # Resample the sound to 44100Hz with the lavcresample audio filter.
 #af=lavcresample=44100
 
@@ -92,7 +98,7 @@ ao=alsa
 ass=on
 
 # Specify  the  subtitle codepage.
-subcp=cp936
+subcp=UTF-8
 
 # Tells MPlayer to handle the subtitle file as unicode.
 unicode=yes
@@ -125,7 +131,7 @@ subfont-text-scale=4
 #user-agent=NSPlayer/4.1.0.3856
 
 # Drop frames to preserve audio/video sync.
-#framedrop = yes
+framedrop = yes
 
 # Specify your preferred skin here (skins are searched for in
 # /usr/local/share/mplayer/skins/<name> and ~/.mplayer/skins/<name>).
