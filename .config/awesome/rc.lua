@@ -152,6 +152,8 @@ root.buttons(awful.util.table.join(
 
 -- {{{ Key bindings
 globalkeys = awful.util.table.join(
+    awful.key({ modkey,           }, "Left",   awful.tag.viewprev       ),
+    awful.key({ modkey,           }, "Right",  awful.tag.viewnext       ),
     awful.key({ modkey,           }, "Escape", awful.tag.history.restore),
 
     awful.key({ modkey,           }, "j",
@@ -187,20 +189,17 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
     -- Private global keys
+    awful.key({ modkey, }, "a", function () awful.util.spawn("xterm -e alsamixer") end),
     awful.key({ modkey, }, "b", function () mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible end),
     awful.key({ modkey, }, "i", function () awful.util.spawn("iceweasel") end),
-    awful.key({ modkey, }, "r", function () awful.util.spawn("rox-filer") end),
+    awful.key({ modkey, }, "m", function () awful.util.spawn("amixer -q sset Master toggle") end),
     awful.key({ modkey, }, "p", function () awful.util.spawn("pidgin") end),
+    awful.key({ modkey, }, "s", function () awful.util.spawn("xlock -mode blank -dpmsoff 5 -font -misc-fixed-*-*-*-*-20-*-*-*-*-*-*") end),
+    awful.key({ modkey, }, "t", function () awful.util.spawn("mpc toggle") end),
     awful.key({ modkey, }, "v", function () awful.util.spawn("virtualbox") end),
     awful.key({ modkey, }, "x", function () awful.util.spawn("xterm") end),
     awful.key({ modkey, }, "Up", function () awful.util.spawn("amixer -q sset PCM 10%+ unmute") end),
     awful.key({ modkey, }, "Down", function () awful.util.spawn("amixer -q sset PCM 10%- unmute") end),
-    awful.key({ modkey, }, "F1", function () awful.util.spawn("xlock -mode blank -dpmsoff 5 -font -misc-fixed-*-*-*-*-20-*-*-*-*-*-*") end),
-    awful.key({ modkey, }, "F5", function () awful.util.spawn("xterm -e alsamixer") end),
-    awful.key({ modkey, }, "F6", function () awful.util.spawn("amixer -q sset Master toggle") end),
-    awful.key({ modkey, }, "F7", function () awful.util.spawn("mpc toggle") end),
-    awful.key({ modkey, }, "F11", awful.tag.viewprev),
-    awful.key({ modkey, }, "F12", awful.tag.viewnext),
     awful.key({ "Mod1" }, "F2", function () awful.util.spawn("gmrun") end),
     awful.key({ "Mod1" }, "Tab",
         function ()
@@ -225,7 +224,6 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
     awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
-    awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end),
     awful.key({ modkey,           }, "n",      function (c) c.minimized = not c.minimized    end),
 
     -- Private client keys
