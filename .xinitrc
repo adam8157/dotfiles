@@ -22,10 +22,10 @@ conky &
 
 #touchpad
 synclient TapButton1=1
-syndaemon -i 2 -k -d &
+syndaemon -i 1 -k -d &
 
 #window manager
-if [ "$WM" = "openbox" ]
+if [ "$WM" == "openbox" ]
 then
     #wallpaper
     hsetroot -fill ~/.Wallpaper
