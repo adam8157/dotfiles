@@ -57,7 +57,7 @@ fontconfig=yes
 font="Sans Serif"
 
 # Adjust matching fuzziness when searching for subtitles.
-sub-fuzziness=2
+sub-fuzziness=1
 
 # Set the scale coefficient to be used for fonts in the SSA/ASS renderer.
 ass-font-scale=1
