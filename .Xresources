@@ -16,7 +16,6 @@ xterm*loginshell: false
 xterm*background: black
 xterm*foreground: gray
 xterm*cursorBlink: false
-xterm*bellIsUrgent: true
 
 !fix alt key input
 xterm*eightBitInput: false

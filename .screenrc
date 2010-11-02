@@ -34,6 +34,7 @@ termcapinfo xterm* ti@:te@
 altscreen on
 
 # Sessions (Placed at the end of screenrc will be better)
-#screen
-#screen -t mutt mutt
-#screen -t irssi irssi
+screen
+screen -t ranger ranger
+screen -t mutt mutt
+screen -t irssi irssi
