@@ -5,7 +5,6 @@ noremap J <C-d>
 noremap K <C-u>
 noremap <F11> gT
 noremap <F12> gt
-noremap s :stop<CR>
 inoremap <F11> <Esc>gT
 inoremap <F12> <Esc>gt
 noremap <silent> <leader>a :set! extensions.autoproxy.proxyMode=auto<CR>
