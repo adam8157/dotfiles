@@ -17,7 +17,7 @@ set title
 set backup
 
 " Set fileencodings
-set fileencodings=ucs-bom,utf-8,gbk
+set fileencodings=ucs-bom,utf-8,gbk,big5
 
 " Set backup directory
 set backupdir=$HOME/.vim/backup
