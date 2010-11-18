@@ -71,8 +71,8 @@ set showmatch
 set hlsearch
 
 " Ignore case when searching
-set ignorecase
 set smartcase
+set ignorecase
 
 " Incremental match when searching
 set incsearch
@@ -87,24 +87,17 @@ set autoindent
 " Smart indet
 set smartindent
 
-" C-style indeting
-set cindent
+" Use real tabs
+set tabstop=8
+set noexpandtab
+set shiftwidth=8
 
-" Set tabstop width
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+" Break long lines
+set textwidth=78
+set formatoptions+=m
 
 " Enable filetype plugin
-filetype on
-filetype plugin on
-filetype indent on
-
-" Set <BS> delete fake tabs
-set smarttab
-
-" Insert spaces instead of real tabs
-set expandtab
+filetype plugin indent on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CTags
@@ -114,25 +107,22 @@ set expandtab
 set tags=tags;
 
 " Sort by name
-let Tlist_Sort_Type = "name"
+let Tlist_Sort_Type="name"
 
 " Use right window
-let Tlist_Use_Right_Window = 1
+let Tlist_Use_Right_Window=1
 
 " Enable auto update
-let Tlist_Auto_Update = 1
+let Tlist_Auto_Update=1
 
 " Set compart format
-let Tlist_Compart_Format = 1
+let Tlist_Compart_Format=1
 
 " Set exit by window
-let Tlist_Exit_OnlyWindow = 1
-
-" Disable auto close
-let Tlist_File_Fold_Auto_Close = 0
+let Tlist_Exit_OnlyWindow=1
 
 " Disable fold column
-let Tlist_Enable_Fold_Column = 0
+let Tlist_Enable_Fold_Column=0
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Cscope
@@ -204,6 +194,8 @@ set pastetoggle=<F4>
 " Save & Make 
 nnoremap <F5> :w<CR>:make!<CR>
 nnoremap <F6> :w<CR>:make! %< CC=gcc CFLAGS="-Wall -g -O2"<CR>:!./%<<CR>
+
+" Quickfix window
 nnoremap <silent> <F7> :botright copen<CR>
 nnoremap <silent> <F8> :cclose<CR>
 
