@@ -19,6 +19,9 @@ set backup
 " Set fileencodings
 set fileencodings=ucs-bom,utf-8,gbk,big5
 
+" Display line number
+set number
+
 " Set backup directory
 set backupdir=$HOME/.vim/backup
 
@@ -95,6 +98,9 @@ set shiftwidth=8
 " Break long lines
 set textwidth=78
 set formatoptions+=m
+
+" Config C-indenting
+set cinoptions=:0,l1,t0,g0
 
 " Enable filetype plugin
 filetype plugin indent on
