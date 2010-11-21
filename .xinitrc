@@ -27,18 +27,18 @@ syndaemon -i 1 -k -d &
 #window manager
 if [ "$WM" == "openbox" ]
 then
-    #wallpaper
-    hsetroot -fill ~/.Wallpaper
+	#wallpaper
+	hsetroot -fill ~/.Wallpaper
 
-    #tint2
-    tint2 &
+	#tint2
+	tint2 &
 
-    #openbox
-    exec openbox
+	#openbox
+	exec openbox
 else
-    #cursor
-    xsetroot -cursor_name left_ptr
+	#cursor
+	xsetroot -cursor_name left_ptr
 
-    #awesome
-    exec awesome
+	#awesome
+	exec awesome
 fi

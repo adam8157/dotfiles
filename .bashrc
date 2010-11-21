@@ -3,25 +3,25 @@
 
 #completion
 if [ -f /etc/bash_completion ]; then
-    . /etc/bash_completion
+	. /etc/bash_completion
 fi
 
 _show_all()
 {
-    local cur
-    COMPREPLY=()
-    cur=`_get_cword`
-    COMPREPLY=( $( apt-cache pkgnames $cur 2> /dev/null ) )
-    return 0
+	local cur
+	COMPREPLY=()
+	cur=`_get_cword`
+	COMPREPLY=( $( apt-cache pkgnames $cur 2> /dev/null ) )
+	return 0
 }
 
 _show_installed()
 {
-    local cur
-    COMPREPLY=()
-    cur=`_get_cword`
-    COMPREPLY=( $( _comp_dpkg_installed_packages $cur ) )
-    return 0
+	local cur
+	COMPREPLY=()
+	cur=`_get_cword`
+	COMPREPLY=( $( _comp_dpkg_installed_packages $cur ) )
+	return 0
 }
 
 complete -F _show_all $default ai aw
@@ -48,6 +48,7 @@ alias gc='git commit -a'
 alias gd='git difftool'
 alias gl='git log --graph'
 alias gp='git push'
+alias grep='grep --color=auto'
 alias gs='git status'
 alias gu='git pull'
 alias hb='sudo pm-hibernate'
@@ -69,18 +70,18 @@ alias x='startx'
 
 #screen and xterm's dynamic title
 case $TERM in
-    xterm*)
-        # Set xterm's title
-        TITLEBAR='\[\e]0;\u@\h:\w\a\]'
-        PS1="${TITLEBAR}${PS1}"
-        ;;
-    screen*)
-        # Use path as title
-        PATHTITLE='\[\ek\W\e\\\]'
-        # Use program name as title
-        PROGRAMTITLE='\[\ek\e\\\]'
-        PS1="${PROGRAMTITLE}${PATHTITLE}${PS1}"
-        ;;
-    *)
-        ;;
+	xterm*)
+		# Set xterm's title
+		TITLEBAR='\[\e]0;\u@\h:\w\a\]'
+		PS1="${TITLEBAR}${PS1}"
+		;;
+	screen*)
+		# Use path as title
+		PATHTITLE='\[\ek\W\e\\\]'
+		# Use program name as title
+		PROGRAMTITLE='\[\ek\e\\\]'
+		PS1="${PROGRAMTITLE}${PATHTITLE}${PS1}"
+		;;
+	*)
+		;;
 esac
