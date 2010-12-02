@@ -25,20 +25,4 @@ synclient TapButton1=1
 syndaemon -i 1 -k -d &
 
 #window manager
-if [ "$WM" == "openbox" ]
-then
-	#wallpaper
-	hsetroot -fill ~/.Wallpaper
-
-	#tint2
-	tint2 &
-
-	#openbox
-	exec openbox
-else
-	#cursor
-	xsetroot -cursor_name left_ptr
-
-	#awesome
-	exec awesome
-fi
+exec awesome
