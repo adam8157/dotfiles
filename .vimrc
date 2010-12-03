@@ -219,8 +219,8 @@ nnoremap <silent> <space> @=((foldclosed(line('.')) < 0) ? 'zc' : 'zo')<CR>
 
 " Use xsel to access the X clipboard
 if $DISPLAY != '' && executable('xsel')
-	nnoremap <silent> "*y :'[,']!xsel -i -p -l /dev/null<CR>u
+	nnoremap <silent> "*y :'[,']w !xsel -i -p -l /dev/null<CR>
 	nnoremap <silent> "*p :r!xsel -p<CR>
-	nnoremap <silent> "+y :'[,']!xsel -i -b -l /dev/null<CR>u
+	nnoremap <silent> "+y :'[,']w !xsel -i -b -l /dev/null<CR>
 	nnoremap <silent> "+p :r!xsel -b<CR>
 endif
