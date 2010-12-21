@@ -105,6 +105,9 @@ set cinoptions=:0,l1,t0,g0
 " Enable filetype plugin
 filetype plugin indent on
 
+" set textwidth for mail
+autocmd Filetype mail set textwidth=72
+
 " Use soft tabs for python
 autocmd Filetype python set et sta ts=4 sw=4
 
