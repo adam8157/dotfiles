@@ -1,9 +1,3 @@
-#umask
-umask 077
-
-#path
-export PATH="$PATH:/home/adam/Scripts"
-
 #bashrc
 if [ -f ~/.bashrc ];then
 	. ~/.bashrc
