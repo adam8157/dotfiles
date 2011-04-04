@@ -17,6 +17,7 @@ noremap <silent> <leader>d :set! extensions.autoproxy.proxyMode=disabled<CR>
 
 set newtab=all
 set complete=l
+set noscrollbars
 set showstatuslinks=2
 set toolbars=none,tabs
 set editor="xterm -e vim"
