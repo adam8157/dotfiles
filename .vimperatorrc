@@ -17,10 +17,9 @@ noremap <silent> <leader>d :set! extensions.autoproxy.proxyMode=disabled<CR>
 
 set newtab=all
 set complete=l
-set guioptions=
 set showstatuslinks=2
+set toolbars=none,tabs
 set editor="xterm -e vim"
-set wildoptions=auto,sort
 set titlestring=Iceweasel
 
 set nextpattern=\\s*(下一页|下一张|下一篇|下页|后页)\\s*,\\bnext\\b,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b
