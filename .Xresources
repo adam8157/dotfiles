@@ -10,16 +10,12 @@ Xcursor.theme: Vanilla-DMZ-AA
 
 !look and feel
 xterm*termName: xterm-256color
-xterm*geometry: 100x30
+xterm*geometry: 80x24
 xterm*scrollBar: false
 xterm*loginshell: false
 xterm*background: black
 xterm*foreground: gray
 xterm*cursorBlink: false
-
-!fix alt key input
-xterm*eightBitInput: false
-xterm*altSendsEscape: true
 
 !font and locale
 xterm*utf8: 1
@@ -30,6 +26,13 @@ xterm*preeditType: Root
 xterm*xftAntialias: true
 xterm*faceName: DejaVu Sans Mono:pixelsize=13.5
 xterm*faceNameDoublesize: WenQuanYi Zen Hei Mono:pixelsize=13.5
+
+!fix alt-key inputting
+xterm*eightBitInput: false
+xterm*altSendsEscape: true
+
+!allow selecting email/url by double-click
+xterm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
 
 !tango color scheme
 xterm*color0: #1e1e1e
