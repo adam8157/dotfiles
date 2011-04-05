@@ -208,7 +208,18 @@ globalkeys = awful.util.table.join(
                 client.focus:raise()
             end
         end),
-    awful.key({}, "Print", function () awful.util.spawn("scrot -e 'mv $f ~/Pictures/Shot/'") end),
+    awful.key({ "Mod1" }, "Print",
+        function ()
+	    awful.util.spawn("scrot -u -e 'mv $f ~/Pictures/Shot/'")
+	    os.execute("sleep 0.5")
+	    naughty.notify({ title="Screenshot", text="The focused window captured" })
+        end),
+    awful.key({}, "Print",
+        function ()
+	    awful.util.spawn("scrot -e 'mv $f ~/Pictures/Shot/'")
+	    os.execute("sleep 0.5")
+	    naughty.notify({ title="Screenshot", text="Full screen captured" })
+        end),
     awful.key({}, "XF86AudioPlay", function () awful.util.spawn("mpc toggle") end),
     awful.key({}, "XF86AudioStop", function () awful.util.spawn("mpc stop") end),
     awful.key({}, "XF86AudioPrev", function () awful.util.spawn("mpc prev") end),
