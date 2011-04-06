@@ -1,4 +1,3 @@
-noremap a A
 noremap j 5j
 noremap k 5k
 noremap J <C-d>
@@ -17,6 +16,7 @@ noremap <silent> <leader>d :set! extensions.autoproxy.proxyMode=disabled<CR>:ech
 
 set newtab=all
 set complete=l
+set focuscontent
 set noscrollbars
 set showstatuslinks=2
 set toolbars=none,tabs
