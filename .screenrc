@@ -21,8 +21,9 @@ bindkey -k F1 prev
 bindkey -k F2 next
 
 # Set xterm's title
-hardstatus string "screen: %t"
-#termcapinfo xterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;screen\007'
+hardstatus off
+hardstatus string "screen(@%H): %t"
+termcapinfo xterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
 
 # Automatically detach on hangup
 autodetach on
