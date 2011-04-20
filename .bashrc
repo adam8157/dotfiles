@@ -8,6 +8,7 @@ umask 077
 export PATH="$PATH:$HOME/Scripts"
 
 #colorful manual page
+export GROFF_NO_SGR=1
 export LESS_TERMCAP_mb=$'\E[05;34m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;34m'       # begin bold
 export LESS_TERMCAP_me=$'\E[0m'           # end mode
