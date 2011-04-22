@@ -10,17 +10,11 @@ set foldenable
 set foldnestmax=1
 set foldmethod=syntax
 
-" Dynamic title
-set title
-
 " Turn backup on
 set backup
 
 " Set fileencodings
 set fileencodings=ucs-bom,utf-8,gbk,big5
-
-" Display line number
-set number
 
 " Set complete options
 set completeopt=longest,menu
@@ -60,8 +54,14 @@ syntax on
 " Show ruler
 set ruler
 
+" Dynamic title
+set title
+
 " Turn on Wild menu
 set wildmenu
+
+" Display line number
+set number
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Search
@@ -100,7 +100,7 @@ set shiftwidth=8
 
 " Break long lines
 set textwidth=78
-set formatoptions+=mB
+set formatoptions+=mM
 
 " Config C-indenting
 set cinoptions=:0,l1,t0,g0
@@ -109,10 +109,20 @@ set cinoptions=:0,l1,t0,g0
 filetype plugin indent on
 
 " set textwidth for mail
-autocmd Filetype mail set textwidth=72
+autocmd FileType mail set textwidth=72
 
 " Use soft tabs for python
-autocmd Filetype python set et sta ts=4 sw=4
+autocmd FileType python set et sta ts=4 sw=4
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Use my own cscope mappings
+let autocscope_menus=0
+
+" Auto change the root directory
+let NERDTreeChDirMode=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " CTags
@@ -154,16 +164,6 @@ set cscopetagorder=1
 
 " Use quickfix window to show cscope results
 set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-
-
-""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Use my own cscope mappings
-let autocscope_menus=0
-
-" Auto change the root directory
-let NERDTreeChDirMode=2
 
 """"""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
