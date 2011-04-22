@@ -22,6 +22,9 @@ set fileencodings=ucs-bom,utf-8,gbk,big5
 " Display line number
 set number
 
+" Set complete options
+set completeopt=longest,menu
+
 " Set backup directory
 set backupdir=$HOME/.vim/backup
 
