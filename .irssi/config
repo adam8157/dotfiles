@@ -1,0 +1,52 @@
+servers = (
+  {
+    address = "irc.freenode.net";
+    chatnet = "Freenode";
+    port = "7000";
+    use_ssl = "yes";
+    ssl_verify = "yes";
+    autoconnect = "yes";
+    ssl_capath = "/etc/ssl/certs";
+  }
+);
+
+chatnets = {
+  Freenode = {
+    type = "IRC";
+    nick = "adam8157";
+    autosendcmd = "/msg nickserv identify PASSWORD;wait 2000";
+  };
+};
+
+channels = (
+  { name = "#ubuntu-cn"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#fedora-zh"; chatnet = "Freenode"; autojoin = "yes"; }
+);
+
+settings = {
+  core = {
+    real_name = "Adam Lee";
+    user_name = "adam8157";
+    nick = "adam8157";
+  };
+  "fe-text" = { actlist_sort = "refnum"; };
+  "perl/core/scripts" = { nicklist_automode = "screen"; };
+  "fe-common/core" = {
+    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
+    beep_when_away = "no";
+  };
+};
+
+aliases = {
+  C = "window close";
+  J = "join";
+  M = "msg";
+  Q = "quit";
+  T = "topic";
+  W = "whois";
+};
+
+keyboard = (
+  { key = "^F"; id = "command"; data = "nicklist scroll +10"; },
+  { key = "^B"; id = "command"; data = "nicklist scroll -10"; }
+);
