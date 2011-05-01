@@ -105,7 +105,7 @@ set sort=reverse-threads
 set sort_aux=last-date-received
 
 # Mailing list
-subscribe debian-announce@lists.debian.org debian-devel-announce@lists.debian.org debian-news@lists.debian.org kernelnewbies@kernelnewbies.org linux-kernel@zh-kernel.org
+subscribe kernelnewbies@kernelnewbies.org linux-kernel@zh-kernel.org
 
 # ---------------------GnuPG stuff-----------------------------------
 # Specify key
