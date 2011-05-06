@@ -99,7 +99,9 @@ set noexpandtab
 set shiftwidth=8
 
 " Break long lines
-set textwidth=78
+"set textwidth=78
+
+" Set auto-formating
 set formatoptions+=mM
 
 " Config C-indenting
