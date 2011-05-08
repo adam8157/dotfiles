@@ -17,8 +17,14 @@ ibus-daemon -x -r -d &
 #xresources
 xrdb ~/.Xresources
 
+#xcursor
+xsetroot -cursor_name left_ptr
+
 #conky
 conky &
+
+#dropbox
+dropboxd &
 
 #touchpad
 synclient TapButton1=1
