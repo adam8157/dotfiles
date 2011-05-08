@@ -22,6 +22,9 @@ set completeopt=longest,menu
 " Set backup directory
 set backupdir=$HOME/.vim/backup
 
+" Set swap file directory
+set directory=$HOME/.vim/swap,/tmp
+
 " Set non-linewise display
 set display=lastline
 
