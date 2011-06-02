@@ -1,7 +1,10 @@
 #umask
 umask 077
 
-#xset
+#bell
+xset b off
+
+#screen-saver
 xset s off
 xset dpms 0 0 0
 
