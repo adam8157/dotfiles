@@ -1,7 +1,7 @@
 " Vim global plugin for autoloading cscope databases.
-" Last Change: Mon Nov 15 08:23:41 CST 2010
+" Last Change: Wed Jan 26 10:28:52 Jerusalem Standard Time 2011
 " Maintainer: Michael Conrad Tadpol Tilsra <tadpol@tadpol.org>
-" Revision: 0.4
+" Revision: 0.5
 
 if exists("loaded_autoload_cscope")
 	finish
@@ -27,11 +27,14 @@ endif
 " windowdir
 "  Gets the directory for the file in the current window
 "  Or the current working dir if there isn't one for the window.
+"  Use tr to allow that other OS paths, too
 function s:windowdir()
   if winbufnr(0) == -1
-    return getcwd()
+    let unislash = getcwd()
+  else 
+    let unislash = fnamemodify(bufname(winbufnr(0)), ':p:h')
   endif
-  return fnamemodify(bufname(winbufnr(0)), ':p:h')
+    return tr(unislash, '\', '/')
 endfunc
 "
 "==
