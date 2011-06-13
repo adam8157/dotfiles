@@ -14,14 +14,13 @@
 	c  = commit
 	co = checkout
 	d  = difftool
-	de = describe --tags
 	l  = log --graph
 	m  = mergetool
-	pl = pull
 	pu = push
 	s  = status
 	t  = tag
-	u  = rm -r --cached
+	up = pull
+	ut = rm -r --cached
 [diff]
 	tool = vimdiff
 [merge]
