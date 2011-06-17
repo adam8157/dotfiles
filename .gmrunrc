@@ -3,11 +3,9 @@
 # Set terminal
 Terminal = xterm
 TermExec = ${Terminal} -e
-AlwaysInTerm = ssh lftp vim man
+AlwaysInTerm = ssh vim man
 
 # Set window geometry (except height)
-Top = 200
-Left = 440
 Width = 400
 
 # History size
@@ -30,12 +28,8 @@ TabTimeout = 0
 #   - %u gets replaced with the whole URL ("http://www.google.com")
 #   - %s gets replaced with "//www.google.com".  This is useful for URL-s
 #     like "man:printf" --> %s will get replaced with "printf"
-URL_http = firefox -remote "openURL(%u, new-window)"
-URL_mailto = firefox -remote "mailto(%s)"
-URL_man = ${TermExec} 'man %s'
-URL_info = ${TermExec} 'info %s'
-URL_readme = ${TermExec} 'less /usr/doc/%s/README'
+URL_http = x-www-browser '%u'
 
 # extension handlers
 EXT:pdf = evince %s
-EXT:c,txt = xterm -e vim %s
+EXT:c,txt = ${TermExec} vim %s
