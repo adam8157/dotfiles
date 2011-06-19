@@ -42,7 +42,6 @@ set message_cache_clean=yes
 set mark_old=no
 set beep_new=yes
 set check_new=yes
-set imap_check_subscribed=yes
 
 # Set timeout
 set timeout=15
