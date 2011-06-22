@@ -19,8 +19,9 @@ chatnets = {
 };
 
 channels = (
+  { name = "#archlinux"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#debian"; chatnet = "Freenode"; autojoin = "yes"; }
   { name = "#ubuntu-cn"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#fedora-zh"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
 settings = {
@@ -41,6 +42,7 @@ aliases = {
   C = "window close";
   J = "join";
   M = "msg";
+  N = "nick";
   Q = "quit";
   T = "topic";
   W = "whois";
