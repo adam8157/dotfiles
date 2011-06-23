@@ -6,7 +6,6 @@ servers = (
     use_ssl = "yes";
     ssl_verify = "yes";
     autoconnect = "yes";
-    ssl_capath = "/etc/ssl/certs";
   }
 );
 
@@ -19,8 +18,8 @@ chatnets = {
 };
 
 channels = (
-  { name = "#archlinux"; chatnet = "Freenode"; autojoin = "yes"; }
-  { name = "#debian"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#archlinux"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#debian"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#ubuntu-cn"; chatnet = "Freenode"; autojoin = "yes"; },
 );
 
@@ -52,3 +51,37 @@ keyboard = (
   { key = "^F"; id = "command"; data = "nicklist scroll +10"; },
   { key = "^B"; id = "command"; data = "nicklist scroll -10"; }
 );
+
+windows = {
+  1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
+  2 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#archlinux";
+        tag = "Freenode";
+      }
+    );
+  };
+  3 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#debian";
+        tag = "Freenode";
+      }
+    );
+  };
+  4 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#ubuntu-cn";
+        tag = "Freenode";
+      }
+    );
+  };
+};
