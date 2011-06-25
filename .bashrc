@@ -4,6 +4,9 @@
 #umask
 umask 077
 
+#variable
+export EDITOR=vim
+
 #path
 export PATH="$PATH:$HOME/Scripts"
 
