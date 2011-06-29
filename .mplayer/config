@@ -35,7 +35,7 @@ af=scaletempo
 softvol=yes
 
 # Set the maximum amplification level in percent.
-softvol-max=200
+softvol-max=500
 
 #####################
 # Subtitle Settings #
