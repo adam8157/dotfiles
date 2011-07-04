@@ -165,9 +165,7 @@ bind editor <space> noop
 bind index,pager L group-reply
 
 macro pager \cu |urlview\n
-macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
-macro index gd "<change-folder>=[Gmail]/Drafts<enter>" "Go to drafts"
 macro index gs "<change-folder>=[Gmail]/Spam<enter>" "Go to spam"
 macro index gt "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
 macro index,pager H "<save-message>=INBOX<enter>" "Mark message as ham"
