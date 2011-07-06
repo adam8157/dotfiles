@@ -106,7 +106,7 @@ set sort=reverse-threads
 set sort_aux=last-date-received
 
 # Mailing list
-subscribe kernelnewbies@kernelnewbies.org linux-kernel@zh-kernel.org
+subscribe kernelnewbies@kernelnewbies.org
 
 # ---------------------GnuPG stuff-----------------------------------
 # Specify key
@@ -116,8 +116,8 @@ set pgp_sign_as="D15CA3BE"
 my_hdr X-PGP-Key-ID: D15CA3BE
 
 # Autosign hook
-send-hook ~A "set pgp_autosign"
-send-hook ~u "set nopgp_autosign"
+#send-hook ~A "set pgp_autosign"
+#send-hook ~u "set nopgp_autosign"
 
 # If attempt to verify PGP/MIME signatures
 set pgp_verify_sig=yes
@@ -156,20 +156,19 @@ bind index \cf next-page
 bind index \cb previous-page
 bind pager j next-line
 bind pager k previous-line
-bind pager <Up> previous-line
-bind pager <Down> next-line
 bind pager gg top
 bind pager G bottom
-bind index \Cx sync-mailbox
+bind index \cx sync-mailbox
 bind editor <space> noop
 bind index,pager L group-reply
 
-macro pager \cu |urlview\n
+macro pager \cb |urlview\n "Call urlview"
 macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
 macro index gs "<change-folder>=[Gmail]/Spam<enter>" "Go to spam"
 macro index gt "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
 macro index,pager H "<save-message>=INBOX<enter>" "Mark message as ham"
 macro index,pager S "<save-message>=[Gmail]/Spam<enter>" "Mark message as spam"
+macro index \cr "<tag-pattern>.\n<tag-prefix><clear-flag>N<untag-pattern>.\n" "Mark all messages as read" 
 
 folder-hook . 'macro index,pager d "<save-message>=[Gmail]/Trash<enter>" "Mark message as trash"'
 folder-hook 'Spam|Trash' 'bind index,pager d delete-message'
