@@ -168,7 +168,7 @@ macro index gs "<change-folder>=[Gmail]/Spam<enter>" "Go to spam"
 macro index gt "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
 macro index,pager H "<save-message>=INBOX<enter>" "Mark message as ham"
 macro index,pager S "<save-message>=[Gmail]/Spam<enter>" "Mark message as spam"
-macro index \cr "<tag-pattern>.\n<tag-prefix><clear-flag>N<untag-pattern>.\n" "Mark all messages as read" 
+macro index \cr "<tag-pattern>.\n<tag-prefix><clear-flag>N<untag-pattern>.\n" "Mark all messages as read"
 
 folder-hook . 'macro index,pager d "<save-message>=[Gmail]/Trash<enter>" "Mark message as trash"'
 folder-hook 'Spam|Trash' 'bind index,pager d delete-message'
