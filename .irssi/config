@@ -20,7 +20,7 @@ chatnets = {
 channels = (
   { name = "#archlinux"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#debian"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#ubuntu-cn"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#ubuntu-cn"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
 settings = {
@@ -51,6 +51,8 @@ keyboard = (
   { key = "^F"; id = "command"; data = "nicklist scroll +10"; },
   { key = "^B"; id = "command"; data = "nicklist scroll -10"; }
 );
+
+hilights = ( { text = "adam8157"; nick = "yes"; word = "yes"; } );
 
 windows = {
   1 = { immortal = "yes"; name = "(status)"; level = "ALL"; };
