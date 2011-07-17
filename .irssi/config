@@ -26,8 +26,9 @@ channels = (
 settings = {
   core = {
     real_name = "Adam Lee";
-    user_name = "adam8157";
+    user_name = "adam";
     nick = "adam8157";
+    quit_message = "Take the red pill...";
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "perl/core/scripts" = { nicklist_automode = "screen"; };
