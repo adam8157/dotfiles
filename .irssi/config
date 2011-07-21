@@ -21,6 +21,7 @@ channels = (
   { name = "#archlinux"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#debian"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#ubuntu-cn"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#fedora-zh"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
 settings = {
@@ -83,6 +84,16 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#ubuntu-cn";
+        tag = "Freenode";
+      }
+    );
+  };
+  5 = {
+    items = (
+      {
+        type = "CHANNEL";
+        chat_type = "IRC";
+        name = "#fedora-zh";
         tag = "Freenode";
       }
     );
