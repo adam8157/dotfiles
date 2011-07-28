@@ -204,8 +204,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, }, "t", function () awful.util.spawn("mpc toggle") end),
     awful.key({ modkey, }, "v", function () awful.util.spawn("virtualbox") end),
     awful.key({ modkey, }, "x", function () awful.util.spawn("xterm") end),
-    awful.key({ modkey, }, "Up", function () awful.util.spawn("amixer -q sset PCM 10%+ unmute") end),
-    awful.key({ modkey, }, "Down", function () awful.util.spawn("amixer -q sset PCM 10%- unmute") end),
+    awful.key({ modkey, }, "Up", function () awful.util.spawn("amixer -q sset Master 10%+ unmute") end),
+    awful.key({ modkey, }, "Down", function () awful.util.spawn("amixer -q sset Master 10%- unmute") end),
     awful.key({ "Mod1" }, "F2", function () awful.util.spawn("gmrun") end),
     awful.key({ "Mod1" }, "Tab",
         function ()
@@ -231,8 +231,8 @@ globalkeys = awful.util.table.join(
     awful.key({}, "XF86AudioPrev", function () awful.util.spawn("mpc prev") end),
     awful.key({}, "XF86AudioNext", function () awful.util.spawn("mpc next") end),
     awful.key({}, "XF86AudioMute", function () awful.util.spawn("amixer -q sset Master toggle") end),
-    awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset PCM 10%- unmute") end),
-    awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset PCM 10%+ unmute") end)
+    awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset Master 10%- unmute") end),
+    awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset Master 10%+ unmute") end)
 
 )
 

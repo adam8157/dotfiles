@@ -25,4 +25,4 @@ use_xft yes
 xftfont DejaVu Sans:pixelsize=11.5
 
 TEXT
-CPU: ${color e0e0e0}${cpu cpu0}%,${cpu cpu1}%${color} | MEM: ${color e0e0e0}$mem / $memmax${color} | TEMP: ${color e0e0e0}${hwmon temp 1}°C${color} | UPTIME: ${color e0e0e0}${uptime_short}${color} | NET: ${color e0e0e0}${downspeed eth0} + ${downspeed wlan0}↓ ${upspeed eth0} + ${upspeed wlan0}↑${color} | VOL: ${color e0e0e0}${mixer PCM}%${if_mixer_mute Master} Mute${endif}${color} | BAT: ${color e0e0e0}${battery}${color}
+CPU: ${color e0e0e0}${cpu cpu0}%,${cpu cpu1}%${color} | MEM: ${color e0e0e0}$mem / $memmax${color} | TEMP: ${color e0e0e0}${hwmon temp 1}°C${color} | UPTIME: ${color e0e0e0}${uptime_short}${color} | NET: ${color e0e0e0}${downspeed eth0} + ${downspeed wlan0}↓ ${upspeed eth0} + ${upspeed wlan0}↑${color} | VOL: ${color e0e0e0}${mixer Master}%${if_mixer_mute Master} Mute${endif}${color} | BAT: ${color e0e0e0}${battery}${color}
