@@ -31,7 +31,7 @@ sub notify {
     $message =~ s/>/&gt;/g;
     $message =~ s/'/&apos;/g;
 
-    my $cmd = "EXEC - notify-send" .
+    my $cmd = "EXEC - notify-launch" .
 	" -i " . Irssi::settings_get_str('notify_icon') .
 	" -t " . Irssi::settings_get_str('notify_time') .
 	" -- '" . $summary . "'" .
