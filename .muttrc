@@ -55,7 +55,7 @@ set wait_key=yes
 
 # Auto view
 set mailcap_path=~/.mutt/mailcap
-auto_view text/html application/pdf application/msword image/*
+auto_view text/html application/pdf application/msword
 
 # Message included in reply
 set include=yes
