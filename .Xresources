@@ -1,9 +1,9 @@
 !x config
 Xft.dpi: 96
 Xft.rgba: rgb
-Xft.hinting: 1
+Xft.hinting: true
 Xft.hintstyle: hintslight
-Xft.antialias: 1
+Xft.antialias: true
 Xcursor.theme: Vanilla-DMZ-AA
 
 !xterm config
@@ -18,7 +18,7 @@ xterm*foreground: gray
 xterm*cursorBlink: false
 
 !font and locale
-xterm*utf8: 1
+xterm*utf8: true
 xterm*locale: true
 xterm*utf8Title: true
 xterm*renderFont: true
