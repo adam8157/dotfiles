@@ -2,9 +2,9 @@
 Xft.dpi: 96
 Xft.rgba: rgb
 Xft.hinting: true
-Xft.hintstyle: hintslight
 Xft.antialias: true
-Xcursor.theme: Vanilla-DMZ-AA
+Xcursor.theme: DMZ-White
+Xft.hintstyle: hintslight
 
 !xterm config
 
