@@ -21,6 +21,7 @@
 	t  = tag
 	up = pull
 	ut = rm -r --cached
+	w  = show
 [diff]
 	tool = vimdiff
 [merge]
