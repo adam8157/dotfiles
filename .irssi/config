@@ -20,7 +20,7 @@ chatnets = {
 channels = (
   { name = "#archlinux"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#debian"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#ubuntu-cn"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#ubuntu-cn"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#fedora-zh"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
@@ -32,6 +32,7 @@ settings = {
     quit_message = "Take the red pill...";
   };
   "fe-text" = { actlist_sort = "refnum"; };
+  "irc/dcc" = { dcc_download_path = "= ~/Downloads/"; };
   "perl/core/scripts" = { nicklist_automode = "screen"; };
   "fe-common/core" = {
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
