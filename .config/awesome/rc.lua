@@ -197,6 +197,7 @@ globalkeys = awful.util.table.join(
     -- Private global keys
     awful.key({ modkey, }, "a", function () awful.util.spawn("xterm -e alsamixer") end),
     awful.key({ modkey, }, "b", function () mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible end),
+    awful.key({ modkey, }, "g", function () awful.util.spawn("goldendict") end),
     awful.key({ modkey, }, "i", function () awful.util.spawn("iceweasel") end),
     awful.key({ modkey, }, "m", function () awful.util.spawn("amixer -q sset Master toggle") end),
     awful.key({ modkey, }, "p", function () awful.util.spawn("pidgin") end),
