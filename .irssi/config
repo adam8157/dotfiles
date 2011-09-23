@@ -3,6 +3,7 @@ servers = (
     address = "irc.freenode.net";
     chatnet = "Freenode";
     port = "7000";
+    password = "PASSWORD";
     use_ssl = "yes";
     ssl_verify = "yes";
     autoconnect = "yes";
@@ -13,7 +14,6 @@ chatnets = {
   Freenode = {
     type = "IRC";
     nick = "adam8157";
-    autosendcmd = "/msg nickserv identify PASSWORD;wait 2000";
   };
 };
 
