@@ -1,6 +1,6 @@
 servers = (
   {
-    address = "irc.freenode.net";
+    address = "chat.freenode.net";
     chatnet = "Freenode";
     port = "7000";
     password = "PASSWORD";
