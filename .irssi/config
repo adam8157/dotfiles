@@ -30,6 +30,8 @@ settings = {
     user_name = "adam";
     nick = "adam8157";
     quit_message = "Take the red pill...";
+    log_create_mode = "600";
+    log_timestamp = "%Y-%m-%d %H:%M ";
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "irc/dcc" = { dcc_download_path = "= ~/Downloads/"; };
@@ -37,6 +39,8 @@ settings = {
   "fe-common/core" = {
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
     beep_when_away = "no";
+    autolog = "yes";
+    autolog_path = "~/.irssi/irclogs/$tag/$0.log";
   };
 };
 
