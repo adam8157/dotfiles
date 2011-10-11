@@ -128,6 +128,9 @@ set fcc_clear=no
 # Encrypt replies to messages which are encrypted
 set pgp_replyencrypt=yes
 
+# Automatically attempt to decrypt traditional PGP messages
+set pgp_auto_decode=yes
+
 # During these time you will not needed to enter passparse again
 set pgp_timeout=1800
 
