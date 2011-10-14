@@ -1,15 +1,7 @@
-# This is an example resource file for rTorrent. Copy to
-# ~/.rtorrent.rc and enable/modify the options as needed. Remember to
-# uncomment the options you wish to enable.
+# Resource file for rTorrent
 
 # Preferred filename encoding
 encoding_list = utf-8
-
-# Send buffer per torrent
-send_buffer_size = 10M
-
-# Receive buffer per torrent
-receive_buffer_size = 20M
 
 # Maximum and minimum number of peers to connect to per torrent.
 min_peers = 100
@@ -46,16 +38,7 @@ schedule = low_diskspace,5,60,close_low_diskspace=1000M
 # when also reaching total upload in bytes, or when
 # reaching final upload ratio in percent.
 # example: stop at ratio 2.0 with at least 200 MB uploaded, or else ratio 20.0
-#schedule = ratio,60,60,"stop_on_ratio=200,200M,2000"
-
-# The ip address reported to the tracker.
-#ip = 127.0.0.1
-#ip = rakshasa.no
-
-# The ip address the listening socket and outgoing connections is
-# bound to.
-#bind = 127.0.0.1
-#bind = rakshasa.no
+schedule = ratio,60,60,"stop_on_ratio=200,200M,2000"
 
 # Port range to use for listening.
 port_range = 6890-6999
@@ -69,10 +52,6 @@ port_random = yes
 
 # Set whetever the client should try to connect to UDP trackers.
 use_udp_trackers = yes
-
-# Alternative calls to bind and ip that should handle dynamic ip's.
-#schedule = ip_tick,0,1800,ip=rakshasa
-#schedule = bind_tick,0,1800,bind=rakshasa
 
 # Encryption options, set to none (default) or any combination of the following:
 # allow_incoming, try_outgoing, require, require_RC4, enable_retry, prefer_plaintext
@@ -97,21 +76,3 @@ dht_port = 6881
 # Enable peer exchange (for torrents not marked private)
 #
 peer_exchange = yes
-
-#
-# Do not modify the following parameters unless you know what you're doing.
-#
-
-# Hash read-ahead controls how many MB to request the kernel to read
-# ahead. If the value is too low the disk may not be fully utilized,
-# while if too high the kernel might not be able to keep the read
-# pages in memory thus end up trashing.
-#hash_read_ahead = 10
-
-# Interval between attempts to check the hash, in milliseconds.
-#hash_interval = 100
-
-# Number of attempts to check the hash while using the mincore status,
-# before forcing. Overworked systems might need lower values to get a
-# decent hash checking rate.
-#hash_max_tries = 10
