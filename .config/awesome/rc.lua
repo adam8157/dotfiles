@@ -194,9 +194,12 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey,           }, "space", function () awful.layout.inc(layouts,  1) end),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(layouts, -1) end),
 
+    awful.key({ modkey, "Control" }, "n", awful.client.restore),
+
     -- Private global keys
     awful.key({ modkey, }, "a", function () awful.util.spawn("xterm -e alsamixer") end),
     awful.key({ modkey, }, "b", function () mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible end),
+    awful.key({ modkey  }, "e", function () awful.util.spawn("skype") end),
     awful.key({ modkey, }, "g", function () awful.util.spawn("goldendict") end),
     awful.key({ modkey, }, "i", function () awful.util.spawn("iceweasel") end),
     awful.key({ modkey, }, "m", function () awful.util.spawn("amixer -q sset Master toggle") end),
@@ -238,11 +241,17 @@ globalkeys = awful.util.table.join(
 )
 
 clientkeys = awful.util.table.join(
+    awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
     awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
-    awful.key({ modkey,           }, "n",      function (c) c.minimized = not c.minimized    end),
+    awful.key({ modkey,           }, "n",
+        function (c)
+            -- The client currently has the input focus, so it cannot be
+            -- minimized, since minimized clients can't have the focus.
+            c.minimized = true
+        end),
 
     -- Private client keys
     awful.key({ "Mod1" }, "F3",
@@ -330,6 +339,8 @@ awful.rules.rules = {
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     { rule = { class = "Pidgin" },
+      properties = { floating = true, tag = tags[1][8] } },
+    { rule = { class = "Skype" },
       properties = { floating = true, tag = tags[1][8] } },
     { rule = { class = "VirtualBox" },
       properties = { tag = tags[1][9] } },
