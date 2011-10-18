@@ -1,0 +1,27 @@
+# Offlineimap config file
+
+[general]
+ui = Quiet
+accounts = Gmail
+maxsyncaccounts = 1
+
+[Account Gmail]
+quick = 30
+autorefresh = 5
+localrepository = Gmail-Local
+remoterepository = Gmail-Remote
+
+[Repository Gmail-Local]
+type = Maildir
+localfolders = ~/Documents/Mails/Gmail
+
+[Repository Gmail-Remote]
+type = Gmail
+keepalive = 60
+realdelete = yes
+holdconnectionopen = yes
+remoteuser = adam8157@gmail.com
+remotepassfile = ~/.mutt/passwd
+nametrans = lambda foldername: re.sub('^\[Gmail\]/', '', foldername)
+folderfilter = lambda foldername: foldername in ['[Gmail]/All Mail',
+	     '[Gmail]/Drafts', '[Gmail]/Spam','[Gmail]/Trash']
