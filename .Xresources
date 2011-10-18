@@ -22,6 +22,7 @@ xterm*utf8: true
 xterm*locale: true
 xterm*utf8Title: true
 xterm*renderFont: true
+xterm*scaleHeight: 1.1
 xterm*preeditType: Root
 xterm*xftAntialias: true
 xterm*faceName: DejaVu Sans Mono:pixelsize=13.5
