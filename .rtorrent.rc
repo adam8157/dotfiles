@@ -1,6 +1,6 @@
 # Resource file for rTorrent
 
-# Preferred filename encoding
+# Preferred filename encoding.
 encoding_list = utf-8
 
 # Maximum and minimum number of peers to connect to per torrent.
@@ -9,7 +9,7 @@ max_peers = 1000
 
 # Same as above but for seeding completed torrents (-1 = same as downloading)
 min_peers_seed = 10
-max_peers_seed = 50
+max_peers_seed = 100
 
 # Maximum number of simultanious uploads per torrent.
 max_uploads = 10
@@ -22,23 +22,8 @@ upload_rate = 10
 directory = ~/Downloads/rtorrent
 
 # Default session directory. Make sure you don't run multiple instance
-# of rtorrent using the same session directory. Perhaps using a
-# relative path?
+# of rtorrent using the same session directory. Perhaps using a relative path?
 session = ~/Downloads/rtorrent/session
-
-# Watch a directory for new torrents, and stop those that have been
-# deleted.
-schedule = watch_directory,5,5,load_start=~/Downloads/rtorrent/*.torrent
-schedule = untied_directory,5,5,stop_untied=
-
-# Close torrents when diskspace is low.
-schedule = low_diskspace,5,60,close_low_diskspace=1000M
-
-# Stop torrents when reaching upload ratio in percent,
-# when also reaching total upload in bytes, or when
-# reaching final upload ratio in percent.
-# example: stop at ratio 2.0 with at least 200 MB uploaded, or else ratio 20.0
-schedule = ratio,60,60,"stop_on_ratio=200,200M,2000"
 
 # Port range to use for listening.
 port_range = 6890-6999
@@ -46,33 +31,25 @@ port_range = 6890-6999
 # Start opening ports at a random position within the port range.
 port_random = yes
 
-# Check hash for finished torrents. Might be usefull until the bug is
-# fixed that causes lack of diskspace not to be properly reported.
-#check_hash = no
-
 # Set whetever the client should try to connect to UDP trackers.
 use_udp_trackers = yes
 
 # Encryption options, set to none (default) or any combination of the following:
 # allow_incoming, try_outgoing, require, require_RC4, enable_retry, prefer_plaintext
-#
-# The example value allows incoming encrypted connections, starts unencrypted
-# outgoing connections but retries with encryption if they fail, preferring
-# plaintext to RC4 encryption after the encrypted handshake
-#
 encryption = allow_incoming,enable_retry,prefer_plaintext
 
-# Enable DHT support for trackerless torrents or when all trackers are down.
-# May be set to "disable" (completely disable DHT), "off" (do not start DHT),
-# "auto" (start and stop DHT as needed), or "on" (start DHT immediately).
-# The default is "off". For DHT to work, a session directory must be defined.
-# 
+# Enable DHT support
 dht = on
 
 # UDP port to use for DHT. 
-# 
 dht_port = 6881
 
 # Enable peer exchange (for torrents not marked private)
-#
 peer_exchange = yes
+
+# Close torrents when diskspace is low.
+schedule = low_diskspace,5,60,close_low_diskspace=1000M
+
+# Watch a directory for new torrents, and stop those that have been deleted.
+schedule = watch_directory,5,5,load_start=~/Downloads/rtorrent/*.torrent
+schedule = untied_directory,5,5,stop_untied=
