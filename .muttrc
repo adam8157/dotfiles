@@ -21,22 +21,15 @@ unset record
 set editor="vim"
 
 # Set folder
-set folder="imaps://imap.gmail.com:993/"
-set spoolfile="imaps://imap.gmail.com/[Gmail]/All Mail"
-set postponed="imaps://imap.gmail.com/[Gmail]/Drafts"
-set smtp_url="smtp://adam8157@smtp.gmail.com:587/"
-
-set imap_user=adam8157
-set ssl_force_tls=yes
-
-#set imap_pass=
-#set smtp_pass=
-source ~/.mutt/passwd
+set folder="~/Documents/Mails/Gmail/"
+set spoolfile="+All Mail"
+set postponed="+Drafts"
 
 # Message cache
 set header_cache=~/.mutt/cache/header
-set message_cachedir=~/.mutt/cache/message
-set message_cache_clean=yes
+
+# Set sendmail
+set sendmail="pre-sendmail"
 
 # New Mail
 set mark_old=no
@@ -166,15 +159,10 @@ bind editor <space> noop
 bind index,pager L group-reply
 
 macro pager \cb |urlview\n "Call urlview"
-macro index ga "<change-folder>=[Gmail]/All Mail<enter>" "Go to all mail"
-macro index gs "<change-folder>=[Gmail]/Spam<enter>" "Go to spam"
-macro index gt "<change-folder>=[Gmail]/Trash<enter>" "Go to trash"
-macro index,pager H "<save-message>=INBOX<enter>" "Mark message as ham"
-macro index,pager S "<save-message>=[Gmail]/Spam<enter>" "Mark message as spam"
+macro index ga "<change-folder>+All Mail<enter>" "Go to all mail"
+macro index gs "<change-folder>+Spam<enter>" "Go to spam"
+macro index gt "<change-folder>+Trash<enter>" "Go to trash"
 macro index \cr "<tag-pattern>.\n<tag-prefix><clear-flag>N<untag-pattern>.\n" "Mark all messages as read"
-
-folder-hook . 'macro index,pager d "<save-message>=[Gmail]/Trash<enter>" "Mark message as trash"'
-folder-hook 'Spam|Trash' 'bind index,pager d delete-message'
 
 # ---------------------Color theme-----------------------------------
 color normal white default
