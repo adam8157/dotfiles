@@ -12,7 +12,7 @@ set index_format="%4C %Z %{%b %d} %?X?%X& ? %-18.18L [%4c] %s"
 set status_format="mutt-filter '-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]----%>-(%P)---'|"
 
 # Display status on the first line
-set status_on_top =yes
+set status_on_top=yes
 
 # No record
 unset record
@@ -21,7 +21,7 @@ unset record
 set editor="vim"
 
 # Set folder
-set folder="~/Documents/Mails/Gmail/"
+set folder="~/Documents/Mails/Gmail"
 set spoolfile="+All Mail"
 set postponed="+Drafts"
 
@@ -159,9 +159,9 @@ bind editor <space> noop
 bind index,pager L group-reply
 
 macro pager \cb |urlview\n "Call urlview"
-macro index ga "<change-folder>+All Mail<enter>" "Go to all mail"
-macro index gs "<change-folder>+Spam<enter>" "Go to spam"
-macro index gt "<change-folder>+Trash<enter>" "Go to trash"
+macro index ga "<change-folder>=All Mail<enter>" "Go to all mail"
+macro index gs "<change-folder>=Spam<enter>" "Go to spam"
+macro index gt "<change-folder>=Trash<enter>" "Go to trash"
 macro index \cr "<tag-pattern>.\n<tag-prefix><clear-flag>N<untag-pattern>.\n" "Mark all messages as read"
 
 # ---------------------Color theme-----------------------------------
