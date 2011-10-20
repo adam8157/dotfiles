@@ -162,6 +162,7 @@ macro pager \cb |urlview\n "Call urlview"
 macro index ga "<change-folder>=All Mail<enter>" "Go to all mail"
 macro index gs "<change-folder>=Spam<enter>" "Go to spam"
 macro index gt "<change-folder>=Trash<enter>" "Go to trash"
+macro index,pager S "<save-message>=Spam<enter>" "Mark message as spam"
 macro index \cr "<tag-pattern>.\n<tag-prefix><clear-flag>N<untag-pattern>.\n" "Mark all messages as read"
 
 # ---------------------Color theme-----------------------------------
