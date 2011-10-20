@@ -74,15 +74,15 @@ set forward_format="Fwd: %s"
 # Show tildes at the end of mail
 set tilde=yes
 
-# Set mail from header
+# Set from header field
 set use_from=yes
+set reverse_name=yes
 set realname='Adam Lee'
+set reverse_realname=no
 set from='Adam Lee <adam8157@gmail.com>'
 
-# Set different from information
+# Set alternates addresses
 alternates '^adam8157@gmail.com$'
-set reverse_name=yes
-set reverse_realname=yes
 
 # Alias file
 source ~/.mutt/alias
@@ -98,7 +98,7 @@ set rfc2047_parameters=yes
 set sort=reverse-threads
 set sort_aux=last-date-received
 
-# Mailing list
+# Mailing lists
 subscribe kernelnewbies@kernelnewbies.org
 
 # ---------------------GnuPG stuff-----------------------------------
