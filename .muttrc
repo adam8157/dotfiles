@@ -37,8 +37,8 @@ set beep_new=yes
 set check_new=yes
 
 # Set timeout
-set timeout=15
-set mail_check=90
+set timeout=30
+set mail_check=10
 
 # Quit without question
 set quit=ask-yes
