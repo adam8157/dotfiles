@@ -1,16 +1,16 @@
-#history
+# history
 #unset HISTFILE
 
-#umask
+# umask
 umask 077
 
-#variable
+# variable
 export EDITOR=vim
 
-#path
+# path
 export PATH="$PATH:$HOME/Scripts"
 
-#colorful manual page
+# colorful manual page
 export GROFF_NO_SGR=1
 export LESS_TERMCAP_mb=$'\E[05;34m'       # begin blinking
 export LESS_TERMCAP_md=$'\E[01;34m'       # begin bold
@@ -20,8 +20,9 @@ export LESS_TERMCAP_so=$'\E[44;33m'       # begin standout-mode
 export LESS_TERMCAP_ue=$'\E[0m'           # end underline
 export LESS_TERMCAP_us=$'\E[04;33m'       # begin underline
 
-#completion
-if [ -f /etc/bash_completion ]; then
+# completion
+if [ -f /etc/bash_completion ]
+then
 	. /etc/bash_completion
 fi
 
@@ -46,7 +47,7 @@ _show_installed()
 complete -F _show_all $default ai aw
 complete -F _show_installed $default ap
 
-#alias
+# alias
 alias ~='cd ~'
 alias ..='cd ..'
 alias ac='sudo apt-get autoremove --purge && sudo apt-get clean && dpkg -l |grep ^rc |awk "{print \$2}" |sudo xargs dpkg -P'
@@ -85,7 +86,7 @@ alias sr='screen -R'
 alias s='sha1sum'
 alias x='startx'
 
-#screen and xterm's dynamic title
+# screen and xterm's dynamic title
 case $TERM in
 	xterm*)
 		# Set xterm's title

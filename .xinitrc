@@ -1,37 +1,37 @@
-#umask
+# umask
 umask 077
 
-#bell
+# bell
 xset b off
 
-#screen-saver
+# screen saver
 xset s off
 xset dpms 0 0 0
 
-#ibus
+# ibus
 export XMODIFIERS="@im=ibus"
 export GTK_IM_MODULE="ibus"
 export QT_IM_MODULE="ibus"
 ibus-daemon -x -r -d &
 
-#xmodmap
+# xmodmap
 #xmodmap ~/.xmodmaprc
 
-#xresources
+# xresources
 xrdb ~/.Xresources
 
-#xcursor
+# xcursor
 xsetroot -cursor_name left_ptr
 
-#conky
+# conky
 conky &
 
-#dropbox
+# dropbox
 dropboxd &
 
-#touchpad
+# touchpad
 synclient TapButton1=1
 syndaemon -i 1 -k -d &
 
-#window manager
+# window manager
 exec awesome
