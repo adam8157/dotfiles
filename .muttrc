@@ -20,6 +20,9 @@ unset record
 # Set editor
 set editor="vim"
 
+# Use Maildir
+set mbox_type=Maildir
+
 # Set folder
 set folder="~/Documents/Mails/Gmail"
 set spoolfile="+All Mail"
