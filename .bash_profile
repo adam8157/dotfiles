@@ -13,7 +13,7 @@ fi
 # offlineimap
 if [ $(tty) == "/dev/tty1" ]
 then
-	start-daemon offlineimap -l .offlineimap/log
+	start-daemon mra-guard
 fi
 
 # startx
