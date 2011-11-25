@@ -7,6 +7,10 @@ require("beautiful")
 -- Notification library
 require("naughty")
 
+-- {{{ Variable definitions
+-- Themes define colours, icons, and wallpapers
+beautiful.init(awful.util.getdir("config") .. "/theme.lua")
+
 -- Private naughty config
 naughty.config.default_preset.font             = "sans 13.5"
 naughty.config.default_preset.position         = "bottom_right"
@@ -38,10 +42,6 @@ do
     end)
 end
 -- }}}
-
--- {{{ Variable definitions
--- Themes define colours, icons, and wallpapers
-beautiful.init(awful.util.getdir("config") .. "/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "xterm"
@@ -244,15 +244,15 @@ globalkeys = awful.util.table.join(
         end),
     awful.key({ "Mod1" }, "Print",
         function ()
-	    awful.util.spawn("scrot -u -e 'mv $f ~/Pictures/Shot/'")
-	    os.execute("sleep 0.5")
-	    naughty.notify({ title="Screenshot", text="The focused window captured" })
+            awful.util.spawn("scrot -u -e 'mv $f ~/Pictures/Shot/'")
+            os.execute("sleep 0.5")
+            naughty.notify({ title="Screenshot", text="The focused window captured" })
         end),
     awful.key({}, "Print",
         function ()
-	    awful.util.spawn("scrot -e 'mv $f ~/Pictures/Shot/'")
-	    os.execute("sleep 0.5")
-	    naughty.notify({ title="Screenshot", text="Full screen captured" })
+            awful.util.spawn("scrot -e 'mv $f ~/Pictures/Shot/'")
+            os.execute("sleep 0.5")
+            naughty.notify({ title="Screenshot", text="Full screen captured" })
         end),
     awful.key({}, "XF86AudioPlay", function () awful.util.spawn("mpc toggle") end),
     awful.key({}, "XF86AudioStop", function () awful.util.spawn("mpc stop") end),
