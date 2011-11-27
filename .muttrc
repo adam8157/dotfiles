@@ -149,24 +149,30 @@ set pgp_getkeys_command="gpg --recv-keys %r > /dev/null 2>&1"
 set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
 
 # ---------------------Key bindings----------------------------------
+bind attach i exit
+bind attach <space> view-attach
+bind browser <space> select-entry
+bind editor <space> noop
 bind index gg first-entry
 bind index G last-entry
 bind index \cf next-page
 bind index \cb previous-page
+bind index \cx sync-mailbox
 bind pager j next-line
 bind pager k previous-line
 bind pager gg top
 bind pager G bottom
-bind index \cx sync-mailbox
-bind editor <space> noop
+bind index,pager R reply
+bind index,pager r group-reply
 bind index,pager L group-reply
 
-macro pager \cb |urlview\n "Call urlview"
+macro attach s "<save-entry><kill-line>~/Downloads/<enter>a" "Save attachment"
 macro index ga "<change-folder>=All Mail<enter>" "Go to all mail"
 macro index gs "<change-folder>=Spam<enter>" "Go to spam"
 macro index gt "<change-folder>=Trash<enter>" "Go to trash"
-macro index,pager S "<save-message>=Spam<enter>" "Mark message as spam"
 macro index \cr "<tag-pattern>.\n<tag-prefix><clear-flag>N<untag-pattern>.\n" "Mark all messages as read"
+macro pager \cb |urlview\n "Call urlview"
+macro index,pager S "<save-message>=Spam<enter>" "Mark message as spam"
 
 # ---------------------Color theme-----------------------------------
 color normal white default
