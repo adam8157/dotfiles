@@ -6,8 +6,8 @@ accounts = Gmail
 maxsyncaccounts = 1
 
 [Account Gmail]
-quick = 30
-autorefresh = 5
+quick = 5
+autorefresh = 2
 localrepository = Gmail-Local
 remoterepository = Gmail-Remote
 
@@ -17,7 +17,7 @@ localfolders = ~/Documents/Mails/Gmail
 
 [Repository Gmail-Remote]
 type = Gmail
-keepalive = 60
+keepalive = 30
 realdelete = yes
 holdconnectionopen = yes
 remoteuser = adam8157@gmail.com
