@@ -228,7 +228,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey, }, "i", function () awful.util.spawn("iceweasel") end),
     awful.key({ modkey, }, "m", function () awful.util.spawn("amixer -q sset Master toggle") end),
     awful.key({ modkey, }, "p", function () awful.util.spawn("pidgin") end),
-    awful.key({ modkey, }, "s", function () awful.util.spawn("xlock -mode blank -dpmsoff 5 -font -misc-fixed-*-*-*-*-20-*-*-*-*-*-*") end),
+    awful.key({ modkey, }, "s", function () awful.util.spawn("slock") end),
     awful.key({ modkey, }, "t", function () awful.util.spawn("mpc toggle") end),
     awful.key({ modkey, }, "v", function () awful.util.spawn("virtualbox") end),
     awful.key({ modkey, }, "x", function () awful.util.spawn("xterm") end),
