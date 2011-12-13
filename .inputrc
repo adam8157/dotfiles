@@ -1,7 +1,5 @@
 set bell-style none
 
-set completion-map-case on
-
 set completion-ignore-case on
 
 set completion-prefix-display-length 2
