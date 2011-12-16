@@ -34,7 +34,7 @@ settings = {
     log_timestamp = "%Y-%m-%d %H:%M ";
   };
   "fe-text" = { actlist_sort = "refnum"; };
-  "irc/dcc" = { dcc_download_path = "= ~/Downloads/"; };
+  "irc/dcc" = { dcc_download_path = "~/Downloads"; };
   "perl/core/scripts" = { nicklist_automode = "screen"; };
   "fe-common/core" = {
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
