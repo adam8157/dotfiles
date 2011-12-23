@@ -30,7 +30,7 @@ xterm*faceNameDoublesize: WenQuanYi Zen Hei Mono:pixelsize=13.5
 
 !fix alt-key inputting
 xterm*eightBitInput: false
-xterm*altSendsEscape: true
+xterm*metaSendsEscape: true
 
 !allow selecting email/url by double-click
 xterm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
