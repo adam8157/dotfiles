@@ -25,6 +25,9 @@ set completeopt=longest,menu
 " Set non-linewise display
 set display=lastline
 
+" Auto change current directory
+set autochdir
+
 " Use absolute paths in sessions
 set sessionoptions-=curdir
 
