@@ -25,9 +25,6 @@ set completeopt=longest,menu
 " Set non-linewise display
 set display=lastline
 
-" Auto change current directory
-set autochdir
-
 " Use absolute paths in sessions
 set sessionoptions-=curdir
 
@@ -41,9 +38,6 @@ set runtimepath+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-
-Bundle 'L9'
-Bundle 'FuzzyFinder'
 
 Bundle 'autoload_cscope.vim'
 Bundle 'bufexplorer.zip'
