@@ -2,6 +2,9 @@
 " General
 """"""""""""""""""""""""""""""""""""""""""""""""""
 
+" Be IMproved
+set nocompatible
+
 " Set backspace
 set backspace=eol,start,indent
 
@@ -10,8 +13,8 @@ set foldenable
 set foldnestmax=1
 set foldmethod=syntax
 
-" Turn backup on
-set backup
+" Enable filetypes
+filetype plugin indent on
 
 " Set fileencodings
 set fileencodings=ucs-bom,utf-8,gbk,big5
@@ -19,23 +22,54 @@ set fileencodings=ucs-bom,utf-8,gbk,big5
 " Set complete options
 set completeopt=longest,menu
 
-" Set backup directory
-set backupdir=$HOME/.vim/backup
-
-" Set swap file directory
-set directory=$HOME/.vim/swap,/tmp
-
 " Set non-linewise display
 set display=lastline
-
-" Disable VI compatible mode
-set nocompatible
 
 " Auto change current directory
 set autochdir
 
 " Use absolute paths in sessions
 set sessionoptions-=curdir
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+filetype off
+
+set runtimepath+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+
+Bundle 'autoload_cscope.vim'
+Bundle 'bufexplorer.zip'
+Bundle 'echofunc.vim'
+Bundle 'grep.vim'
+Bundle 'OmniCppComplete'
+Bundle 'snipMate'
+Bundle 'SuperTab-continued.'
+Bundle 'taglist.vim'
+Bundle 'The-NERD-Commenter'
+Bundle 'The-NERD-tree'
+
+filetype plugin indent on
+
+""""""""""""""""""""""""""""""""""""""""""""""""""
+" Backup
+""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Enable backup
+set backup
+
+" Set backup directory
+set backupdir=~/.vim/backup
+
+" Set swap file directory
+set directory=~/.vim/swap,/tmp
 
 " Keep more backups for one file
 autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
@@ -109,9 +143,6 @@ set formatoptions+=mM
 
 " Config C-indenting
 set cinoptions=:0,l1,t0,g0
-
-" Enable filetype plugin
-filetype plugin indent on
 
 " set textwidth for mail
 autocmd FileType mail set textwidth=72
