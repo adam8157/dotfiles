@@ -14,7 +14,9 @@
 	c  = commit
 	co = checkout
 	d  = difftool
+	dc = difftool --cached
 	f  = format-patch
+	i  = add -i
 	l  = log
 	m  = mergetool
 	t  = tag
