@@ -1,6 +1,6 @@
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Be IMproved
 set nocompatible
@@ -31,33 +31,9 @@ set autochdir
 " Use absolute paths in sessions
 set sessionoptions-=curdir
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle
-""""""""""""""""""""""""""""""""""""""""""""""""""
-
-filetype off
-
-set runtimepath+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-
-Bundle 'autoload_cscope.vim'
-Bundle 'bufexplorer.zip'
-Bundle 'echofunc.vim'
-Bundle 'grep.vim'
-Bundle 'OmniCppComplete'
-Bundle 'snipMate'
-Bundle 'SuperTab-continued.'
-Bundle 'taglist.vim'
-Bundle 'The-NERD-Commenter'
-Bundle 'The-NERD-tree'
-
-filetype plugin indent on
-
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Backup
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Enable backup
 set backup
@@ -71,9 +47,9 @@ set directory=~/.vim/swap,/tmp
 " Keep more backups for one file
 autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Set colorscheme
 colorscheme desert
@@ -81,9 +57,9 @@ colorscheme desert
 " Enable syntax highlight
 syntax on
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Show ruler
 set ruler
@@ -97,9 +73,9 @@ set wildmenu
 " Display line number
 set number
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Enable magic matching
 set magic
@@ -117,9 +93,9 @@ set ignorecase
 " Incremental match when searching
 set incsearch
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Indent
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Auto indent
 set autoindent
@@ -147,9 +123,9 @@ autocmd FileType mail set textwidth=72
 " Use soft tabs for python
 autocmd FileType python set et sta ts=4 sw=4
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Use my own cscope mappings
 let autocscope_menus=0
@@ -157,9 +133,9 @@ let autocscope_menus=0
 " Auto change the root directory
 let NERDTreeChDirMode=2
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CTags
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Auto finding
 set tags=tags;
@@ -182,9 +158,9 @@ let Tlist_Exit_OnlyWindow=1
 " Disable fold column
 let Tlist_Enable_Fold_Column=0
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Cscope
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Use both cscope and ctag
 set cscopetag
@@ -198,9 +174,9 @@ set cscopetagorder=1
 " Use quickfix window to show cscope results
 set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-
 
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
-""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Tab navigation
 nnoremap tp :tabprevious<CR>
@@ -263,3 +239,29 @@ if $DISPLAY != '' && executable('xsel')
 	nnoremap <silent> "+y :'[,']w !xsel -i -b -l /dev/null<CR>
 	nnoremap <silent> "+p :r!xsel -b<CR>
 endif
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vundle
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" git clone http://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+
+filetype off
+
+set runtimepath+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'autoload_cscope.vim'
+Bundle 'bufexplorer.zip'
+Bundle 'echofunc.vim'
+Bundle 'grep.vim'
+Bundle 'OmniCppComplete'
+Bundle 'snipMate'
+Bundle 'SuperTab-continued.'
+Bundle 'taglist.vim'
+Bundle 'The-NERD-Commenter'
+Bundle 'The-NERD-tree'
+
+filetype plugin indent on
