@@ -8,7 +8,24 @@ umask 077
 export EDITOR=vim
 
 # path
-export PATH="$PATH:$HOME/Scripts"
+pathmunge () {
+	case ":${PATH}:" in
+		*:"$1":*)
+			;;
+		*)
+			if [ "$2" = "after" ]
+			then
+				PATH=$PATH:$1
+			else
+				PATH=$1:$PATH
+			fi
+			;;
+	esac
+}
+
+pathmunge $HOME/Scripts after
+
+export PATH
 
 # colorful manual page
 export GROFF_NO_SGR=1
