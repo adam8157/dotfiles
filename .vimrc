@@ -253,6 +253,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 
+Bundle 'Align'
 Bundle 'autoload_cscope.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'echofunc.vim'
