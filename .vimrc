@@ -138,7 +138,7 @@ let NERDTreeChDirMode=2
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Auto finding
-set tags=tags;
+set tags=tags;~
 
 " Sort by name
 let Tlist_Sort_Type="name"
