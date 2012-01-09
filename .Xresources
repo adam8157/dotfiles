@@ -1,4 +1,5 @@
-!x config
+! x config
+
 Xft.dpi: 96
 Xft.rgba: rgb
 Xft.hinting: true
@@ -6,18 +7,20 @@ Xft.antialias: true
 Xcursor.theme: DMZ-White
 Xft.hintstyle: hintslight
 
-!xterm config
 
-!look and feel
+! xterm config
+
+! general settings
 xterm*termName: xterm-256color
 xterm*geometry: 80x24
+xterm*saveLines: 1024
 xterm*scrollBar: false
 xterm*loginshell: false
 xterm*background: black
 xterm*foreground: gray
 xterm*cursorBlink: false
 
-!font and locale
+! fonts and encoding
 xterm*utf8: true
 xterm*locale: true
 xterm*utf8Title: true
@@ -28,14 +31,14 @@ xterm*xftAntialias: true
 xterm*faceName: DejaVu Sans Mono:pixelsize=13.5
 xterm*faceNameDoublesize: WenQuanYi Zen Hei Mono:pixelsize=13.5
 
-!fix alt-key inputting
+! fix alt-key inputting
 xterm*eightBitInput: false
 xterm*metaSendsEscape: true
 
-!allow selecting email/url by double-click
+! allow selecting email/url by double-click
 xterm*charClass: 33:48,37-38:48,45-47:48,64:48,58:48,126:48,61:48,63:48,43:48,35:48
 
-!tango color scheme
+! tango color scheme
 xterm*color0: #1e1e1e
 xterm*color1: #cc0000
 xterm*color2: #4e9a06

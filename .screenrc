@@ -10,6 +10,9 @@ deflogin off
 # Dynamic title
 shelltitle '$ |bash'
 
+# Set scrollback
+defscrollback 10240
+
 # Caption String
 caption always "%{= R}[ %{=b b}%-w%{=rb db}%>%n %t%{-}%+w%{-b}%< %=%{R}][%{M}%D %M %d %{G}%c%{R}]"
 
