@@ -22,8 +22,9 @@ set fileencodings=ucs-bom,utf-8,gbk,big5
 " Set complete options
 set completeopt=longest,menu
 
-" Set non-linewise display
-set display=lastline
+" Set wild menu & mode
+set wildmenu
+set wildmode=longest:full,full
 
 " Auto change current directory
 set autochdir
@@ -67,11 +68,11 @@ set ruler
 " Dynamic title
 set title
 
-" Turn on Wild menu
-set wildmenu
-
 " Display line number
 set number
+
+" Allow to display incomplete line
+set display=lastline
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search
