@@ -71,6 +71,9 @@ set title
 " Display line number
 set number
 
+" Always have a status line
+set laststatus=2
+
 " Allow to display incomplete line
 set display=lastline
 
