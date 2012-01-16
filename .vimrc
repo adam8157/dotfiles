@@ -137,6 +137,9 @@ let autocscope_menus=0
 " Auto change the root directory
 let NERDTreeChDirMode=2
 
+" Use context to decide completion type
+let SuperTabDefaultCompletionType="context"
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " CTags
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
