@@ -1,7 +1,7 @@
 servers = (
   {
     address = "chat.freenode.net";
-    chatnet = "Freenode";
+    chatnet = "freenode";
     port = "7000";
     password = "PASSWORD";
     use_ssl = "yes";
@@ -11,17 +11,15 @@ servers = (
 );
 
 chatnets = {
-  Freenode = {
+  freenode = {
     type = "IRC";
     nick = "adam8157";
   };
 };
 
 channels = (
-  { name = "#archlinux"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#debian"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#ubuntu-cn"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#fedora-zh"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#debian"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#ubuntu-cn"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 settings = {
@@ -68,8 +66,8 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#archlinux";
-        tag = "Freenode";
+        name = "#debian";
+        tag = "freenode";
       }
     );
   };
@@ -78,28 +76,8 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#debian";
-        tag = "Freenode";
-      }
-    );
-  };
-  4 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
         name = "#ubuntu-cn";
-        tag = "Freenode";
-      }
-    );
-  };
-  5 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#fedora-zh";
-        tag = "Freenode";
+        tag = "freenode";
       }
     );
   };
