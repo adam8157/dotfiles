@@ -127,6 +127,9 @@ autocmd FileType mail set textwidth=72
 " Use soft tabs for python
 autocmd FileType python set et sta ts=4 sw=4
 
+" Use extension to set filetype
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
