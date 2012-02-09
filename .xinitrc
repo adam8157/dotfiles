@@ -1,5 +1,5 @@
 # umask
-umask 077
+umask 022
 
 # bell
 xset b off

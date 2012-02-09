@@ -2,7 +2,7 @@
 #unset HISTFILE
 
 # umask
-umask 077
+umask 022
 
 # variable
 export EDITOR=vim
