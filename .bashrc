@@ -4,6 +4,9 @@
 # umask
 umask 022
 
+# xon/xoff
+stty -ixon
+
 # variable
 export EDITOR=vim
 

@@ -1,5 +1,5 @@
-# Start message
-startup_message off
+# Set encoding
+defutf8 on
 
 # Disable vbell
 vbell off
@@ -10,16 +10,17 @@ deflogin off
 # Dynamic title
 shelltitle '$ |bash'
 
-# Set scrollback
-defscrollback 10240
-
 # Caption String
 caption always "%{= R}[ %{=b b}%-w%{=rb db}%>%n %t%{-}%+w%{-b}%< %=%{R}][%{M}%D %M %d %{G}%c%{R}]"
 
-# Utf-8 handling
-defutf8 on
+# Set scrollback
+defscrollback 10240
+
+# Startup message
+startup_message off
 
 # Keyboard binding
+bind s
 bindkey -k F1 prev
 bindkey -k F2 next
 
@@ -28,7 +29,7 @@ hardstatus off
 hardstatus string "screen(@%H): %t"
 termcapinfo xterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
 
-# Automatically detach on hangup
+# Automatically detach upon hangup
 autodetach on
 
 # Make the xterm scroller work in screen
