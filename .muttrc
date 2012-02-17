@@ -1,4 +1,4 @@
-# MIME Alternative
+# MIME alternative
 unalternative_order *
 alternative_order text/*
 
@@ -31,10 +31,15 @@ set postponed="+Drafts"
 # Message cache
 set header_cache=~/.mutt/cache/header
 
+# Set IMAP(for marking as ham)
+set imap_user=adam8157
+set ssl_force_tls=yes
+set imap_pass=`cat ~/.mutt/passwd`
+
 # Set sendmail
 set sendmail="pre-sendmail"
 
-# New Mail
+# New mail
 set mark_old=no
 set beep_new=yes
 set check_new=yes
@@ -172,6 +177,7 @@ macro index gs "<change-folder>=Spam<enter>" "Go to spam"
 macro index gt "<change-folder>=Trash<enter>" "Go to trash"
 macro index \cr "<tag-pattern>.\n<tag-prefix><clear-flag>N<untag-pattern>.\n" "Mark all messages as read"
 macro pager \cb |urlview\n "Call urlview"
+macro index,pager H "<save-message>imaps://imap.gmail.com:993/INBOX<enter>" "Mark message as ham"
 macro index,pager S "<save-message>=Spam<enter>" "Mark message as spam"
 
 # ---------------------Color theme-----------------------------------
