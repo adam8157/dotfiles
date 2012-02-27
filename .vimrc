@@ -131,43 +131,11 @@ autocmd FileType python set et sta ts=4 sw=4
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Use my own cscope mappings
-let autocscope_menus=0
-
-" Use context to decide completion type
-let SuperTabDefaultCompletionType="context"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" CTags
+" Ctags & Cscope
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Auto finding
 set tags=tags;~
-
-" Sort by name
-let Tlist_Sort_Type="name"
-
-" Use right window
-let Tlist_Use_Right_Window=1
-
-" Enable auto update
-let Tlist_Auto_Update=1
-
-" Set compart format
-let Tlist_Compart_Format=1
-
-" Set exit by window
-let Tlist_Exit_OnlyWindow=1
-
-" Disable fold column
-let Tlist_Enable_Fold_Column=0
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Cscope
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Use both cscope and ctag
 set cscopetag
@@ -180,6 +148,19 @@ set cscopetagorder=1
 
 " Use quickfix window to show cscope results
 set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plugins
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" Set Tagbar width
+let tagbar_width = 32
+
+" Use my own cscope mappings
+let autocscope_menus = 0
+
+" Use context to decide completion type
+let SuperTabDefaultCompletionType = "context"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -213,8 +194,8 @@ nnoremap <C-\>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 noremap <Up> gk
 noremap <Down> gj
 
-" Toggle Tlist
-nnoremap <silent> <F2> :TlistToggle<CR>:TlistUpdate<CR>
+" Toggle Tagbar
+nnoremap <silent> <F2> :TagbarToggle<CR>
 
 " Grep search tools
 nnoremap <F3> :Rgrep<CR>
@@ -267,7 +248,7 @@ Bundle 'echofunc.vim'
 Bundle 'grep.vim'
 Bundle 'snipMate'
 Bundle 'SuperTab-continued.'
-Bundle 'taglist.vim'
+Bundle 'Tagbar'
 Bundle 'The-NERD-Commenter'
 Bundle 'The-NERD-tree'
 
