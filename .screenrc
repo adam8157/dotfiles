@@ -29,6 +29,9 @@ hardstatus off
 hardstatus string "screen(@%H): %t"
 termcapinfo xterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
 
+# Set $TERM variable
+term screen-256color
+
 # Automatically detach upon hangup
 autodetach on
 
