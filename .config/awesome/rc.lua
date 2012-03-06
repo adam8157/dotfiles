@@ -368,6 +368,8 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "Pidgin" },
       properties = { floating = true, tag = tags[1][8] } },
+    { rule = { class = "Plugin-container"},
+      properties = { floating = true } },
     { rule = { class = "Skype" },
       properties = { floating = true, tag = tags[1][8] } },
     { rule = { class = "VirtualBox" },
