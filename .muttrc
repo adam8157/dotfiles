@@ -25,16 +25,11 @@ set mbox_type=Maildir
 
 # Set folder
 set folder="~/Documents/Mails/Gmail"
-set spoolfile="+All Mail"
+set spoolfile="+INBOX"
 set postponed="+Drafts"
 
 # Message cache
 set header_cache=~/.mutt/cache/header
-
-# Set IMAP(for marking as ham)
-set imap_user=adam8157
-set ssl_force_tls=yes
-set imap_pass=`cat ~/.mutt/passwd`
 
 # Set sendmail
 set sendmail="pre-sendmail"
@@ -66,7 +61,7 @@ set resolve=yes
 set pager_stop=yes
 set pager_index_lines=5
 
-# Allow editing the header
+# Allow editing the headers
 set edit_headers=yes
 
 # To recognize reply messages
@@ -82,7 +77,10 @@ set forward_format="Fwd: %s"
 # Show tildes at the end of mail
 set tilde=yes
 
-# Set from header field
+# Add Bcc header
+my_hdr Bcc: adam8157@gmail.com
+
+# Set From header
 set use_from=yes
 set reverse_name=yes
 set realname='Adam Lee'
@@ -172,12 +170,13 @@ bind index,pager r group-reply
 bind index,pager L group-reply
 
 macro attach s "<save-entry><kill-line>~/Downloads/<enter>a" "Save attachment"
-macro index ga "<change-folder>=All Mail<enter>" "Go to all mail"
+macro index i '<change-folder>?<toggle-mailboxes>'
+macro index gi "<change-folder>=INBOX<enter>" "Go to INBOX"
 macro index gs "<change-folder>=Spam<enter>" "Go to spam"
 macro index gt "<change-folder>=Trash<enter>" "Go to trash"
 macro index \cr "<tag-pattern>.\n<tag-prefix><clear-flag>N<untag-pattern>.\n" "Mark all messages as read"
 macro pager \cb |urlview\n "Call urlview"
-macro index,pager H "<save-message>imaps://imap.gmail.com:993/INBOX<enter>" "Mark message as ham"
+macro index,pager H "<save-message>=INBOX<enter>" "Mark message as ham"
 macro index,pager S "<save-message>=Spam<enter>" "Mark message as spam"
 
 # ---------------------Color theme-----------------------------------
