@@ -156,30 +156,32 @@ set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
 # ---------------------Key bindings----------------------------------
 bind attach i exit
 bind attach <space> view-attach
+bind browser i exit
+bind browser,index \cb previous-page
+bind browser,index \cf next-page
+bind browser,index gg first-entry
+bind browser,index G last-entry
+bind browser l select-entry
 bind browser <space> select-entry
 bind editor <space> noop
-bind index gg first-entry
-bind index G last-entry
-bind index \cf next-page
-bind index \cb previous-page
 bind index \cx sync-mailbox
+bind index,pager L group-reply
+bind index,pager r group-reply
+bind index,pager R reply
+bind pager G bottom
+bind pager gg top
 bind pager j next-line
 bind pager k previous-line
-bind pager gg top
-bind pager G bottom
-bind index,pager R reply
-bind index,pager r group-reply
-bind index,pager L group-reply
 
 macro attach s "<save-entry><kill-line>~/Downloads/<enter>a" "Save attachment"
-macro index i '<change-folder>?<toggle-mailboxes>'
-macro index gi "<change-folder>=INBOX<enter>" "Go to INBOX"
+macro index \cr "<tag-pattern>.\n<tag-prefix><clear-flag>N<untag-pattern>.\n" "Mark all messages as read"
+macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index gs "<change-folder>=Spam<enter>" "Go to spam"
 macro index gt "<change-folder>=Trash<enter>" "Go to trash"
-macro index \cr "<tag-pattern>.\n<tag-prefix><clear-flag>N<untag-pattern>.\n" "Mark all messages as read"
-macro pager \cb |urlview\n "Call urlview"
+macro index i '<change-folder>?<toggle-mailboxes>'
 macro index,pager H "<save-message>=INBOX<enter>" "Mark message as ham"
 macro index,pager S "<save-message>=Spam<enter>" "Mark message as spam"
+macro pager \cb |urlview\n "Call urlview"
 
 # ---------------------Color theme-----------------------------------
 color normal white default
