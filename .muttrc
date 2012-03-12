@@ -60,7 +60,8 @@ set include=yes
 # Pager view
 set resolve=yes
 set pager_stop=yes
-set pager_index_lines=5
+set menu_scroll=yes
+set pager_index_lines=6
 
 # Allow editing the headers
 set edit_headers=yes
