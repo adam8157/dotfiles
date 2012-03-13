@@ -38,7 +38,7 @@ set sendmail="pre-sendmail"
 set mark_old=no
 set beep_new=yes
 set check_new=yes
-mailboxes =INBOX =comp.lang.c =kernel-cn =kernelnewbies
+mailboxes =INBOX =kernel-cn =kernelnewbies
 
 # Set timeout
 set timeout=30
@@ -107,7 +107,7 @@ set sort=reverse-threads
 set sort_aux=last-date-received
 
 # Mailing lists
-subscribe comp.lang.c@googlegroups.com kernelnewbies@kernelnewbies.org kernel@vger.linux-kernel.cn
+subscribe kernelnewbies@kernelnewbies.org kernel@vger.linux-kernel.cn
 
 # ---------------------GnuPG stuff-----------------------------------
 # Specify key
