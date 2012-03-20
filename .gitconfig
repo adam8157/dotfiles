@@ -7,7 +7,7 @@
 	grep   = auto
 	status = auto
 [push]
-	default = matching
+	default = upstream
 [alias]
 	a  = add
 	b  = branch
