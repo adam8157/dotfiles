@@ -47,7 +47,7 @@ then
 	. /etc/bash_completion
 fi
 
-_show_all()
+_comp_all_packages()
 {
 	local cur
 	COMPREPLY=()
@@ -56,17 +56,25 @@ _show_all()
 	return 0
 }
 
-_show_installed()
+_show_installed_packages()
+{
+	command grep -A 1 "Package: $1" /var/lib/dpkg/status | \
+		command grep -B 1 -Ee "ok installed|half-installed|unpacked| \
+		half-configured|config-files" -Ee "^Essential: yes" | \
+		command grep "Package: $1" | cut -d\  -f2
+}
+
+_comp_installed_packages()
 {
 	local cur
 	COMPREPLY=()
 	cur=`_get_cword`
-	COMPREPLY=( $( _comp_dpkg_installed_packages $cur ) )
+	COMPREPLY=( $( _show_installed_packages $cur ) )
 	return 0
 }
 
-complete -F _show_all $default ai aw
-complete -F _show_installed $default ap
+complete -F _comp_all_packages $default ai aw
+complete -F _comp_installed_packages $default ap
 
 # alias
 alias ~='cd ~'
