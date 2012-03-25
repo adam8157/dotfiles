@@ -4,11 +4,11 @@
 # umask
 umask 022
 
-# xon/xoff
-stty -ixon
-
 # variable
 export EDITOR=vim
+
+# xon/xoff
+[ -t 0 ] && stty -ixon
 
 # path
 pathmunge () {
