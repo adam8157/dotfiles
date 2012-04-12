@@ -175,9 +175,9 @@ nnoremap gf <C-W>gf
 
 " Move among windows
 noremap <C-h> <C-W>h
-noremap <C-l> <C-W>l
 noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
+noremap <C-l> <C-W>l
 
 " Cscope mappings
 nnoremap <C-w>\ :scs find c <C-R>=expand("<cword>")<CR><CR>
@@ -247,6 +247,7 @@ Bundle 'autoload_cscope.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'echofunc.vim'
 Bundle 'grep.vim'
+Bundle 'Indent-Guides'
 Bundle 'snipMate'
 Bundle 'SuperTab-continued.'
 Bundle 'Tagbar'
