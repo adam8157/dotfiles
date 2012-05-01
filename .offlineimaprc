@@ -18,7 +18,6 @@ localfolders = ~/Documents/Mails/Gmail
 [Repository Gmail-Remote]
 type = Gmail
 keepalive = 30
-realdelete = yes
 holdconnectionopen = yes
 remoteuser = adam8157@gmail.com
 remotepassfile = ~/.mutt/passwd
