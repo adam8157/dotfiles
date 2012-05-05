@@ -183,7 +183,7 @@ macro index,pager H "<save-message>=INBOX<enter>" "Mark message as ham"
 macro index,pager S "<save-message>=Spam<enter>" "Mark message as spam"
 macro pager \cb |urlview\n "Call urlview"
 
-folder-hook . 'macro index,pager d "<save-message>=Trash<enter>" "Mark message as trash"'
+folder-hook . 'macro index,pager d "<save-message>=Trash<enter><enter>" "Mark message as trash"'
 folder-hook 'Spam|Trash' 'bind index,pager d delete-message'
 
 # ---------------------Color theme-----------------------------------
@@ -202,7 +202,7 @@ color quoted1 yellow default
 color quoted2 red default
 color hdrdefault cyan default
 color header default magenta .*
-color header brightgreen blue ^(From|To|Cc|Subject|X-Bogosity):
+color header brightgreen blue ^(From|To|Cc|Subject):
 color signature cyan default
 
 color index green default ~p # To me
