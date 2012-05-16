@@ -8,12 +8,6 @@ xset b off
 xset s off
 xset dpms 0 0 0
 
-# ibus
-export XMODIFIERS="@im=ibus"
-export GTK_IM_MODULE="ibus"
-export QT_IM_MODULE="ibus"
-ibus-daemon -x -r -d &
-
 # xmodmap
 #xmodmap ~/.xmodmaprc
 
@@ -22,6 +16,12 @@ xrdb ~/.Xresources
 
 # xcursor
 xsetroot -cursor_name left_ptr
+
+# fcitx
+export XMODIFIERS="@im=fcitx"
+export GTK_IM_MODULE="fcitx"
+export QT_IM_MODULE="fcitx"
+fcitx &
 
 # conky
 conky &
