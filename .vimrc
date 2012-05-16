@@ -26,6 +26,9 @@ set completeopt=longest,menu
 set wildmenu
 set wildmode=longest:full,full
 
+" Set key codes timeout
+set ttimeoutlen=100
+
 " Auto change current directory
 set autochdir
 
