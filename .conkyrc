@@ -1,3 +1,8 @@
+# own_window
+own_window yes
+own_window_type override
+own_window_transparent yes
+
 # background
 background yes
 
@@ -6,9 +11,6 @@ double_buffer yes
 
 # borders
 draw_borders no
-
-# shades
-draw_shades yes
 
 # position
 gap_y 5
