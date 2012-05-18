@@ -7,6 +7,9 @@ require("beautiful")
 -- Notification library
 require("naughty")
 
+-- Private library
+require("vicious")
+
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
 beautiful.init(awful.util.getdir("config") .. "/theme.lua")
@@ -82,6 +85,40 @@ for s = 1, screen.count() do
 end
 -- }}}
 
+-- {{{ Vicious(Private)
+
+-- {{{ Net
+mynetwidget = widget({ type = 'textbox', name = 'mynetwidget',align = 'right'})
+function netspeed(format)
+    args = vicious.widgets.net(format)
+    netspeed_tab = {}
+    netspeed_tab['{down_kb}'] = args['{eth0 down_kb}'] + args['{wlan0 down_kb}']
+    netspeed_tab['{up_kb}'] = args['{eth0 up_kb}'] + args['{wlan0 up_kb}']
+    return netspeed_tab
+end
+vicious.register(mynetwidget, netspeed, "${down_kb}↓ ${up_kb}↑", 2)
+-- }}}
+
+-- {{{ CPU
+mycpuwidget = widget({ type = "textbox" })
+vicious.register(mycpuwidget, vicious.widgets.cpu, "$1%")
+
+mytempwidget = widget({ type = "textbox", name = "thermalwidget", align = 'right' })
+vicious.register(mytempwidget, vicious.widgets.thermal, "$1°C", 10, "thermal_zone0")
+-- }}}
+
+-- {{{ Battery
+mybatwidget = widget({ type = 'textbox', name = 'mybatwidget'})
+vicious.register(mybatwidget, vicious.widgets.bat, "$1 $2", 10, "BAT0")
+-- }}}
+
+-- {{{ Volume
+myvolwidget = widget({ type = 'textbox', name = 'myvolwidget'})
+vicious.register(myvolwidget, vicious.widgets.volume, "$2 $1", 2, "Master")
+-- }}}
+
+-- }}}
+
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock({ align = "right" }, " %a %b %d, %H:%M ", 1)
@@ -93,7 +130,7 @@ mysystray = widget({ type = "systray" })
 myicon = widget({ type = "imagebox" })
 myicon.image = image(beautiful.awesome_icon)
 myspace = widget({ type = "textbox" })
-myspace.text = "  "
+myspace.text = " "
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -164,7 +201,7 @@ for s = 1, screen.count() do
     -- Add widgets to the wibox - order matters
     mywibox[s].widgets = {
         {
-            myspace,
+            myspace, myspace,
             mylayoutbox[s],
             mytaglist[s],
             mypromptbox[s],
@@ -172,6 +209,15 @@ for s = 1, screen.count() do
         },
         mytextclock,
         s == 1 and mysystray or nil,
+
+        -- Private widgets
+        myspace, myspace,
+        myvolwidget, myspace,
+        mybatwidget, myspace,
+        mytempwidget, myspace,
+        mycpuwidget, myspace,
+        mynetwidget, myspace,
+
         mytasklist[s],
         layout = awful.widget.layout.horizontal.rightleft
     }
