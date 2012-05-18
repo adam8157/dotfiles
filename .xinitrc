@@ -23,11 +23,11 @@ export GTK_IM_MODULE="fcitx"
 export QT_IM_MODULE="fcitx"
 fcitx &
 
-# conky
-conky &
-
 # dropbox
 dropboxd &
+
+# xcompmgr
+xcompmgr &
 
 # touchpad
 synclient TapButton1=1
