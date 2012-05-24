@@ -45,7 +45,7 @@ softvol-max=500
 ass=on
 
 # Specify the subtitle codepage.
-subcp=UTF-8
+subcp=enca:zh:UTF-8
 
 # Tells MPlayer to handle the subtitle file as unicode.
 unicode=yes
