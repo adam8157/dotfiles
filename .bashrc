@@ -110,7 +110,7 @@ alias sp='sudo pm-suspend'
 alias sr='screen -R'
 
 # screen and xterm's dynamic title
-case $TERM in
+[ -z "$SSH_TTY" ] && case $TERM in
 	xterm*)
 		# Set xterm's title
 		TITLEBAR='\[\e]0;\u@\h:\w\a\]'
