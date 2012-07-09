@@ -1,6 +1,6 @@
 # MIME alternative
 unalternative_order *
-alternative_order text/*
+alternative_order text/plain text/html
 
 # Selecting headers
 ignore *
