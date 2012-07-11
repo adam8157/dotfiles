@@ -32,6 +32,9 @@ termcapinfo xterm* 'hs:ts=\E]0;:fs=\007:ds=\E]0;\007'
 # Set $TERM variable
 term screen-256color
 
+# Set message timeout
+msgwait 3
+
 # Set mapping timeout
 maptimeout 10
 
