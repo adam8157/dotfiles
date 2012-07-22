@@ -30,3 +30,6 @@
 	tool = vimdiff
 [merge]
 	tool = vimdiff
+[sendemail]
+	chainreplyto = false
+	smtpserver = /usr/bin/msmtp
