@@ -32,4 +32,5 @@
 	tool = vimdiff
 [sendemail]
 	chainreplyto = false
+	bcc = adam8157@gmail.com
 	smtpserver = /usr/bin/msmtp
