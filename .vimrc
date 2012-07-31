@@ -138,7 +138,7 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Auto finding
-set tags=tags;~
+set tags=tags;
 
 " Use both cscope and ctag
 set cscopetag
