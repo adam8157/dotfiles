@@ -75,9 +75,6 @@ subfont-text-scale=5
 # other settings #
 ##################
 
-# Use 8MB input cache by default.
-cache=8192
-
 # Drop frames to preserve audio/video sync.
 framedrop=yes
 
