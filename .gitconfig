@@ -31,6 +31,7 @@
 [merge]
 	tool = vimdiff
 [sendemail]
+	suppresscc = self
 	chainreplyto = false
 	bcc = adam8157@gmail.com
 	smtpserver = /usr/bin/msmtp
