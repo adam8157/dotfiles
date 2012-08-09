@@ -14,6 +14,9 @@ noremap <silent> <leader>a :set! extensions.autoproxy.proxyMode=auto<CR>:echo ':
 noremap <silent> <leader>g :set! extensions.autoproxy.proxyMode=global<CR>:echo ':D'<CR>
 noremap <silent> <leader>d :set! extensions.autoproxy.proxyMode=disabled<CR>:echo ':('<CR>
 
+ignorekeys add mail\.google\.com
+ignorekeys add www\.google\.com\/reader
+
 set newtab=all
 set complete=l
 set focuscontent
@@ -25,5 +28,3 @@ set hintchars="hjklasdfgyuiopqwertnmzxcvb"
 
 set nextpattern=\\s*(下一页|下一张|下一篇|下页|后页)\\s*,\\bnext\\b,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b
 set previouspattern=\\s*(上一页|上一张|上一篇|上页|前页)\\s*,\\b(prev|previous)\\b,^<$,^(<<|«)$,^(<|«),(<|«)$
-
-autocmd LocationChange .* js modes.passAllKeys = /.*(mail\.google\.com|www\.google\.com\/reader).*/.test(buffer.URL)
