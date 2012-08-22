@@ -244,6 +244,7 @@ call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
+Bundle 'Lokaltog/vim-easymotion'
 
 Bundle 'Align'
 Bundle 'autoload_cscope.vim'
