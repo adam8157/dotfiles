@@ -17,8 +17,6 @@ localfolders = ~/Documents/Mails/Gmail
 
 [Repository Gmail-Remote]
 type = Gmail
-keepalive = 60
-holdconnectionopen = yes
 remoteuser = adam8157@gmail.com
 remotepassfile = ~/.mutt/passwd
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
