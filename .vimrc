@@ -208,7 +208,7 @@ set pastetoggle=<F4>
 
 " Save & Make 
 nnoremap <F5> :w<CR>:make!<CR>
-nnoremap <F6> :w<CR>:make! %< CC=gcc CFLAGS="-Wall -g -O2"<CR>:!./%<<CR>
+nnoremap <F6> :w<CR>:make! %< CC=gcc CFLAGS="-g -Wall"<CR>:!./%<<CR>
 
 " Quickfix window
 nnoremap <silent> <F7> :botright copen<CR>
