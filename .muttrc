@@ -157,15 +157,18 @@ set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
 bind attach i exit
 bind attach <space> view-attach
 bind browser i exit
-bind browser,index \cb previous-page
-bind browser,index \cf next-page
 bind browser,index gg first-entry
 bind browser,index G last-entry
+bind browser,index,pager \cb previous-page
+bind browser,index,pager \cf next-page
 bind browser l select-entry
 bind browser <space> select-entry
 bind editor <space> noop
 bind index \cx sync-mailbox
+bind index j next-entry
+bind index k previous-entry
 bind index,pager L group-reply
+bind index,pager p search-opposite
 bind index,pager r group-reply
 bind index,pager R reply
 bind pager G bottom
@@ -183,6 +186,10 @@ macro index,pager H "<save-message>=INBOX<enter>" "Mark message as ham"
 macro index,pager S "<save-message>=Spam<enter>" "Mark message as spam"
 macro pager \cb |urlview\n "Call urlview"
 
+folder-hook . 'bind index,pager \cd noop'
+folder-hook 'Spam|Trash' 'bind index,pager \cd delete-thread'
+folder-hook . 'bind index,pager \ed noop'
+folder-hook 'Spam|Trash' 'bind index,pager \ed delete-subthread'
 folder-hook . 'macro index,pager d "<save-message>=Trash<enter>" "Mark message as trash"'
 folder-hook 'Spam|Trash' 'bind index,pager d delete-message'
 
