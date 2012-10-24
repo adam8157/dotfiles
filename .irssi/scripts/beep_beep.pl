@@ -45,7 +45,7 @@ sub beep_beep() {
 	}
 }
 
-Irssi::settings_add_str("lookandfeel", "beep_cmd", "aplay -q ~/.irssi/scripts/beep_bark.wav > /dev/null &");
+Irssi::settings_add_str("lookandfeel", "beep_cmd", "printf '\a' && aplay -q ~/.irssi/scripts/beep_bark.wav > /dev/null &");
 Irssi::settings_add_int("lookandfeel", "beep_flood", 2000);
 Irssi::signal_add("beep", "beep_beep");
 
