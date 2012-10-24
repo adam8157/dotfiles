@@ -18,6 +18,7 @@ xterm*loginshell: false
 xterm*background: black
 xterm*foreground: gray
 xterm*cursorBlink: false
+xterm*bellIsUrgent: true
 
 ! fonts and encoding
 xterm*utf8: true
