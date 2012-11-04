@@ -24,22 +24,27 @@ channels = (
 
 settings = {
   core = {
+    nick = "adam8157";
     real_name = "Adam Lee";
     user_name = "adam";
-    nick = "adam8157";
-    quit_message = "Take the red pill...";
     log_create_mode = "600";
     log_timestamp = "%Y-%m-%d %H:%M ";
+    quit_message = "Take the red pill...";
+    recode = "yes";
+    recode_autodetect_utf8 = "yes";
+    recode_out_default_charset = "UTF-8";
+    recode_fallback = "GBK";
+    recode_transliterate = "yes";
   };
-  "fe-text" = { actlist_sort = "refnum"; };
-  "irc/dcc" = { dcc_download_path = "~/Downloads"; };
-  "perl/core/scripts" = { nicklist_automode = "screen"; };
   "fe-common/core" = {
     beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
     beep_when_away = "no";
     autolog = "yes";
     autolog_path = "~/.irssi/irclogs/$tag/$0.log";
   };
+  "fe-text" = { actlist_sort = "refnum"; };
+  "irc/dcc" = { dcc_download_path = "~/Downloads"; };
+  "perl/core/scripts" = { nicklist_automode = "screen"; };
 };
 
 aliases = {
