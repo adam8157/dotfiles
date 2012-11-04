@@ -49,7 +49,9 @@ settings = {
 
 aliases = {
   C = "window close";
+  H = "help";
   J = "join";
+  K = "kick";
   M = "msg";
   N = "nick";
   Q = "quit";
