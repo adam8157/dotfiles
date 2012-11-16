@@ -111,6 +111,7 @@ alias ntp='sudo ntpdate pool.ntp.org && sudo hwclock --systohc'
 alias pt='find . -name \*.py -exec ptags {} \+'
 alias pw='pwgen -Bcns 16 1'
 alias rb='sudo reboot'
+alias sc='scrot -e "mv \$f ~/Pictures/Shot/"'
 alias sp='sudo pm-suspend'
 alias sr='screen -R'
 
