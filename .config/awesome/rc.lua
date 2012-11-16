@@ -271,20 +271,29 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
-    -- Private global keys
-    awful.key({ modkey, }, "a", function () awful.util.spawn("xterm -e alsamixer") end),
-    awful.key({ modkey, }, "b", function () mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible end),
-    awful.key({ modkey, }, "g", function () awful.util.spawn("goldendict") end),
-    awful.key({ modkey, }, "i", function () awful.util.spawn("iceweasel") end),
-    awful.key({ modkey, }, "m", function () awful.util.spawn("amixer -q sset Master toggle") end),
-    awful.key({ modkey, }, "p", function () awful.util.spawn("pidgin") end),
-    awful.key({ modkey, }, "s", function () awful.util.spawn_with_shell("xset dpms 0 0 5 ; slock ; xset dpms 0 0 0") end),
-    awful.key({ modkey, }, "t", function () awful.util.spawn("mpc toggle") end),
-    awful.key({ modkey, }, "v", function () awful.util.spawn("virtualbox") end),
-    awful.key({ modkey, }, "x", function () awful.util.spawn("xterm") end),
-    awful.key({ modkey, }, "Up", function () awful.util.spawn("amixer -q sset Master 10%+ unmute") end),
-    awful.key({ modkey, }, "Down", function () awful.util.spawn("amixer -q sset Master 10%- unmute") end),
+    -- Private global key bindings
+    awful.key({ modkey }, "a", function () awful.util.spawn("xterm -e alsamixer") end),
+    awful.key({ modkey }, "b", function () mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible end),
+    awful.key({ modkey }, "g", function () awful.util.spawn("goldendict") end),
+    awful.key({ modkey }, "i", function () awful.util.spawn("iceweasel") end),
+    awful.key({ modkey }, "m", function () awful.util.spawn("amixer -q sset Master toggle") end),
+    awful.key({ modkey }, "p", function () awful.util.spawn("pidgin") end),
+    awful.key({ modkey }, "s", function () awful.util.spawn_with_shell("xset dpms 0 0 5 ; slock ; xset dpms 0 0 0") end),
+    awful.key({ modkey }, "t", function () awful.util.spawn("mpc toggle") end),
+    awful.key({ modkey }, "v", function () awful.util.spawn("virtualbox") end),
+    awful.key({ modkey }, "x", function () awful.util.spawn("xterm") end),
+    awful.key({ modkey }, "Up", function () awful.util.spawn("amixer -q sset Master 10%+ unmute") end),
+    awful.key({ modkey }, "Down", function () awful.util.spawn("amixer -q sset Master 10%- unmute") end),
+    awful.key({ modkey }, "Print",
+        function ()
+            awful.util.spawn("scrot -e 'mv $f ~/Pictures/Shot/'")
+            os.execute("sleep 0.5")
+            naughty.notify({ title="Screenshot", text="The full screen captured" })
+        end),
+
     awful.key({ "Mod1" }, "F2", function () awful.util.spawn("gmrun") end),
+    awful.key({ "Mod1" }, "Left", function () awful.util.spawn("mpc prev") end),
+    awful.key({ "Mod1" }, "Right", function () awful.util.spawn("mpc next") end),
     awful.key({ "Mod1" }, "Tab",
         function ()
             awful.client.focus.history.previous()
@@ -298,12 +307,7 @@ globalkeys = awful.util.table.join(
             os.execute("sleep 0.5")
             naughty.notify({ title="Screenshot", text="The focused window captured" })
         end),
-    awful.key({}, "Print",
-        function ()
-            awful.util.spawn("scrot -e 'mv $f ~/Pictures/Shot/'")
-            os.execute("sleep 0.5")
-            naughty.notify({ title="Screenshot", text="Full screen captured" })
-        end),
+
     awful.key({}, "XF86AudioPlay", function () awful.util.spawn("mpc toggle") end),
     awful.key({}, "XF86AudioStop", function () awful.util.spawn("mpc stop") end),
     awful.key({}, "XF86AudioPrev", function () awful.util.spawn("mpc prev") end),
@@ -327,7 +331,7 @@ clientkeys = awful.util.table.join(
             c.minimized = true
         end),
 
-    -- Private client keys
+    -- Private client key bindings
     awful.key({ "Mod1" }, "F3",
         function (c)
             c.maximized_horizontal = not c.maximized_horizontal
