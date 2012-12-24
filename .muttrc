@@ -50,6 +50,12 @@ set quit=ask-yes
 # Ask for a key after command
 set wait_key=yes
 
+# Decode the messages before pipe
+set pipe_decode=yes
+
+# Decode RFC2047-encoded MIME parameters
+set rfc2047_parameters=yes
+
 # Mailcap
 set mailcap_path=~/.mutt/mailcap
 mime_lookup application/octet-stream
@@ -101,9 +107,6 @@ set alias_file=~/.mutt/alias
 
 # Signature
 set signature=~/.mutt/signature
-
-# Charset settings
-set rfc2047_parameters=yes
 
 # Set sort order
 set sort=reverse-threads
