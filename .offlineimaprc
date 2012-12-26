@@ -13,7 +13,7 @@ remoterepository = Gmail-Remote
 
 [Repository Gmail-Local]
 type = Maildir
-localfolders = ~/Documents/Mails/Gmail
+localfolders = ~/documents/mails/gmail
 
 [Repository Gmail-Remote]
 type = Gmail

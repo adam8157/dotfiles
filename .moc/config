@@ -4,7 +4,7 @@
 ReadTags		= yes
 
 # Directory in which you store music files.
-MusicDir		= "/home/adam/Music"
+MusicDir		= "/home/adam/music"
 
 # Turn on repeat.
 Repeat			= no

@@ -24,7 +24,7 @@ set editor="vim"
 set mbox_type=Maildir
 
 # Set folder
-set folder="~/Documents/Mails/Gmail"
+set folder="~/documents/mails/gmail"
 set spoolfile="+INBOX"
 set postponed="+Drafts"
 
@@ -182,7 +182,7 @@ bind pager gg top
 bind pager j next-line
 bind pager k previous-line
 
-macro attach s "<save-entry><kill-line>~/Downloads/<enter>a" "Save attachment"
+macro attach s "<save-entry><kill-line>~/downloads/<enter>a" "Save attachment"
 macro index \cr "<tag-pattern>.\n<tag-prefix><clear-flag>N<untag-pattern>.\n" "Mark all messages as read"
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index gs "<change-folder>=Spam<enter>" "Go to spam"

@@ -26,8 +26,8 @@ pathmunge () {
 	esac
 }
 
-pathmunge $HOME/Binary after
-pathmunge $HOME/Scripts after
+pathmunge $HOME/binary after
+pathmunge $HOME/scripts after
 
 export PATH
 

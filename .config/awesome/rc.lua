@@ -286,7 +286,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "Down", function () awful.util.spawn("amixer -q sset Master 10%- unmute") end),
     awful.key({ modkey }, "Print",
         function ()
-            awful.util.spawn("scrot -e 'mv $f ~/Pictures/Shot/'")
+            awful.util.spawn("scrot -e 'mv $f ~/pictures/shot/'")
             os.execute("sleep 0.5")
             naughty.notify({ title="Screenshot", text="The full screen captured" })
         end),
@@ -304,7 +304,7 @@ globalkeys = awful.util.table.join(
         end),
     awful.key({ "Mod1" }, "Print",
         function ()
-            awful.util.spawn("scrot -u -e 'mv $f ~/Pictures/Shot/'")
+            awful.util.spawn("scrot -u -e 'mv $f ~/pictures/shot/'")
             os.execute("sleep 0.5")
             naughty.notify({ title="Screenshot", text="The focused window captured" })
         end),
