@@ -15,6 +15,7 @@ require("vicious")
 beautiful.init(awful.util.getdir("config") .. "/theme.lua")
 
 -- Private naughty config
+naughty.config.default_preset.timeout          = 3
 naughty.config.default_preset.font             = "sans 13.5"
 naughty.config.default_preset.position         = "bottom_right"
 naughty.config.default_preset.fg               = beautiful.fg_focus
