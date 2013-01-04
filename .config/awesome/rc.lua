@@ -276,6 +276,9 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
+    -- Prompt
+    awful.key({ modkey },            "r",     function () mypromptbox[mouse.screen]:run() end),
+
     -- Private global key bindings
     awful.key({ modkey }, "a", function () awful.util.spawn("xterm -e alsamixer") end),
     awful.key({ modkey }, "b", function () mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible end),
