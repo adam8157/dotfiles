@@ -43,7 +43,7 @@ theme.taglist_squares_unsel = theme_icons .. "taglist/square_unsel.png"
 -- menu_[border_color|border_width]
 --theme.menu_submenu_icon =
 theme.menu_height = "15"
-theme.menu_width  = "100"
+theme.menu_width  = "115"
 
 -- You can add as many variables as
 -- you wish and access them by using
