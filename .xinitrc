@@ -8,6 +8,12 @@ xset b off
 xset s off
 xset dpms 0 0 0
 
+# fcitx
+export XMODIFIERS="@im=fcitx"
+export GTK_IM_MODULE="fcitx"
+export QT_IM_MODULE="fcitx"
+fcitx &
+
 # xmodmap
 xmodmap ~/.xmodmaprc
 
@@ -16,12 +22,6 @@ xrdb ~/.Xresources
 
 # xcursor
 xsetroot -cursor_name left_ptr
-
-# fcitx
-export XMODIFIERS="@im=fcitx"
-export GTK_IM_MODULE="fcitx"
-export QT_IM_MODULE="fcitx"
-fcitx &
 
 # dropbox
 dropboxd &
