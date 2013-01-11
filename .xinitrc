@@ -9,7 +9,7 @@ xset s off
 xset dpms 0 0 0
 
 # xmodmap
-#xmodmap ~/.xmodmaprc
+xmodmap ~/.xmodmaprc
 
 # xresources
 xrdb ~/.Xresources
