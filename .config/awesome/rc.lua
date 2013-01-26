@@ -320,7 +320,6 @@ globalkeys = awful.util.table.join(
         end),
 
     awful.key({ "Mod1" }, "n", naughty.toggle),
-    awful.key({ "Mod1" }, "F2", function () awful.util.spawn("gmrun") end),
     awful.key({ "Mod1" }, "Left", function () awful.util.spawn("mpc prev") end),
     awful.key({ "Mod1" }, "Right", function () awful.util.spawn("mpc next") end),
     awful.key({ "Mod1" }, "Tab",
