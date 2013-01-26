@@ -301,9 +301,9 @@ globalkeys = awful.util.table.join(
 
     -- Private global key bindings
     awful.key({ modkey }, "a", function () awful.util.spawn("xterm -e alsamixer") end),
-    awful.key({ modkey }, "b", function () mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible end),
+    awful.key({ modkey }, "b", function () awful.util.spawn("firefox") end),
     awful.key({ modkey }, "g", function () awful.util.spawn("goldendict") end),
-    awful.key({ modkey }, "i", function () awful.util.spawn("iceweasel") end),
+    awful.key({ modkey }, "i", function () mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible end),
     awful.key({ modkey }, "m", function () awful.util.spawn("amixer -q sset Master toggle") end),
     awful.key({ modkey }, "p", function () awful.util.spawn("pidgin") end),
     awful.key({ modkey }, "s", function () awful.util.spawn_with_shell("xset dpms 0 0 5 ; slock ; xset dpms 0 0 0") end),
@@ -343,7 +343,6 @@ globalkeys = awful.util.table.join(
     awful.key({}, "XF86AudioMute", function () awful.util.spawn("amixer -q sset Master toggle") end),
     awful.key({}, "XF86AudioLowerVolume", function () awful.util.spawn("amixer -q sset Master 10%- unmute") end),
     awful.key({}, "XF86AudioRaiseVolume", function () awful.util.spawn("amixer -q sset Master 10%+ unmute") end)
-
 )
 
 clientkeys = awful.util.table.join(
@@ -372,7 +371,6 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "Right", function () awful.client.moveresize( 20,   0,   0,   0) end),
     awful.key({ modkey, "Control" }, "Prior", function () awful.client.moveresize(-20, -20,  40,  40) end),
     awful.key({ modkey, "Control" }, "Next",  function () awful.client.moveresize( 20,  20, -40, -40) end)
-
 )
 
 -- Compute the maximum number of digit we need, limited to 9
