@@ -111,12 +111,8 @@ mynetwidget = widget({ type = 'textbox', name = 'mynetwidget', align = 'right'})
 function get_netspeed()
     local netspeed = {}
     local deviceinfo = vicious.widgets.net()
-    for device in io.popen("ls /sys/class/net/"):lines() do
-        if device and device ~= "lo" then
-            netspeed['{down_kb}'] = (netspeed['{down_kb}'] or 0) + deviceinfo['{' .. device .. " " .. "down_kb" .. '}']
-            netspeed['{up_kb}'] = (netspeed['{up_kb}'] or 0) + deviceinfo['{' .. device .. " " .. "up_kb" .. '}']
-        end
-    end
+    netspeed['{down_kb}'] = deviceinfo['{eth0 down_kb}'] + deviceinfo['{wlan0 down_kb}']
+    netspeed['{up_kb}'] = deviceinfo['{eth0 up_kb}'] + deviceinfo['{wlan0 up_kb}']
     return netspeed
 end
 vicious.register(mynetwidget, get_netspeed, "${down_kb}↓ ${up_kb}↑", 2)
