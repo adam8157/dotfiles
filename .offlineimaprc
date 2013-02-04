@@ -3,6 +3,7 @@
 [general]
 ui = Quiet
 accounts = Gmail
+socktimeout = 60
 maxsyncaccounts = 1
 
 [Account Gmail]
