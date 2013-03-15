@@ -15,7 +15,7 @@ export QT_IM_MODULE="fcitx"
 fcitx &
 
 # xmodmap
-xmodmap ~/.xmodmaprc
+(sleep2 && xmodmap ~/.xmodmaprc)&
 
 # xresources
 xrdb ~/.Xresources
