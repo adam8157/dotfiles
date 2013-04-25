@@ -2,21 +2,21 @@
 
 [general]
 ui = Quiet
-accounts = Gmail
+accounts = gmail
 socktimeout = 60
 maxsyncaccounts = 1
 
-[Account Gmail]
+[Account gmail]
 quick = 5
 autorefresh = 1
-localrepository = Gmail-Local
-remoterepository = Gmail-Remote
+localrepository = gmail-local
+remoterepository = gmail-remote
 
-[Repository Gmail-Local]
+[Repository gmail-local]
 type = Maildir
 localfolders = ~/documents/mails/gmail
 
-[Repository Gmail-Remote]
+[Repository gmail-remote]
 type = Gmail
 remoteuser = adam8157@gmail.com
 remotepassfile = ~/.mutt/passwd
