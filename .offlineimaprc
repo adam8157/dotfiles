@@ -7,8 +7,8 @@ socktimeout = 60
 maxsyncaccounts = 1
 
 [Account Gmail]
-quick = 10
-autorefresh = 0.5
+quick = 5
+autorefresh = 1
 localrepository = Gmail-Local
 remoterepository = Gmail-Remote
 
