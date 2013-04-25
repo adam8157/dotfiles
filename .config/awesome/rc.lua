@@ -122,18 +122,30 @@ vicious.register(mynetwidget, get_netspeed, "${down_kb}↓ ${up_kb}↑", 2)
 mycpuwidget = widget({ type = "textbox" })
 vicious.register(mycpuwidget, vicious.widgets.cpu, "$1%")
 
-mytempwidget = widget({ type = "textbox", name = "thermalwidget", align = 'right' })
-vicious.register(mytempwidget, vicious.widgets.thermal, "$1°C", 10, "thermal_zone0")
+mytempwidget = widget({ type = "textbox", align = 'right' })
+vicious.register(mytempwidget, vicious.widgets.thermal, "$1°C", 8, "thermal_zone0")
 -- }}}
 
 -- {{{ Battery
-mybatwidget = widget({ type = 'textbox', name = 'mybatwidget'})
-vicious.register(mybatwidget, vicious.widgets.bat, "$1 $2", 10, "BAT0")
+mybatwidget = widget({ type = 'textbox' })
+vicious.register(mybatwidget, vicious.widgets.bat, "$1 $2", 8, "BAT0")
 -- }}}
 
 -- {{{ Volume
-myvolwidget = widget({ type = 'textbox', name = 'myvolwidget'})
+myvolwidget = widget({ type = 'textbox' })
 vicious.register(myvolwidget, vicious.widgets.volume, "$2 $1", 2, "Master")
+-- }}}
+
+-- {{{ MPD
+mympdwidget = widget({ type = "textbox" })
+vicious.register(mympdwidget, vicious.widgets.mpd,
+    function (widget, args)
+        if args["{state}"] == "Play" then
+            return "♬ " .. args["{Title}"]
+        else
+            return ""
+        end
+    end, 4)
 -- }}}
 
 -- }}}
@@ -231,6 +243,7 @@ for s = 1, screen.count() do
 
         -- Private widgets
         myspace, myspace,
+        mympdwidget, myspace,
         myvolwidget, myspace,
         mybatwidget, myspace,
         mytempwidget, myspace,
