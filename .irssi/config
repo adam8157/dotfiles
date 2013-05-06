@@ -37,7 +37,7 @@ settings = {
     recode_transliterate = "yes";
   };
   "fe-common/core" = {
-    beep_msg_level = "MSGS NOTICES DCC DCCMSGS HILIGHT";
+    beep_msg_level = "MSGS NOTICES INVITES DCC DCCMSGS HILIGHT";
     beep_when_away = "no";
     autolog = "yes";
     autolog_path = "~/.irssi/irclogs/$tag/$0.log";
