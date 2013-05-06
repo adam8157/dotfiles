@@ -6,7 +6,7 @@ servers = (
     password = "adam8157:PASSWORD";
     use_ssl = "yes";
     ssl_verify = "yes";
-    autoconnect = "yes";
+    autoconnect = "no";
   }
 );
 
