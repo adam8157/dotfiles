@@ -12,18 +12,13 @@
 [alias]
 	a  = add
 	ai = add -i
-	b  = branch
 	c  = commit
 	cm = commit --amend
-	co = checkout
 	dc = difftool --cached
-	d  = difftool
-	fp = format-patch
+	dt = difftool
 	lg = log --graph
-	l  = log
 	lp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
-	m  = mergetool
-	rb = rebase
+	mt = mergetool
 	t  = tag
 	ut = rm -r --cached
 [diff]
