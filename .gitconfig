@@ -26,6 +26,7 @@
 [merge]
 	tool = vimdiff
 [sendemail]
+	confirm = always
 	suppresscc = self
 	chainreplyto = false
 	bcc = adam8157@gmail.com
