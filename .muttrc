@@ -110,7 +110,7 @@ set signature=~/.mutt/signature
 
 # Set sort order
 set sort=reverse-threads
-set sort_aux=last-date-received
+set sort_aux=last-date-sent
 
 # Mailing lists
 subscribe kernelnewbies@kernelnewbies.org kernel@vger.linux-kernel.cn
