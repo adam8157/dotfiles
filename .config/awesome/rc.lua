@@ -360,12 +360,6 @@ globalkeys = awful.util.table.join(
                 client.focus:raise()
             end
         end),
-    awful.key({ "Mod1" }, "Print",
-        function ()
-            awful.util.spawn("scrot -u -e 'mv $f ~/pictures/shot/'")
-            os.execute("sleep 0.5")
-            naughty.notify({ title="Screenshot", text="The focused window captured" })
-        end),
 
     awful.key({ modkey, "Control" }, "m", function () awful.util.spawn("monitor-toggle") end),
 
