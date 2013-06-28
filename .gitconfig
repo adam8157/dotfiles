@@ -17,7 +17,7 @@
 	dc = difftool --cached
 	dt = difftool
 	lg = log --graph
-	lp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+	lp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%cr %C(bold blue)<%an>%Creset'
 	mt = mergetool
 	t  = tag
 	ut = rm -r --cached
