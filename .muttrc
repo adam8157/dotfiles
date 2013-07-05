@@ -113,6 +113,7 @@ set sort=reverse-threads
 set sort_aux=last-date-sent
 
 # Mailing lists
+lists .*@vger.kernel.org
 subscribe kernelnewbies@kernelnewbies.org kernel@vger.linux-kernel.cn
 
 # ---------------------GnuPG stuff-----------------------------------
@@ -173,7 +174,7 @@ bind editor <space> noop
 bind index \cx sync-mailbox
 bind index j next-entry
 bind index k previous-entry
-bind index,pager L group-reply
+bind index,pager L list-reply
 bind index,pager p search-opposite
 bind index,pager r group-reply
 bind index,pager R reply
