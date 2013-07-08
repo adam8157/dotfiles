@@ -174,7 +174,6 @@ bind editor <space> noop
 bind index \cx sync-mailbox
 bind index j next-entry
 bind index k previous-entry
-bind index,pager L list-reply
 bind index,pager p search-opposite
 bind index,pager r group-reply
 bind index,pager R reply
