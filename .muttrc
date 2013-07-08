@@ -94,9 +94,9 @@ my_hdr Bcc: adam8157@gmail.com
 # Set From header
 set use_from=yes
 set reverse_name=yes
-set realname='Adam Lee'
+set realname="Adam Lee"
 set reverse_realname=no
-set from='Adam Lee <adam8157@gmail.com>'
+set from="Adam Lee <adam8157@gmail.com>"
 
 # Set alternates addresses
 alternates '^adam8157@gmail.com$'
