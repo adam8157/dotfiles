@@ -112,6 +112,10 @@ set signature=~/.mutt/signature
 set sort=reverse-threads
 set sort_aux=last-date-sent
 
+# Mail-Followup-To
+set followup_to=no
+set honor_followup_to=no
+
 # Mailing lists
 lists .*@vger.kernel.org
 subscribe kernelnewbies@kernelnewbies.org kernel@vger.linux-kernel.cn
