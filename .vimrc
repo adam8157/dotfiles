@@ -193,11 +193,11 @@ nnoremap <C-\>e :scs find e <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
 nnoremap <C-\>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 
-" Set Up and Down non-linewise
+" Display lines upward and downward
 noremap <Up> gk
 noremap <Down> gj
 
-" Toggle Tagbar
+" Tagbar toggle
 nnoremap <silent> <F2> :TagbarToggle<CR>
 
 " Searching tool
@@ -214,10 +214,10 @@ nnoremap <F6> :w<CR>:make! %< CC=gcc CFLAGS="-g -Wall"<CR>:!./%<<CR>
 nnoremap <silent> <F7> :botright copen<CR>
 nnoremap <silent> <F8> :cclose<CR>
 
-" NERDTreeToggle
+" NERDTree toggle
 nnoremap <silent> <F9> :NERDTreeToggle<CR>
 
-" Toggle display line number
+" Line numbers toggle
 nnoremap <silent> <F10> :set number!<CR>
 
 " Use <space> to toggle fold
