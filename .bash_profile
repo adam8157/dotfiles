@@ -4,12 +4,16 @@ then
 	. ~/.bashrc
 fi
 
-# daemon and X
+# daemon
 if [ "$(tty)" = "/dev/tty1" ]
 then
 	start-daemon mpd
 
 	start-daemon mra-guard
+fi
 
-	[ -z "$DISPLAY" ] && startx
+# startx
+if [ "$(tty)" = "/dev/tty1" ] && [ -z "$DISPLAY" ]
+then
+	exec startx
 fi
