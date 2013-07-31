@@ -102,6 +102,7 @@ alias pt='find . -name \*.py -exec ptags {} \+'
 alias pw='pwgen -Bcns 16 1'
 alias reboot='sudo -k reboot'
 alias sr='screen -R'
+alias x='exec startx'
 
 # screen and xterm's dynamic title
 [ -z "$SSH_TTY" ] && case $TERM in
