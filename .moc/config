@@ -19,7 +19,7 @@ AutoNext		= yes
 SoundDriver		= ALSA
 
 # ALSA mixer device.
-AlsaMixer 		= Master
+AlsaMixer1 		= Master
 
 # Second ALSA mixer device.
 AlsaMixer2		= PCM
