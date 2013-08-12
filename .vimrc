@@ -201,7 +201,7 @@ noremap <Down> gj
 nnoremap <silent> <F2> :TagbarToggle<CR>
 
 " Searching tool
-nnoremap <F3> :Ack <C-R>=expand("<cword>")<CR>
+nnoremap <F3> :Rgrep<CR>
 
 " Paste toggle
 set pastetoggle=<F4>
@@ -246,7 +246,6 @@ Bundle 'gmarik/vundle'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Lokaltog/vim-easymotion'
 
-Bundle 'ack.vim'
 Bundle 'Align'
 Bundle 'autoload_cscope.vim'
 Bundle 'bufexplorer.zip'
@@ -254,6 +253,7 @@ Bundle 'ctrlp.vim'
 Bundle 'DrawIt'
 Bundle 'echofunc.vim'
 Bundle 'fcitx.vim'
+Bundle 'grep.vim'
 Bundle 'Indent-Guides'
 Bundle 'Markdown'
 Bundle 'matchit.zip'
