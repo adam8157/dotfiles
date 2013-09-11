@@ -11,10 +11,7 @@ servers = (
 );
 
 chatnets = {
-  freenode = {
-    type = "IRC";
-    nick = "adam8157";
-  };
+  freenode = { type = "IRC"; };
 };
 
 channels = (
