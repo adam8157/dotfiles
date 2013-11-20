@@ -21,6 +21,7 @@
 	mt = mergetool
 	t  = tag
 	ut = rm -r --cached
+	wc = whatchanged -1
 [diff]
 	tool = vimdiff
 [merge]
