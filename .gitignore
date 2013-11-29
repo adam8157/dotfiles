@@ -1,0 +1,11 @@
+# ssh
+.ssh
+
+# mutt
+.mutt/alias
+.mutt/passwd
+.mutt/cache/header
+
+# pgp
+.gnupg/*
+!.gnupg/gpg.conf
