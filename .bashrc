@@ -104,19 +104,22 @@ alias reboot='sudo -k reboot'
 alias sr='screen -R'
 alias x='exec startx'
 
+# prompt string
+PS1='\u@\h:\w\[\e[33m\]$(__git_ps1 "{%s}")\[\e[0m\]\$ '
+
 # screen and xterm's dynamic title
 [ -z "$SSH_TTY" ] && case $TERM in
 	xterm*)
 		# Set xterm's title
 		TITLEBAR='\[\e]0;\u@\h:\w\a\]'
-		PS1="${TITLEBAR}${PS1}"
+		export PS1="${TITLEBAR}${PS1}"
 		;;
 	screen*)
 		# Use path as title
 		PATHTITLE='\[\ek\W\e\\\]'
 		# Use program name as title
 		PROGRAMTITLE='\[\ek\e\\\]'
-		PS1="${PROGRAMTITLE}${PATHTITLE}${PS1}"
+		export PS1="${PROGRAMTITLE}${PATHTITLE}${PS1}"
 		;;
 	*)
 		;;
