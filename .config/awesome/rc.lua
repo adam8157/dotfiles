@@ -341,8 +341,8 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "t", function () awful.util.spawn("mpc toggle") end),
     awful.key({ modkey }, "v", function () awful.util.spawn("virtualbox") end),
     awful.key({ modkey }, "x", function () awful.util.spawn("xterm") end),
-    awful.key({ modkey }, "Up", function () awful.util.spawn("amixer -q sset Master 10%+ unmute") end),
-    awful.key({ modkey }, "Down", function () awful.util.spawn("amixer -q sset Master 10%- unmute") end),
+    awful.key({ modkey }, "Up", function () awful.util.spawn("amixer -M -q sset Master 10%+ unmute") end),
+    awful.key({ modkey }, "Down", function () awful.util.spawn("amixer -M -q sset Master 10%- unmute") end),
     awful.key({ modkey }, "Print",
         function ()
             awful.util.spawn("scrot -e 'mv $f ~/pictures/shot/'")
