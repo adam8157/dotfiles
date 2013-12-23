@@ -153,19 +153,6 @@ set cscopetagorder=1
 set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Plugins
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Set Tagbar width
-let tagbar_width = 32
-
-" Use my own cscope mappings
-let autocscope_menus = 0
-
-" Use context to decide completion type
-let SuperTabDefaultCompletionType = "context"
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -232,11 +219,20 @@ if $DISPLAY != '' && executable('xsel')
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Vundle
+" Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+" Set Tagbar width
+let tagbar_width = 32
 
+" Use my own cscope mappings
+let autocscope_menus = 0
+
+" Use context to decide completion type
+let SuperTabDefaultCompletionType = "context"
+
+" Vundle plugin manager
+" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 filetype off
 
 set runtimepath+=~/.vim/bundle/vundle/
@@ -250,7 +246,6 @@ Bundle 'Align'
 Bundle 'autoload_cscope.vim'
 Bundle 'bufexplorer.zip'
 Bundle 'ctrlp.vim'
-Bundle 'DrawIt'
 Bundle 'echofunc.vim'
 Bundle 'fcitx.vim'
 Bundle 'grep.vim'
