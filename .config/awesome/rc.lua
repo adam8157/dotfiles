@@ -14,18 +14,6 @@ local menubar = require("menubar")
 -- Private library
 local vicious = require("vicious")
 
--- {{{ Variable definitions
--- Themes define colours, icons, and wallpapers
-beautiful.init(awful.util.getdir("config") .. "/theme.lua")
-
--- Private naughty config
-naughty.config.defaults.timeout         = 3
-naughty.config.defaults.font            = "sans 14"
-naughty.config.defaults.position        = "bottom_right"
-naughty.config.defaults.fg              = beautiful.fg_focus
-naughty.config.defaults.bg              = beautiful.bg_focus
-naughty.config.defaults.border_color    = beautiful.border_focus
-
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
 -- another config (This code will only ever execute for the fallback config)
@@ -51,9 +39,21 @@ do
 end
 -- }}}
 
+-- {{{ Variable definitions
+-- Themes define colours, icons, and wallpapers
+beautiful.init(awful.util.getdir("config") .. "/theme.lua")
+
+-- Private naughty config
+naughty.config.defaults.timeout         = 3
+naughty.config.defaults.font            = "sans 14"
+naughty.config.defaults.position        = "bottom_right"
+naughty.config.defaults.fg              = beautiful.fg_focus
+naughty.config.defaults.bg              = beautiful.bg_focus
+naughty.config.defaults.border_color    = beautiful.border_focus
+
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
-editor = "vim"
+terminal = "x-terminal-emulator"
+editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
@@ -377,7 +377,6 @@ clientkeys = awful.util.table.join(
     awful.key({ modkey, "Control" }, "space",  awful.client.floating.toggle                     ),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end),
     awful.key({ modkey,           }, "o",      awful.client.movetoscreen                        ),
-    awful.key({ modkey, "Shift"   }, "r",      function (c) c:redraw()                       end),
     awful.key({ modkey,           }, "n",
         function (c)
             -- The client currently has the input focus, so it cannot be
@@ -423,16 +422,20 @@ for i = 1, 9 do
                   end),
         awful.key({ modkey, "Shift" }, "#" .. i + 9,
                   function ()
-                      local tag = awful.tag.gettags(client.focus.screen)[i]
-                      if client.focus and tag then
-                          awful.client.movetotag(tag)
+                      if client.focus then
+                          local tag = awful.tag.gettags(client.focus.screen)[i]
+                          if tag then
+                              awful.client.movetotag(tag)
+                          end
                      end
                   end),
         awful.key({ modkey, "Control", "Shift" }, "#" .. i + 9,
                   function ()
-                      local tag = awful.tag.gettags(client.focus.screen)[i]
-                      if client.focus and tag then
-                          awful.client.toggletag(tag)
+                      if client.focus then
+                          local tag = awful.tag.gettags(client.focus.screen)[i]
+                          if tag then
+                              awful.client.toggletag(tag)
+                          end
                       end
                   end))
 end
