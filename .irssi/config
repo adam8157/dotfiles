@@ -16,14 +16,13 @@ chatnets = {
 
 channels = (
   { name = "#debian"; chatnet = "freenode"; autojoin = "yes"; },
-  { name = "#ubuntu-cn"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 settings = {
   core = {
     nick = "adam8157";
-    real_name = "Adam Lee";
     user_name = "adam";
+    real_name = "Adam Lee";
     log_create_mode = "600";
     log_timestamp = "%Y-%m-%d %H:%M ";
     quit_message = "Take the red pill...";
@@ -71,16 +70,6 @@ windows = {
         type = "CHANNEL";
         chat_type = "IRC";
         name = "#debian";
-        tag = "freenode";
-      }
-    );
-  };
-  3 = {
-    items = (
-      {
-        type = "CHANNEL";
-        chat_type = "IRC";
-        name = "#ubuntu-cn";
         tag = "freenode";
       }
     );
