@@ -75,7 +75,7 @@ complete -F _comp_installed_packages $default ap
 
 # alias
 alias ..='cd ..'
-alias ac='sudo apt-get autoremove --purge && sudo apt-get clean && dpkg -l |grep ^rc |awk "{print \$2}" |sudo xargs dpkg -P'
+alias ac='sudo apt-get autoremove --purge && sudo apt-get clean && dpkg -l |grep ^rc |awk "{print \$2}" |sudo xargs -r dpkg -P'
 alias ad='sudo apt-get update && sudo apt-get dist-upgrade'
 alias ai='sudo apt-get install'
 alias ap='sudo apt-get purge'
