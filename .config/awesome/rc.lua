@@ -337,7 +337,7 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "i", function () mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible end),
     awful.key({ modkey }, "m", function () awful.util.spawn("amixer -q sset Master toggle") end),
     awful.key({ modkey }, "p", function () awful.util.spawn("pidgin") end),
-    awful.key({ modkey }, "s", function () awful.util.spawn_with_shell("xset dpms 0 0 5 ; slock ; xset dpms 0 0 0") end),
+    awful.key({ modkey }, "s", function () awful.util.spawn_with_shell("xset dpms 0 0 3; slock; xset dpms 0 0 0") end),
     awful.key({ modkey }, "t", function () awful.util.spawn("mpc toggle") end),
     awful.key({ modkey }, "v", function () awful.util.spawn("virtualbox") end),
     awful.key({ modkey }, "x", function () awful.util.spawn("xterm") end),
