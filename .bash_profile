@@ -7,9 +7,8 @@ fi
 # daemon
 if [ "$(tty)" = "/dev/tty1" ]
 then
-	start-daemon mpd
-
-	start-daemon mra-guard
+	mpd &
+	mra-guard &
 fi
 
 # startx
