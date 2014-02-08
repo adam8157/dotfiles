@@ -23,9 +23,6 @@ xmodmap ~/.xmodmaprc
 # xresources
 xrdb ~/.Xresources
 
-# xcursor
-xsetroot -cursor_name left_ptr
-
 # dropbox
 dropboxd &
 
