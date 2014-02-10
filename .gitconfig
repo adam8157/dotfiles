@@ -12,15 +12,25 @@
 [alias]
 	a  = add
 	ai = add -i
+	b  = branch
 	c  = commit
-	cm = commit --amend
+	ca = commit -a
+	co = checkout
+	d  = difftool
 	dc = difftool --cached
-	dt = difftool
+	l  = log
 	lg = log --graph
 	lp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%cr %C(bold blue)<%an>%Creset'
-	mt = mergetool
+	m  = mergetool
+	p  = push
+	r  = rebase
+	rd = !git ls-files -d |xargs git checkout --
+	ri = rebase -i
+	s  = status
 	t  = tag
+	u  = pull --rebase
 	ut = rm -r --cached
+	w  = show
 	wc = whatchanged -1
 [diff]
 	tool = vimdiff
