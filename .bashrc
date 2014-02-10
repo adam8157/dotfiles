@@ -94,6 +94,7 @@ alias poweroff='sudo -k poweroff'
 alias reboot='sudo -k reboot'
 
 alias grep='grep --color=auto'
+alias sort='LANG=C sort'
 
 alias gct='ctags -R --fields=+lS && cscope -Rbq'
 alias gpw='pwgen -Bcns 16 1'
