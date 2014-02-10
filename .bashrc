@@ -70,38 +70,35 @@ _comp_installed_packages()
 	return 0
 }
 
-complete -F _comp_all_packages $default ai aw
-complete -F _comp_installed_packages $default ap
+complete -F _comp_all_packages $default agi acw acp
+complete -F _comp_installed_packages $default agp
 
 # alias
 alias ..='cd ..'
-alias ac='sudo apt-get autoremove --purge && sudo apt-get clean && dpkg -l |grep ^rc |awk "{print \$2}" |sudo xargs -r dpkg -P'
-alias ad='sudo apt-get update && sudo apt-get dist-upgrade'
-alias ai='sudo apt-get install'
-alias ap='sudo apt-get purge'
-alias as='apt-cache search --names-only'
-alias au='sudo apt-get upgrade'
-alias aw='apt-cache show'
-alias ct='ctags -R --fields=+lS && cscope -Rbq'
-alias ga='git add -A'
-alias gc='git commit -a'
-alias gd='git difftool'
-alias gl='git log'
-alias gp='git push'
-alias grep='grep --color=auto'
-alias gr='git ls-files -d |xargs git checkout --'
-alias gs='git status'
-alias gu='git pull --rebase'
-alias gw='git show'
+alias ...='cd ../..'
+
+alias acp='apt-cache policy'
+alias acs='apt-cache search --names-only'
+alias acw='apt-cache show'
+alias agc='sudo apt-get autoremove --purge && sudo apt-get clean && dpkg -l |grep ^rc |awk "{print \$2}" |sudo xargs -r dpkg -P'
+alias agd='sudo apt-get update && sudo apt-get dist-upgrade'
+alias agi='sudo apt-get install'
+alias agp='sudo apt-get purge'
+alias agu='sudo apt-get upgrade'
+
 alias la='ls -lAh --color=auto'
 alias ll='ls -l --color=auto'
 alias ls='ls --color=auto'
-alias ntp='sudo ntpdate pool.ntp.org && sudo hwclock --systohc'
+
 alias poweroff='sudo -k poweroff'
-alias pt='find . -name \*.py -exec ptags {} \+'
-alias pw='pwgen -Bcns 16 1'
 alias reboot='sudo -k reboot'
-alias sr='screen -R'
+
+alias grep='grep --color=auto'
+
+alias gct='ctags -R --fields=+lS && cscope -Rbq'
+alias gpw='pwgen -Bcns 16 1'
+alias ntp='sudo ntpdate pool.ntp.org && sudo hwclock --systohc'
+alias sr='screen -D -R'
 alias x='exec startx'
 
 # prompt string
