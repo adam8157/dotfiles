@@ -75,7 +75,7 @@ theme.titlebar_maximized_button_normal_active   = theme_icons_dir .. "titlebar/m
 theme.titlebar_maximized_button_focus_inactive  = theme_icons_dir .. "titlebar/maximized_focus_inactive.png"
 theme.titlebar_maximized_button_normal_inactive = theme_icons_dir .. "titlebar/maximized_normal_inactive.png"
 
-theme.wallpaper = os.getenv("HOME") .. "/.Wallpaper"
+theme.wallpaper = os.getenv("HOME") .. "/.wallpaper"
 
 -- You can use your own layout icons like this:
 theme.layout_tile       = theme_icons_dir .. "layouts/tile.png"
