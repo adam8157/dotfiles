@@ -73,7 +73,18 @@ _comp_installed_packages()
 complete -F _comp_all_packages $default agi acw acp
 complete -F _comp_installed_packages $default agp
 
-# alias
+# functions
+calc() {
+	echo "scale=4;""$*" | bc
+}
+
+wallpaper() {
+	[ -f "$1" ] && ln -sf "$1" ~/.wallpaper
+
+	hsetroot -fill ~/.wallpaper
+}
+
+# aliases
 alias ..='cd ..'
 alias ...='cd ../..'
 
