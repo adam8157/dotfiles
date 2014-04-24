@@ -7,6 +7,10 @@ export EDITOR=vim
 # xon/xoff
 [ -t 0 ] && stty -ixon
 
+# history
+export HISTSIZE=1024
+export HISTFILESIZE=10240
+
 # path
 pathmunge () {
 	case ":${PATH}:" in
