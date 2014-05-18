@@ -236,26 +236,27 @@ let SuperTabDefaultCompletionType = "context"
 filetype off
 
 set runtimepath+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 
-Bundle 'gmarik/vundle'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Lokaltog/vim-easymotion'
+Plugin 'gmarik/vundle'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'Lokaltog/vim-easymotion'
 
-Bundle 'Align'
-Bundle 'autoload_cscope.vim'
-Bundle 'bufexplorer.zip'
-Bundle 'ctrlp.vim'
-Bundle 'echofunc.vim'
-Bundle 'fcitx.vim'
-Bundle 'grep.vim'
-Bundle 'Indent-Guides'
-Bundle 'Markdown'
-Bundle 'matchit.zip'
-Bundle 'snipMate'
-Bundle 'SuperTab--Van-Dewoestine'
-Bundle 'Tagbar'
-Bundle 'The-NERD-Commenter'
-Bundle 'The-NERD-tree'
+Plugin 'Align'
+Plugin 'autoload_cscope.vim'
+Plugin 'bufexplorer.zip'
+Plugin 'ctrlp.vim'
+Plugin 'echofunc.vim'
+Plugin 'fcitx.vim'
+Plugin 'grep.vim'
+Plugin 'Indent-Guides'
+Plugin 'Markdown'
+Plugin 'matchit.zip'
+Plugin 'snipMate'
+Plugin 'SuperTab--Van-Dewoestine'
+Plugin 'Tagbar'
+Plugin 'The-NERD-Commenter'
+Plugin 'The-NERD-tree'
 
+call vundle#end()
 filetype plugin indent on
