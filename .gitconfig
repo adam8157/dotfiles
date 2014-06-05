@@ -8,7 +8,7 @@
 	interactive = auto
 	status      = auto
 [push]
-	default = upstream
+	default = simple
 [alias]
 	a  = add
 	ai = add -i
