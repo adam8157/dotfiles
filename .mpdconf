@@ -104,10 +104,19 @@ bind_to_address		"localhost"
 #
 # An example of an ALSA output:
 #
+#audio_output {
+#	type		"alsa"
+#	name		"My ALSA Device"
+#	mixer_type      "software"
+#}
+#
+# An example of a pulseaudio output (streaming to a remote pulseaudio server)
+#
 audio_output {
-	type		"alsa"
-	name		"My ALSA Device"
-	mixer_type      "software"
+	type		"pulse"
+	name		"My Pulse Output"
+#	server		"remote_server"		# optional
+#	sink		"remote_server_sink"	# optional
 }
 #
 ###############################################################################

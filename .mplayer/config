@@ -26,7 +26,7 @@ zoom=yes
 ##################
 
 # Specify default audio driver (see -ao help for a list).
-ao=alsa
+ao=pulse,alsa
 
 # Scales audio tempo without altering pitch.
 af=scaletempo
