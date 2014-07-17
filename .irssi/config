@@ -37,6 +37,7 @@ settings = {
     beep_when_away = "no";
     autolog = "yes";
     autolog_path = "~/.irssi/irclogs/$tag/$0.log";
+    hilight_nick_matches = "yes";
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "irc/dcc" = { dcc_download_path = "~/downloads"; };
