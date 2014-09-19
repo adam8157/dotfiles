@@ -7,5 +7,3 @@ ui text
 # Name and email setting
 realname "Adam Lee"
 email "adam8157@gmail.com"
-# Additional headers to add
-header "X-Debbugs-CC: adam8157@gmail.com"
