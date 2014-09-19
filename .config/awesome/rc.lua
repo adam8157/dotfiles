@@ -156,7 +156,7 @@ mympdwidget = wibox.widget.textbox()
 vicious.register(mympdwidget, vicious.widgets.mpd,
     function (widget, args)
         if args["{state}"] == "Play" then
-            return "♬ " .. args["{Title}"]
+            return "♬ " .. args["{Artist}"] .. " - " .. args["{Title}"]
         else
             return ""
         end
