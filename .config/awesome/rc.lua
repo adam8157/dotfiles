@@ -472,6 +472,8 @@ awful.rules.rules = {
       properties = { size_hints_honor = false } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
+    { rule = { class = "mpv" },
+      properties = { floating = true } },
     { rule = { class = "Plugin-container"},
       properties = { floating = true } },
     { rule = { instance = "Navigator", class = "Firefox" },
