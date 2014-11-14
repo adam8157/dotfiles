@@ -23,6 +23,12 @@ xmodmap ~/.xmodmaprc
 # xresources
 xrdb ~/.Xresources
 
+# mpd
+mpd &
+
+# mra-guard
+mra-guard &
+
 # dropbox
 dropboxd &
 
