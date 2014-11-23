@@ -134,23 +134,34 @@ autocmd FileType python set et sw=4 sts=4
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Ctags & Cscope
+" Source code tagging
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Auto finding
+" Autoload tags
 set tags=tags;
+
+" Use GNU GLOBAL
+set cscopeprg=gtags-cscope
 
 " Use both cscope and ctag
 set cscopetag
 
-" Show msg when cscope db added
+" Show msg when adding a database
 set cscopeverbose
-
-" Use tags for definition search first
-set cscopetagorder=1
 
 " Use quickfix window to show cscope results
 set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-
+
+" Find the database file and load it automatically
+function! LoadDatabase()
+	let db = findfile("GTAGS", ".;")
+	if (!empty(db))
+		set nocscopeverbose
+		exe "cs add " . db
+		set cscopeverbose
+	endif
+endfunction
+autocmd BufEnter *.[ch] call LoadDatabase()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -225,9 +236,6 @@ endif
 " Set Tagbar width
 let tagbar_width = 32
 
-" Use my own cscope mappings
-let autocscope_menus = 0
-
 " Use context to decide completion type
 let SuperTabDefaultCompletionType = "context"
 
@@ -243,7 +251,6 @@ Plugin 'Lokaltog/vim-powerline'
 Plugin 'Lokaltog/vim-easymotion'
 
 Plugin 'Align'
-Plugin 'autoload_cscope.vim'
 Plugin 'bufexplorer.zip'
 Plugin 'ctrlp.vim'
 Plugin 'echofunc.vim'
