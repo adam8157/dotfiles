@@ -111,7 +111,6 @@ alias reboot='sudo -k reboot'
 alias grep='grep --color=auto'
 alias sort='LANG=C sort'
 
-alias gct='ctags -R && gtags -i'
 alias gpw='pwgen -Bcns 16 1'
 alias ntp='sudo ntpdate pool.ntp.org && sudo hwclock --systohc'
 alias sr='screen -D -R'

@@ -137,19 +137,12 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 " Source code tagging
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Autoload tags
-set tags=tags;
-
-" Use GNU GLOBAL
+" Use GLOBAL instead of ctags and cscope
+set cscopetag
+set cscopetagorder=0
 set cscopeprg=gtags-cscope
 
-" Use both cscope and ctag
-set cscopetag
-
-" Show msg when adding a database
-set cscopeverbose
-
-" Use quickfix window to show cscope results
+" Use quickfix window to show GLOBAL results
 set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-
 
 " Find the database file and load it automatically
@@ -180,7 +173,7 @@ noremap <C-j> <C-W>j
 noremap <C-k> <C-W>k
 noremap <C-l> <C-W>l
 
-" Cscope mappings
+" GLOBAL key mappings
 nnoremap <C-w>\ :scs find c <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>s :scs find s <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>g :scs find g <C-R>=expand("<cword>")<CR><CR>
