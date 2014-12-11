@@ -240,7 +240,8 @@ set runtimepath+=~/.vim/bundle/vundle/
 call vundle#begin()
 
 Plugin 'gmarik/vundle'
-Plugin 'Lokaltog/vim-powerline'
+
+Plugin 'bling/vim-airline'
 Plugin 'Lokaltog/vim-easymotion'
 
 Plugin 'Align'
