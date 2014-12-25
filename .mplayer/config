@@ -75,8 +75,5 @@ subfont-text-scale=5
 # other settings #
 ##################
 
-# Drop frames to preserve audio/video sync.
-framedrop=yes
-
-# Turns off xscreensaver at startup and turns it on again on exit.
+# Turns off screensaver at startup and turns it on again on exit?
 stop-xscreensaver=no
