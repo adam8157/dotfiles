@@ -32,8 +32,8 @@ mra-guard &
 # dropbox
 dropboxd &
 
-# xcompmgr
-xcompmgr &
+# compositor
+compton &
 
 # touchpad
 synclient TapButton1=1
