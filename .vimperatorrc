@@ -21,7 +21,7 @@ set noscrollbars
 set showstatuslinks=2
 set toolbars=none,tabs
 set editor="xterm -e vim"
-set hintchars="hjklasdfgyuiopqwertnmzxcvb"
+set hintchars="hjklasdfgyuipwertnmzxcvb"
 
 set nextpattern=\\s*(下一页|下一张|下一篇|下页|后页)\\s*,\\bnext\\b,^>$,^(>>|»)$,^(>|»),(>|»)$,\\bmore\\b
 set previouspattern=\\s*(上一页|上一张|上一篇|上页|前页)\\s*,\\b(prev|previous)\\b,^<$,^(<<|«)$,^(<|«),(<|«)$
