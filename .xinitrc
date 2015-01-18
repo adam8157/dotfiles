@@ -1,12 +1,15 @@
 # umask
 umask 022
 
-# bell
+# x bell
 xset b off
 
 # screen saver
 xset s off
 xset dpms 0 0 0
+
+# xresources
+xrdb ~/.Xresources
 
 # external monitor
 monitor-toggle
@@ -20,11 +23,12 @@ fcitx &
 # xmodmap
 xmodmap ~/.xmodmaprc
 
-# xresources
-xrdb ~/.Xresources
+# touchpad
+synclient TapButton1=1
+syndaemon -i 1 -k -d
 
 # mpd
-mpd &
+mpd
 
 # mra-guard
 mra-guard &
@@ -34,10 +38,6 @@ dropboxd &
 
 # compositor
 compton &
-
-# touchpad
-synclient TapButton1=1
-syndaemon -i 1 -k -d &
 
 # window manager
 exec awesome
