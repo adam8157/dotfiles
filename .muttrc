@@ -9,7 +9,7 @@ hdr_order From Subject Date To CC BCC Reply-To X-PGP-Key-ID
 
 # Format strings
 set index_format="%4C %Z %{!%b %d %Y}  %-18.18L [%4c]%?X?*& ? %s"
-set status_format="mutt-filter '-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]----%>-(%P)---'|"
+set status_format="mutt-filter mutt '-%r-Mutt: %f [Msgs:%?M?%M/?%m%?n? New:%n?%?o? Old:%o?%?d? Del:%d?%?F? Flag:%F?%?t? Tag:%t?%?p? Post:%p?%?b? Inc:%b?%?l? %l?]----%>-(%P)---'|"
 
 # Display status on the first line
 set status_on_top=yes
