@@ -168,10 +168,10 @@ nnoremap tc :tabclose<CR>
 nnoremap gf <C-W>gf
 
 " Move among windows
-noremap <C-h> <C-W>h
-noremap <C-j> <C-W>j
-noremap <C-k> <C-W>k
-noremap <C-l> <C-W>l
+nnoremap <C-h> <C-W>h
+nnoremap <C-j> <C-W>j
+nnoremap <C-k> <C-W>k
+nnoremap <C-l> <C-W>l
 
 " GLOBAL key mappings
 nnoremap <C-w>\ :scs find c <C-R>=expand("<cword>")<CR><CR>
@@ -185,8 +185,8 @@ nnoremap <C-\>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
 nnoremap <C-\>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
 
 " Display lines upward and downward
-noremap <Up> gk
-noremap <Down> gj
+nnoremap <Up> gk
+nnoremap <Down> gj
 
 " Tagbar toggle
 nnoremap <silent> <F2> :TagbarToggle<CR>
