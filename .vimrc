@@ -197,9 +197,13 @@ nnoremap <F3> :Rgrep<CR>
 " Paste toggle
 set pastetoggle=<F4>
 
-" Save & Make 
+" Save & Make
 nnoremap <F5> :w<CR>:make!<CR>
-nnoremap <F6> :w<CR>:make! %< CC=gcc CFLAGS="-g -Wall"<CR>:!./%<<CR>
+
+" Save & Run
+au FileType go nn <F6> :w<CR>:!go run %<CR>
+au FileType python nn <F6> :w<CR>:!python %<CR>
+au FileType c nn <F6> :w<CR>:make! %< CC=gcc CFLAGS="-g -Wall"<CR>:!./%<<CR>
 
 " Quickfix window
 nnoremap <silent> <F7> :botright copen<CR>
