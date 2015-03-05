@@ -16,8 +16,10 @@
 	c  = commit
 	ca = commit -a
 	co = checkout
+	cp = cherry-pick -x
 	d  = difftool
 	dc = difftool --cached
+	fp = format-patch
 	l  = log
 	lg = log --graph
 	lp = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen%cr %C(bold blue)<%an>%Creset'
