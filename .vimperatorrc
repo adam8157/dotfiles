@@ -10,6 +10,9 @@ noremap <C-F11> :tabmove -1<CR>
 noremap <C-F12> :tabmove +1<CR>
 inoremap <C-F11> <Esc>:tabmove -1<CR>
 inoremap <C-F12> <Esc>:tabmove +1<CR>
+noremap <silent> <leader>a :set! extensions.autoproxy.proxyMode=auto<CR>:echo ':)'<CR>
+noremap <silent> <leader>g :set! extensions.autoproxy.proxyMode=global<CR>:echo ':D'<CR>
+noremap <silent> <leader>d :set! extensions.autoproxy.proxyMode=disabled<CR>:echo ':('<CR>
 
 ignorekeys add digg\.com\/reader
 ignorekeys add mail\.google\.com
