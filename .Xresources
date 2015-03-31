@@ -37,8 +37,13 @@ xterm*trimSelection: true
 xterm*eightBitInput: false
 xterm*metaSendsEscape: true
 
+! key bindings
+! change font size dynamically
 ! copy and paste with clipboard
 xterm*translations: #override \
+	Ctrl Alt <KeyPress> 0: set-vt-font(d) \n\
+	Ctrl Alt <KeyPress> +: larger-vt-font() \n\
+	Ctrl Alt <KeyPress> -: smaller-vt-font() \n\
 	Ctrl Shift <KeyPress> C: copy-selection(CLIPBOARD) \n\
 	Ctrl Shift <KeyPress> V: insert-selection(CLIPBOARD)
 
