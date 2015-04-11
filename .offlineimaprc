@@ -9,6 +9,7 @@ maxsyncaccounts = 1
 [Account gmail]
 quick = 5
 autorefresh = 1
+proxy = SOCKS5:127.0.0.1:9050
 localrepository = gmail-local
 remoterepository = gmail-remote
 
