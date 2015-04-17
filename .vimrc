@@ -174,7 +174,6 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 
 " GLOBAL key mappings
-nnoremap <C-w>\ :scs find c <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>s :scs find s <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>g :scs find g <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>d :scs find d <C-R>=expand("<cword>")<CR><CR>
