@@ -470,6 +470,7 @@ awful.rules.rules = {
     -- Private rules
     { rule = { },
       properties = { size_hints_honor = false } },
+
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     { rule = { class = "mpv" },
@@ -490,6 +491,10 @@ awful.rules.rules = {
       properties = { floating = true, tag = tags[1][8] } },
     { rule = { class = "VirtualBox" },
       properties = { tag = tags[1][9] } },
+
+    -- Hangouts
+    { rule = { instance = "crx_nckgahadagoaajjgafhacjanaoiihapd", class = "Google-chrome" },
+      properties = { floating = true, tag = tags[1][8] } },
 }
 -- }}}
 
