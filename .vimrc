@@ -137,6 +137,9 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 " Source code tagging
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Autoload tags
+set tags=tags;
+
 " Use GLOBAL instead of ctags and cscope
 set cscopetag
 set cscopetagorder=0
