@@ -29,11 +29,11 @@ set wildmode=longest:full,full
 " Set key codes timeout
 set ttimeoutlen=100
 
-" Auto change current directory
-"set autochdir
-
 " Use absolute paths in sessions
 set sessionoptions-=curdir
+
+" Set current working directory automatically
+autocmd BufEnter * silent! lcd %:p:h
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Backup
