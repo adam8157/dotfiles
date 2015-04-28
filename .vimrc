@@ -247,6 +247,9 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle'
 
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
 Plugin 'bling/vim-airline'
 Plugin 'Lokaltog/vim-easymotion'
 
@@ -259,7 +262,6 @@ Plugin 'grep.vim'
 Plugin 'Indent-Guides'
 Plugin 'Markdown'
 Plugin 'matchit.zip'
-Plugin 'snipMate'
 Plugin 'SuperTab--Van-Dewoestine'
 Plugin 'Tagbar'
 Plugin 'The-NERD-Commenter'
