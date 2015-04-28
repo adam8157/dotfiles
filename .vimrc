@@ -235,6 +235,14 @@ endif
 " Set Tagbar width
 let tagbar_width = 32
 
+" Vim-go plugin settings
+let go_fmt_fail_silently = 1
+let go_highlight_functions = 1
+let go_highlight_methods = 1
+let go_highlight_structs = 1
+let go_highlight_operators = 1
+let go_highlight_build_constraints = 1
+
 " Use context to decide completion type
 let SuperTabDefaultCompletionType = "context"
 
@@ -250,6 +258,7 @@ Plugin 'gmarik/vundle'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
+Plugin 'fatih/vim-go'
 Plugin 'bling/vim-airline'
 Plugin 'Lokaltog/vim-easymotion'
 
