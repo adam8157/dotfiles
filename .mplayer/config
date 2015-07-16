@@ -2,8 +2,6 @@
 # MPlayer configuration file
 #
 
-[default]
-
 ##################
 # video settings #
 ##################
@@ -11,15 +9,9 @@
 # Specify default video driver (see -vo help for a list).
 vo=vaapi,x11
 
-# Start in fullscreen mode by default.
-#fs=yes
-
 # Enable software scaling (powerful CPU needed) for video output
 # drivers that do not support hardware scaling.
 zoom=yes
-
-# Keep the player window on top of all other windows.
-#ontop=yes
 
 ##################
 # audio settings #
@@ -47,9 +39,6 @@ ass=on
 # Specify the subtitle codepage.
 subcp=enca:zh:UTF-8
 
-# Tells MPlayer to handle the subtitle file as unicode.
-unicode=yes
-
 # Enables the usage of fontconfig managed fonts.
 fontconfig=yes
 
@@ -58,18 +47,6 @@ font="Sans Serif"
 
 # Adjust matching fuzziness when searching for subtitles.
 sub-fuzziness=1
-
-# Set the scale coefficient to be used for fonts in the SSA/ASS renderer.
-ass-font-scale=1
-
-# Sets the autoscale mode.
-subfont-autoscale=3
-
-# Sets the autoscale coefficient of the OSD elements.
-subfont-osd-scale=2
-
-# Sets the subtitle text autoscale coefficient as percentage of the screen size.
-subfont-text-scale=5
 
 ##################
 # other settings #
