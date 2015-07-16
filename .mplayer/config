@@ -9,7 +9,7 @@
 ##################
 
 # Specify default video driver (see -vo help for a list).
-vo=xv,x11
+vo=vaapi,x11
 
 # Start in fullscreen mode by default.
 #fs=yes
