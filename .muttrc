@@ -200,9 +200,9 @@ folder-hook . 'bind index,pager \cd noop'
 folder-hook 'Spam|Trash' 'bind index,pager \cd delete-thread'
 folder-hook . 'bind index,pager \ed noop'
 folder-hook 'Spam|Trash' 'bind index,pager \ed delete-subthread'
-folder-hook . 'macro index,pager d "<save-message>=Trash<enter>" "Mark message as trash"'
 folder-hook . 'bind index,pager A delete-message'
 folder-hook 'Spam|Trash' 'bind index,pager A noop'
+folder-hook . 'macro index,pager d "<save-message>=Trash<enter>" "Mark message as trash"'
 folder-hook 'Spam|Trash' 'bind index,pager d delete-message'
 
 # ---------------------Color theme-----------------------------------
