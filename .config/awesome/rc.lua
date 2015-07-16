@@ -477,6 +477,8 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "Plugin-container"},
       properties = { floating = true } },
+    { rule = { class = "qemu*" },
+      properties = { floating = true } },
     { rule = { instance = "Navigator" },
       properties = { tag = tags[1][2] } },
     { rule = { instance = "DTA" },
