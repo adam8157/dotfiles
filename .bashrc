@@ -105,6 +105,10 @@ alias la='ls -lAh --color=auto'
 alias ll='ls -l --color=auto'
 alias ls='ls --color=auto'
 
+alias suspend='systemctl suspend'
+alias hibernate='systemctl hibernate'
+alias hybrid-sleep='systemctl hybrid-sleep'
+
 alias poweroff='sudo -k poweroff'
 alias reboot='sudo -k reboot'
 
