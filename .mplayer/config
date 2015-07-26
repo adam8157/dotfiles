@@ -7,7 +7,7 @@
 ##################
 
 # Specify default video driver (see -vo help for a list).
-vo=vaapi,x11
+vo=vaapi,xv,x11
 
 # Enable software scaling (powerful CPU needed) for video output
 # drivers that do not support hardware scaling.
