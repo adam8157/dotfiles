@@ -485,6 +485,8 @@ awful.rules.rules = {
       properties = { tag = tags[1][3] } },
     { rule = { class = "Google-chrome" },
       properties = { tag = tags[1][4] } },
+    { rule = { class = "Linphone" },
+      properties = { tag = tags[1][5] } },
     { rule = { class = "Gimp" },
       properties = { tag = tags[1][7] } },
     { rule = { class = "Skype" },
