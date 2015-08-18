@@ -338,7 +338,6 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "g", function () awful.util.spawn("goldendict") end),
     awful.key({ modkey }, "i", function () mywibox[mouse.screen].visible = not mywibox[mouse.screen].visible end),
     awful.key({ modkey }, "m", function () awful.util.spawn("amixer -q sset Master toggle") end),
-    awful.key({ modkey }, "p", function () awful.util.spawn("pidgin") end),
     awful.key({ modkey }, "s", function () awful.util.spawn_with_shell("xset dpms 0 0 3; slock; xset dpms 0 0 0") end),
     awful.key({ modkey }, "t", function () awful.util.spawn("mpc toggle") end),
     awful.key({ modkey }, "v", function () awful.util.spawn("virtualbox") end),
@@ -479,6 +478,7 @@ awful.rules.rules = {
       properties = { floating = true } },
     { rule = { class = "qemu*" },
       properties = { floating = true } },
+
     { rule = { instance = "Navigator" },
       properties = { tag = tags[1][2] } },
     { rule = { instance = "DTA" },
@@ -487,16 +487,10 @@ awful.rules.rules = {
       properties = { tag = tags[1][4] } },
     { rule = { class = "Gimp" },
       properties = { tag = tags[1][7] } },
-    { rule = { class = "Pidgin" },
-      properties = { floating = true, tag = tags[1][8] } },
     { rule = { class = "Skype" },
       properties = { floating = true, tag = tags[1][8] } },
     { rule = { class = "VirtualBox" },
       properties = { tag = tags[1][9] } },
-
-    -- Hangouts
-    { rule = { instance = "crx_nckgahadagoaajjgafhacjanaoiihapd", class = "Google-chrome" },
-      properties = { floating = true, tag = tags[1][8] } },
 }
 -- }}}
 
