@@ -140,20 +140,22 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 " Autoload tags
 set tags=tags;
 
-" Use GLOBAL instead of ctags and cscope
+" Use both cscope and ctags
 set cscopetag
-set cscopetagorder=0
-set cscopeprg=gtags-cscope
 
-" Use quickfix window to show GLOBAL results
+" Search cscope database(s) first
+set cscopetagorder=0
+
+" Use quickfix window to show search results
 set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-
 
 " Find the database file and load it automatically
 function! LoadDatabase()
-	let db = findfile("GTAGS", ".;")
+	let db = findfile("cscope.out", ".;")
 	if (!empty(db))
-		set nocscopeverbose
-		exe "cs add " . db
+		let path = strpart(db, 0, match(db, "/cscope.out$"))
+		set nocscopeverbose " suppress 'duplicate connection' error
+		exe "cs add " . db . " " . path
 		set cscopeverbose
 	endif
 endfunction
@@ -176,7 +178,7 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 
-" GLOBAL key mappings
+" Cscope key mappings
 nnoremap <C-\>s :scs find s <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>g :scs find g <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>d :scs find d <C-R>=expand("<cword>")<CR><CR>
