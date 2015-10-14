@@ -483,7 +483,7 @@ awful.rules.rules = {
       properties = { tag = tags[1][2] } },
     { rule = { instance = "DTA" },
       properties = { tag = tags[1][3] } },
-    { rule = { class = "Google-chrome" },
+    { rule = { class = "google-chrome" },
       properties = { tag = tags[1][4] } },
     { rule = { class = "Linphone" },
       properties = { tag = tags[1][5] } },
