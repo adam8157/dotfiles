@@ -125,7 +125,7 @@ alias x='exec startx'
 PS1='\u@\h:\w\[\e[33m\]$(__git_ps1 "{%s}")\[\e[0m\]\$ '
 
 # screen and xterm's dynamic title
-[ -z "$SSH_TTY" ] && case $TERM in
+[ -z "$SSH_TTY" ] && [ -z "$TMUX" ] && case $TERM in
 	xterm*)
 		# Set xterm's title
 		TITLEBAR='\[\e]0;\u@\h:\w\a\]'
