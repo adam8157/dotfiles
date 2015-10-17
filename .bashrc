@@ -119,6 +119,7 @@ alias gct='ctags -R --fields=+lS && cscope -Rbq'
 alias gpw='pwgen -Bcns 16 1'
 alias ntp='sudo ntpdate pool.ntp.org && sudo hwclock --systohc'
 alias sr='screen -D -R'
+alias tm='tmux new-session -A -s 0'
 alias x='exec startx'
 
 # prompt string
