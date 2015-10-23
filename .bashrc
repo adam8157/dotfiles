@@ -27,6 +27,8 @@ pathmunge () {
 	esac
 }
 
+pathmunge /usr/lib/ccache
+
 pathmunge $HOME/binary after
 pathmunge $HOME/scripts after
 
