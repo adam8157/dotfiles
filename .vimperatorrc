@@ -15,6 +15,7 @@ noremap <silent> <leader>g :set! extensions.autoproxy.proxyMode=global<CR>:echo 
 noremap <silent> <leader>d :set! extensions.autoproxy.proxyMode=disabled<CR>:echo ':('<CR>
 
 ignorekeys add digg\.com\/reader
+ignorekeys add docs\.google\.com
 ignorekeys add mail\.google\.com
 
 set newtab=all
