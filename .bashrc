@@ -32,9 +32,6 @@ pathmunge /usr/lib/ccache
 pathmunge $HOME/binary after
 pathmunge $HOME/scripts after
 
-export GOROOT=$HOME/binary/bundle/go
-pathmunge $GOROOT/bin after
-
 export GOPATH=$HOME/projects/golang
 pathmunge $GOPATH/bin after
 
