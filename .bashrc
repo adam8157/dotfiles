@@ -12,7 +12,7 @@ export HISTSIZE=1024
 export HISTFILESIZE=10240
 
 # path
-pathmunge () {
+pathmunge() {
 	case ":${PATH}:" in
 		*:"$1":*)
 			;;
