@@ -249,13 +249,13 @@ let go_highlight_build_constraints = 1
 let SuperTabDefaultCompletionType = "context"
 
 " Vundle plugin manager
-" git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 filetype off
 
-set runtimepath+=~/.vim/bundle/vundle/
+set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
-Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
