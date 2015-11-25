@@ -245,6 +245,12 @@ let go_highlight_build_constraints = 1
 " Use context to decide completion type
 let SuperTabDefaultCompletionType = "context"
 
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xnoremap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nnoremap ga <Plug>(EasyAlign)
+
 " Vundle plugin manager
 " git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 filetype off
@@ -257,12 +263,12 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
-Plugin 'fatih/vim-go'
 Plugin 'bling/vim-airline'
+Plugin 'fatih/vim-go'
+Plugin 'junegunn/vim-easy-align'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'plasticboy/vim-markdown'
 
-Plugin 'Align'
 Plugin 'bufexplorer.zip'
 Plugin 'ctrlp.vim'
 Plugin 'echofunc.vim'
