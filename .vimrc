@@ -122,7 +122,7 @@ set shiftwidth=8
 set formatoptions+=mM
 
 " Config C-indenting
-set cinoptions=:0,l1,t0,g0
+set cinoptions=:0,l1,t0,g0,(0
 
 " set textwidth for mail
 autocmd FileType mail set textwidth=72
