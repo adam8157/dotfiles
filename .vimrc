@@ -128,10 +128,7 @@ set cinoptions=:0,l1,t0,g0,(0
 autocmd FileType mail set textwidth=72
 
 " Use soft tabs for python
-autocmd FileType python set et sw=4 sts=4
-
-" Use extension to set filetype
-autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Source code tagging
