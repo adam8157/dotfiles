@@ -8,8 +8,8 @@ export EDITOR=vim
 [ -t 0 ] && stty -ixon
 
 # history
-export HISTSIZE=1024
-export HISTFILESIZE=10240
+export HISTSIZE=10240
+export HISTFILESIZE=102400
 
 # path
 pathmunge() {
