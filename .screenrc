@@ -14,7 +14,7 @@ shelltitle '$ |bash'
 caption always "%{= R}[ %{=b b}%-w%{=rb db}%>%n %t%{-}%+w%{-b}%< %=%{R}]"
 
 # Set scrollback
-defscrollback 10240
+defscrollback 102400
 
 # Startup message
 startup_message off
