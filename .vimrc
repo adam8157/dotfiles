@@ -242,6 +242,9 @@ let go_highlight_structs = 1
 let go_highlight_operators = 1
 let go_highlight_build_constraints = 1
 
+" Add extra spaces when (un)commenting
+let NERDSpaceDelims = 1
+
 " Use context to decide completion type
 let SuperTabDefaultCompletionType = "context"
 
