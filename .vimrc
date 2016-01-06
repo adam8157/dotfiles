@@ -254,34 +254,32 @@ xmap ga <Plug>(EasyAlign)
 " Start interactive EasyAlign for a motion/text object (e.g. gaip)
 nmap ga <Plug>(EasyAlign)
 
-" Vundle plugin manager
-" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-filetype off
+" Plugin manager
+if empty(glob('~/.vim/autoload/plug.vim'))
+	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+		\ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	autocmd VimEnter * PlugInstall | source $MYVIMRC
+endif
 
-set runtimepath+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/bundle')
 
-Plugin 'VundleVim/Vundle.vim'
+Plug 'bufexplorer.zip'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'fcitx.vim'
+Plug 'matchit.zip'
+Plug 'rking/ag.vim'
+Plug 'Tagbar'
+Plug 'The-NERD-Commenter'
+Plug 'The-NERD-tree'
 
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plug 'bling/vim-airline'
+Plug 'ervandew/supertab'
+Plug 'junegunn/vim-easy-align'
+Plug 'Lokaltog/vim-easymotion'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
-Plugin 'bling/vim-airline'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'ervandew/supertab'
-Plugin 'fatih/vim-go'
-Plugin 'junegunn/vim-easy-align'
-Plugin 'Lokaltog/vim-easymotion'
-Plugin 'plasticboy/vim-markdown'
-Plugin 'rking/ag.vim'
+Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'Indent-Guides', { 'for': 'python' }
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
-Plugin 'bufexplorer.zip'
-Plugin 'fcitx.vim'
-Plugin 'Indent-Guides'
-Plugin 'matchit.zip'
-Plugin 'Tagbar'
-Plugin 'The-NERD-Commenter'
-Plugin 'The-NERD-tree'
-
-call vundle#end()
-filetype plugin indent on
+call plug#end()
