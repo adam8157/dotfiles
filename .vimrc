@@ -193,7 +193,7 @@ nnoremap <Down> gj
 nnoremap <silent> <F2> :TagbarToggle<CR>
 
 " Searching tool
-nnoremap <F3> :Rgrep<CR>
+nnoremap <F3> :Ag <C-R>=expand("<cword>")<CR> ./
 
 " Paste toggle
 set pastetoggle=<F4>
@@ -271,12 +271,12 @@ Plugin 'fatih/vim-go'
 Plugin 'junegunn/vim-easy-align'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'rking/ag.vim'
 
 Plugin 'bufexplorer.zip'
 Plugin 'ctrlp.vim'
 Plugin 'echofunc.vim'
 Plugin 'fcitx.vim'
-Plugin 'grep.vim'
 Plugin 'Indent-Guides'
 Plugin 'matchit.zip'
 Plugin 'SuperTab--Van-Dewoestine'
