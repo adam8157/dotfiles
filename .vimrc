@@ -275,7 +275,6 @@ Plugin 'rking/ag.vim'
 
 Plugin 'bufexplorer.zip'
 Plugin 'ctrlp.vim'
-Plugin 'echofunc.vim'
 Plugin 'fcitx.vim'
 Plugin 'Indent-Guides'
 Plugin 'matchit.zip'
