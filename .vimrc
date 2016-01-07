@@ -175,6 +175,10 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 
+" MRU & Buffer finder
+nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>m :CtrlPMRUFiles<CR>
+
 " Cscope key mappings
 nnoremap <C-\>s :scs find s <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>g :scs find g <C-R>=expand("<cword>")<CR><CR>
@@ -263,7 +267,6 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'bufexplorer.zip'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fcitx.vim'
 Plug 'matchit.zip'
