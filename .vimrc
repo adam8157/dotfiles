@@ -267,18 +267,18 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fcitx.vim'
 Plug 'matchit.zip'
-Plug 'rking/ag.vim'
-Plug 'Tagbar'
-Plug 'The-NERD-Commenter'
-Plug 'The-NERD-tree'
 
 Plug 'bling/vim-airline'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'junegunn/vim-easy-align'
 Plug 'Lokaltog/vim-easymotion'
+Plug 'majutsushi/tagbar'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 Plug 'fatih/vim-go', { 'for': 'go' }
