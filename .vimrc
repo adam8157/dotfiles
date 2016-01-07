@@ -193,7 +193,7 @@ nnoremap <Down> gj
 nnoremap <silent> <F2> :TagbarToggle<CR>
 
 " Searching tool
-nnoremap <F3> :Ag <C-R>=expand("<cword>")<CR> ./
+nnoremap <F3> :Ag! <C-R>=expand("<cword>")<CR> ./
 
 " Paste toggle
 set pastetoggle=<F4>
