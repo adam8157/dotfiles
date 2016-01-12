@@ -90,6 +90,10 @@ calc() {
 	echo "scale=4;""$*" | bc
 }
 
+title() {
+	printf "\ek${1}\e\\" > /dev/tty
+}
+
 wallpaper() {
 	[ -f "$1" ] && ln -sf "$1" ~/.wallpaper
 
