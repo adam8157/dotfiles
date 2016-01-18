@@ -270,7 +270,6 @@ call plug#begin('~/.vim/bundle')
 Plug 'fcitx.vim'
 Plug 'matchit.zip'
 
-Plug 'bling/vim-airline'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'junegunn/vim-easy-align'
@@ -280,6 +279,7 @@ Plug 'rking/ag.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'vim-airline/vim-airline'
 
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'Indent-Guides', { 'for': 'python' }
