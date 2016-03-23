@@ -156,7 +156,7 @@ function! LoadDatabase()
 		set cscopeverbose
 	endif
 endfunction
-autocmd BufEnter *.[ch] call LoadDatabase()
+autocmd BufEnter *.c,*.cc,*.cpp,*.h call LoadDatabase()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
