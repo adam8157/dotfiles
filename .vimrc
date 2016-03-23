@@ -33,7 +33,7 @@ set ttimeoutlen=100
 set sessionoptions-=curdir
 
 " Set current working directory automatically
-autocmd BufEnter * silent! lcd %:p:h
+" autocmd BufEnter * silent! lcd %:p:h
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Backup
