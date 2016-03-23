@@ -175,9 +175,11 @@ nnoremap <C-j> <C-W>j
 nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 
-" MRU & Buffer finder
-nnoremap <Leader>b :CtrlPBuffer<CR>
-nnoremap <Leader>m :CtrlPMRUFiles<CR>
+" Fuzzy finder
+nnoremap <Leader>f :FzfFiles<CR>
+nnoremap <Leader>b :FzfBuffers<CR>
+nnoremap <Leader>m :FzfHistory<CR>
+nnoremap <Leader>g :FzfGitFiles<CR>
 
 " Cscope key mappings
 nnoremap <C-\>s :scs find s <C-R>=expand("<cword>")<CR><CR>
@@ -238,6 +240,9 @@ endif
 " Set Tagbar width
 let tagbar_width = 32
 
+" Fzf command prefix
+let fzf_command_prefix = 'Fzf'
+
 " Vim-go plugin settings
 let go_fmt_fail_silently = 1
 let go_highlight_functions = 1
@@ -270,7 +275,6 @@ call plug#begin('~/.vim/bundle')
 Plug 'fcitx.vim'
 Plug 'matchit.zip'
 
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'junegunn/vim-easy-align'
 Plug 'Lokaltog/vim-easymotion'
@@ -284,5 +288,8 @@ Plug 'vim-airline/vim-airline'
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'Indent-Guides', { 'for': 'python' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()
