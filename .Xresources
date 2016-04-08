@@ -28,7 +28,7 @@ xterm*renderFont: true
 xterm*preeditType: Root
 xterm*xftAntialias: true
 xterm*faceName: DejaVu Sans Mono:size=11
-xterm*faceNameDoublesize: WenQuanYi Zen Hei Mono:size=11
+xterm*faceNameDoublesize: Noto Sans Mono CJK SC:size=11
 
 ! trim trailing spaces
 xterm*trimSelection: true
