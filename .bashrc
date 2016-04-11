@@ -134,6 +134,8 @@ alias sr='screen -D -R'
 alias tm='tmux new-session -A -s 0'
 alias x='exec startx'
 
+alias mutt='command mutt && [ -n "$TMUX" ] && tmux set automatic-rename on'
+
 # prompt string
 PS1='\u@\h:\w\[\e[33m\]$(__git_ps1 "{%s}")\[\e[0m\]\$ '
 
