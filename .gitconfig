@@ -17,8 +17,8 @@
 	ca = commit -a
 	co = checkout
 	cp = cherry-pick -x
-	d  = difftool
-	dc = difftool --cached
+	d  = difftool -M
+	dc = difftool -M --cached
 	fp = format-patch
 	l  = log
 	lg = log --graph
