@@ -272,11 +272,10 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'fcitx.vim'
-Plug 'matchit.zip'
-
+Plug 'benjifisher/matchit.zip'
 Plug 'ervandew/supertab'
 Plug 'junegunn/vim-easy-align'
+Plug 'lilydjwg/fcitx.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
 Plug 'rking/ag.vim'
