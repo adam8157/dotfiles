@@ -122,10 +122,10 @@ subscribe kernelnewbies@kernelnewbies.org kernel@vger.linux-kernel.cn
 
 # ---------------------GnuPG stuff-----------------------------------
 # Specify key
-set pgp_sign_as="2F39D84D"
+set pgp_sign_as="2365E9762F39D84D"
 
 # PGP header
-my_hdr X-PGP-Key-ID: 2F39D84D
+my_hdr X-PGP-Key-ID: 2365E9762F39D84D
 
 # Autosign hook
 #send-hook ~A "set pgp_autosign"
@@ -152,8 +152,8 @@ set pgp_verify_command="gpg --status-fd=2 --no-verbose --quiet --batch --output 
 set pgp_decrypt_command="gpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
 set pgp_sign_command="gpg --no-verbose --batch --quiet --output - %?p?--passphrase-fd 0? --armor --detach-sign --textmode %?a?-u %a? %f"
 set pgp_clearsign_command="gpg --no-verbose --batch --quiet --output - %?p?--passphrase-fd 0? --armor --textmode --clearsign %?a?-u %a? %f"
-set pgp_encrypt_only_command="/usr/lib/mutt/pgpewrap gpg --encrypt-to 2F39D84D --charset utf8 --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
-set pgp_encrypt_sign_command="/usr/lib/mutt/pgpewrap gpg %?p?--passphrase-fd 0? --encrypt-to 2F39D84D --charset utf8 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
+set pgp_encrypt_only_command="/usr/lib/mutt/pgpewrap gpg --encrypt-to 2365E9762F39D84D --charset utf8 --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
+set pgp_encrypt_sign_command="/usr/lib/mutt/pgpewrap gpg %?p?--passphrase-fd 0? --encrypt-to 2365E9762F39D84D --charset utf8 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
 set pgp_import_command="gpg --no-verbose --import %f"
 set pgp_export_command="gpg --no-verbose --export --armor %r"
 set pgp_verify_key_command="gpg --verbose --batch --fingerprint --check-sigs %r"
