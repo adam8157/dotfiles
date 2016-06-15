@@ -1,6 +1,7 @@
 [user]
 	name  = Adam Lee
 	email = adam8157@gmail.com
+	signingkey = 2365E9762F39D84D
 [color]
 	branch      = auto
 	diff        = auto
