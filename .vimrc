@@ -137,10 +137,13 @@ autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
 " Autoload tags
 set tags=tags;
 
-" Use both cscope and ctags
+" Use GLOBAL tags
+set cscopeprg=gtags-cscope
+
+" Use both GLOBAL and ctags
 set cscopetag
 
-" Search cscope database(s) first
+" Search GLOBAL database first
 set cscopetagorder=0
 
 " Use quickfix window to show search results
@@ -148,11 +151,10 @@ set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-
 
 " Find the database file and load it automatically
 function! LoadDatabase()
-	let db = findfile("cscope.out", ".;")
+	let db = findfile("GTAGS", ".;")
 	if (!empty(db))
-		let path = strpart(db, 0, match(db, "/cscope.out$"))
 		set nocscopeverbose " suppress 'duplicate connection' error
-		exe "cs add " . db . " " . path
+		exe "cs add " . db
 		set cscopeverbose
 	endif
 endfunction
@@ -181,7 +183,7 @@ nnoremap <Leader>b :FzfBuffers<CR>
 nnoremap <Leader>m :FzfHistory<CR>
 nnoremap <Leader>g :FzfGitFiles<CR>
 
-" Cscope key mappings
+" GLOBAL key mappings
 nnoremap <C-\>s :scs find s <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>g :scs find g <C-R>=expand("<cword>")<CR><CR>
 nnoremap <C-\>d :scs find d <C-R>=expand("<cword>")<CR><CR>
