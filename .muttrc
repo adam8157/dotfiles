@@ -165,9 +165,8 @@ set pgp_getkeys_command="gpg --recv-keys %r > /dev/null 2>&1"
 set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
 
 # ---------------------Key bindings----------------------------------
-bind attach i exit
+bind attach,browser,pager i exit
 bind attach <space> view-attach
-bind browser i exit
 bind browser,index gg first-entry
 bind browser,index G last-entry
 bind browser,index,pager \cb previous-page
