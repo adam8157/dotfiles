@@ -1,5 +1,5 @@
 # ssh
-.ssh
+.ssh/id*
 
 # mutt
 .mutt/alias
