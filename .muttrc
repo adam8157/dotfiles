@@ -167,6 +167,7 @@ set pgp_good_sign="^\\[GNUPG:\\] GOODSIG"
 # ---------------------Key bindings----------------------------------
 bind attach,browser,pager i exit
 bind attach <space> view-attach
+bind index,pager g noop
 bind browser,index gg first-entry
 bind browser,index G last-entry
 bind browser,index,pager \cb previous-page
