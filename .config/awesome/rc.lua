@@ -624,8 +624,8 @@ awful.rules.rules = {
       properties = { screen = 1, tag = "4" } },
     { rule = { class = "Gimp" },
       properties = { screen = 1, tag = "7" } },
-    { rule = { class = "Skype" },
-      properties = { floating = true, screen = 1, tag = "8" } },
+    { rule = { class = "Skype*" },
+      properties = { screen = 1, tag = "8" } },
     { rule = { class = "VirtualBox" },
       properties = { screen = 1, tag = "9" } },
 }
