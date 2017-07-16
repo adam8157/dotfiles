@@ -274,6 +274,8 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
+Plug 'vim-scripts/OmniCppComplete'
+
 Plug 'benjifisher/matchit.zip'
 Plug 'ervandew/supertab'
 Plug 'junegunn/vim-easy-align'
@@ -287,7 +289,7 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline'
 
 Plug 'fatih/vim-go', { 'for': 'go' }
-Plug 'Indent-Guides', { 'for': 'python' }
+Plug 'nathanaelkane/vim-indent-guides', { 'for': 'python' }
 Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 Plug 'junegunn/fzf.vim'
