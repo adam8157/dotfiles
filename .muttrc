@@ -122,14 +122,17 @@ subscribe kernelnewbies@kernelnewbies.org kernel@vger.linux-kernel.cn
 
 # ---------------------GnuPG stuff-----------------------------------
 # Specify key
-set pgp_sign_as="2365E9762F39D84D"
+set pgp_sign_as="0x2365E9762F39D84D"
 
 # PGP header
-my_hdr X-PGP-Key-ID: 2365E9762F39D84D
+my_hdr X-PGP-Key-ID: 0x2365E9762F39D84D
 
 # Autosign hook
 #send-hook ~A "set pgp_autosign"
 #send-hook ~u "set nopgp_autosign"
+
+# Use gpg-agent
+set pgp_use_gpg_agent=yes
 
 # If attempt to verify PGP/MIME signatures
 set pgp_verify_sig=yes
@@ -137,28 +140,31 @@ set pgp_verify_sig=yes
 # Don't store unencrypted and unsigned mail
 set fcc_clear=no
 
+# Sign replies to messages which are signed
+set pgp_replysign=yes
+
 # Encrypt replies to messages which are encrypted
 set pgp_replyencrypt=yes
 
 # Automatically attempt to decrypt traditional PGP messages
 set pgp_auto_decode=yes
 
-# During these time you will not needed to enter passparse again
-set pgp_timeout=1800
+# During these time you will not needed to enter passphrase again
+set pgp_timeout=3600
 
 # Set PGP commands
-set pgp_decode_command="gpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
-set pgp_verify_command="gpg --status-fd=2 --no-verbose --quiet --batch --output - --verify %s %f"
-set pgp_decrypt_command="gpg --status-fd=2 %?p?--passphrase-fd 0? --no-verbose --quiet --batch --output - %f"
-set pgp_sign_command="gpg --no-verbose --batch --quiet --output - %?p?--passphrase-fd 0? --armor --detach-sign --textmode %?a?-u %a? %f"
-set pgp_clearsign_command="gpg --no-verbose --batch --quiet --output - %?p?--passphrase-fd 0? --armor --textmode --clearsign %?a?-u %a? %f"
-set pgp_encrypt_only_command="/usr/lib/mutt/pgpewrap gpg --encrypt-to 2365E9762F39D84D --charset utf8 --batch --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
-set pgp_encrypt_sign_command="/usr/lib/mutt/pgpewrap gpg %?p?--passphrase-fd 0? --encrypt-to 2365E9762F39D84D --charset utf8 --batch --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
+set pgp_decode_command="gpg --no-verbose --quiet --output - %f"
+set pgp_verify_command="gpg --no-verbose --quiet --output - --verify %s %f"
+set pgp_decrypt_command="gpg --no-verbose --quiet --output - %f"
+set pgp_sign_command="gpg --no-verbose --quiet --output - --armor --detach-sign --textmode %?a?-u %a? %f"
+set pgp_clearsign_command="gpg --no-verbose --quiet --output - --armor --textmode --clearsign %?a?-u %a? %f"
+set pgp_encrypt_only_command="/usr/lib/mutt/pgpewrap gpg --encrypt-to 0x2365E9762F39D84D --charset utf8 --quiet --no-verbose --output - --encrypt --textmode --armor --always-trust -- -r %r -- %f"
+set pgp_encrypt_sign_command="/usr/lib/mutt/pgpewrap gpg --encrypt-to 0x2365E9762F39D84D --charset utf8 --quiet --no-verbose --textmode --output - --encrypt --sign %?a?-u %a? --armor --always-trust -- -r %r -- %f"
 set pgp_import_command="gpg --no-verbose --import %f"
 set pgp_export_command="gpg --no-verbose --export --armor %r"
-set pgp_verify_key_command="gpg --verbose --batch --fingerprint --check-sigs %r"
-set pgp_list_pubring_command="gpg --no-verbose --batch --quiet --with-colons --list-keys %r"
-set pgp_list_secring_command="gpg --no-verbose --batch --quiet --with-colons --list-secret-keys %r"
+set pgp_verify_key_command="gpg --verbose --fingerprint --check-sigs %r"
+set pgp_list_pubring_command="gpg --no-verbose --quiet --with-colons --list-keys %r"
+set pgp_list_secring_command="gpg --no-verbose --quiet --with-colons --list-secret-keys %r"
 set pgp_getkeys_command="gpg --recv-keys %r > /dev/null 2>&1"
 
 # Pattern for good signature
