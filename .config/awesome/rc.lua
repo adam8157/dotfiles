@@ -412,7 +412,7 @@ globalkeys = awful.util.table.join(
 
     -- Private global key bindings
     awful.key({ modkey }, "a", function () awful.util.spawn("xterm -e alsamixer") end),
-    awful.key({ modkey }, "b", function () awful.util.spawn("firefox") end),
+    awful.key({ modkey }, "b", function () awful.util.spawn("google-chrome") end),
     awful.key({ modkey }, "g", function () awful.util.spawn("goldendict") end),
     awful.key({ modkey }, "i",
         function ()
@@ -616,16 +616,10 @@ awful.rules.rules = {
     { rule = { class = "qemu*" },
       properties = { floating = true } },
 
-    { rule = { instance = "Navigator", class = "Firefox" },
-      properties = { screen = 1, tag = "2" } },
-    { rule = { instance = "DTA", class = "Firefox" },
-      properties = { screen = 1, tag = "3" } },
     { rule = { class = "Google-chrome" },
-      properties = { screen = 1, tag = "4" } },
+      properties = { screen = 1, tag = "2" } },
     { rule = { class = "Gimp" },
       properties = { screen = 1, tag = "7" } },
-    { rule = { class = "Skype*" },
-      properties = { screen = 1, tag = "8" } },
     { rule = { class = "VirtualBox" },
       properties = { screen = 1, tag = "9" } },
 }
