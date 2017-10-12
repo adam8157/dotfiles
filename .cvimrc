@@ -1,0 +1,32 @@
+let configpath = "/home/adam/.cvimrc"
+set localconfig
+
+set nohud
+set nosmoothscroll
+set noautofocus
+set typelinkhints
+let scrollstep = 120
+let barposition = "bottom"
+
+let hintcharacters = "hjklasdfgyuiopqwertnmzxcvb"
+
+unmap d x X u a
+
+map d closeTab
+map u lastClosedTab
+map <F11> previousTab
+map <F12> nextTab
+map <C-F11> moveTabLeft
+map <C-F12> moveTabRight
+
+let blacklists = ["*://mail.google.com/*", "*://docs.google.com/*"]
+
+site '*://digg.com/reader*' {
+   unmap j
+   unmap k
+   unmap r
+   unmap v
+}
+
+let nextmatchpattern = "((?!first)(((下|后|後)(一)?(页|頁|张|張|篇))|next|older|more|>|›|»|forward| )+)"
+let previousmatchpattern = "((?!last)(((上|前)(一)?(页|頁|张|張|篇))|prev(ious)?|newer|back|«|less|<|‹| )+)"
