@@ -38,7 +38,7 @@ set sendmail="pre-sendmail"
 set mark_old=no
 set beep_new=yes
 set check_new=yes
-mailboxes =INBOX =kernel-cn =kernelnewbies
+mailboxes =INBOX
 
 # Set timeout
 set timeout=30
@@ -118,7 +118,6 @@ set honor_followup_to=no
 
 # Mailing lists
 lists .*@vger.kernel.org
-subscribe kernelnewbies@kernelnewbies.org kernel@vger.linux-kernel.cn
 
 # ---------------------GnuPG stuff-----------------------------------
 # Specify key
