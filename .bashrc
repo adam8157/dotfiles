@@ -37,6 +37,9 @@ pathmunge $GOPATH/bin after
 
 export PATH
 
+export CDPATH=.:$GOPATH/src:$GOPATH/src/github.com:$GOPATH/src/golang.org
+alias cd='cd >/dev/null'
+
 # colorful manual page
 man() {
 	env GROFF_NO_SGR=1 \
