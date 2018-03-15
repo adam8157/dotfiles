@@ -21,7 +21,7 @@ map <C-F12> moveTabRight
 
 let blacklists = ["*://mail.google.com/*", "*://docs.google.com/*"]
 
-site '*://digg.com/reader*' {
+site '*://www.inoreader.com*' {
    unmap j
    unmap k
    unmap r
