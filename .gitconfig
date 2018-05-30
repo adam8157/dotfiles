@@ -17,7 +17,7 @@
 	c  = commit
 	ca = commit -a
 	co = checkout
-	cp = cherry-pick -x
+	cp = cherry-pick
 	d  = difftool -M
 	dc = difftool -M --cached
 	fp = format-patch
@@ -33,6 +33,7 @@
 	t  = tag
 	u  = pull
 	um = pull --no-ff
+	up = remote update --prune
 	ur = pull --rebase
 	ut = rm -r --cached
 	w  = show
