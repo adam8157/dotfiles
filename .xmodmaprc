@@ -1,3 +1,8 @@
-! Map Caps_Lock to Escape
+! Map Caps_Lock to Control
+keycode 66 = Control_L
 clear Lock
-keycode 66 = Escape
+add Control = Control_L
+
+! Map Caps_Lock to Escape
+!clear Lock
+!keycode 66 = Escape
