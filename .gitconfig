@@ -38,9 +38,6 @@
 	ut = rm -r --cached
 	w  = show
 	wc = whatchanged -1
-
-	bisect-fixed   = bisect bad
-	bisect-unfixed = bisect good
 [diff]
 	tool = vimdiff
 [merge]
