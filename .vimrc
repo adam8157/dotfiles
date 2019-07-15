@@ -61,6 +61,9 @@ colorscheme desert
 " Enable syntax highlight
 syntax on
 
+" Set the highlight color for search
+highlight Search term=reverse ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
