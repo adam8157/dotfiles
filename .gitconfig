@@ -2,6 +2,8 @@
 	name  = Adam Lee
 	email = adam8157@gmail.com
 	signingkey = 2365E9762F39D84D
+[core]
+	excludesfile = /Users/adam/.gitignore_global
 [color]
 	branch      = auto
 	diff        = auto
