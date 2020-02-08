@@ -1,0 +1,17 @@
+# tags
+tags
+
+# global
+GPATH
+GRTAGS
+GTAGS
+
+# JetBrains
+.idea/
+
+# VS Code
+.vscode/
+
+# CMake
+cmake-build-*/
+compile_commands.json
