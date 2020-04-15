@@ -44,9 +44,15 @@ set backup
 
 " Set backup directory
 set backupdir=~/.vim/backup
+if !isdirectory($HOME . "/.vim/backup")
+	call mkdir($HOME . "/.vim/backup", "p", 0700)
+endif
 
 " Set swap file directory
 set directory=~/.vim/swap,/tmp
+if !isdirectory($HOME . "/.vim/swap")
+	call mkdir($HOME . "/.vim/swap", "p", 0700)
+endif
 
 " Keep more backups for one file
 autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
