@@ -15,7 +15,7 @@ chatnets = {
 };
 
 channels = (
-  { name = "#debian"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#ubuntu-cn"; chatnet = "freenode"; autojoin = "no"; },
 );
 
 settings = {
@@ -65,7 +65,7 @@ windows = {
       {
         type = "CHANNEL";
         chat_type = "IRC";
-        name = "#debian";
+        name = "#ubuntu-cn";
         tag = "freenode";
       }
     );
