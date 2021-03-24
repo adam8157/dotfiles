@@ -146,7 +146,7 @@ alias x='exec startx'
 alias mutt='command mutt && [ -n "$TMUX" ] && tmux set automatic-rename on'
 
 # prompt string
-PS1='\u@\h:\w\[\e[33m\]$(__git_ps1 "{%s}")\[\e[0m\]\$ '
+PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\e[33m\]$(__git_ps1 "{%s}")\[\e[0m\]\$ '
 
 # screen and xterm's dynamic title
 [ -z "$SSH_TTY" ] && [ -z "$TMUX" ] && case $TERM in
