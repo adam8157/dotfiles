@@ -1,3 +1,9 @@
+# if not running interactively, don't do anything
+case $- in
+	*i*) ;;
+	*) return;;
+esac
+
 # umask
 umask 022
 
