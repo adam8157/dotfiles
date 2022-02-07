@@ -55,7 +55,7 @@ if !isdirectory($HOME . "/.vim/swap")
 endif
 
 " Keep more backups for one file
-autocmd BufWritePre * let &backupext = strftime(".%m-%d-%H-%M")
+autocmd BufWritePre * let &backupext = strftime(".%y%m%d%H%M")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colors
