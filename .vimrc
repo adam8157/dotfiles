@@ -286,6 +286,7 @@ call plug#begin('~/.vim/bundle')
 Plug 'vim-scripts/OmniCppComplete'
 
 Plug 'benjifisher/matchit.zip'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'ervandew/supertab'
 Plug 'junegunn/vim-easy-align'
 Plug 'lilydjwg/fcitx.vim'
