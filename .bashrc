@@ -140,7 +140,10 @@ alias sr='screen -D -R'
 alias tm='tmux new-session -A -s 0'
 alias x='exec startx'
 
+alias fixssh='export $(tmux showenv SSH_AUTH_SOCK)'
 alias mutt='command mutt && [ -n "$TMUX" ] && tmux set automatic-rename on'
+
+alias bupdate='brew update && brew upgrade && brew cleanup -s --prune=7'
 
 # prompt string
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\e[33m\]$(__git_ps1 "{%s}")\[\e[0m\]\$ '
