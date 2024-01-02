@@ -1,9 +1,3 @@
-# if not running interactively, don't do anything
-case $- in
-	*i*) ;;
-	*) return;;
-esac
-
 # umask
 umask 022
 
@@ -42,6 +36,12 @@ export GOPATH=$HOME/projects/golang
 pathmunge $GOPATH/bin after
 
 export PATH
+
+# if not running interactively, return here
+case $- in
+	*i*) ;;
+	*) return;;
+esac
 
 # colorful manual page
 man() {
