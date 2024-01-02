@@ -38,7 +38,7 @@ set sendmail="pre-sendmail"
 set mark_old=no
 set beep_new=yes
 set check_new=yes
-mailboxes =INBOX
+mailboxes =INBOX =PgSQL
 
 # Set timeout
 set timeout=30
@@ -118,6 +118,8 @@ set honor_followup_to=no
 
 # Mailing lists
 lists .*@vger.kernel.org
+lists .*@lists.postgresql.org
+subscribe pgsql-hackers@lists.postgresql.org
 
 # ---------------------GnuPG stuff-----------------------------------
 # Specify key
@@ -209,6 +211,8 @@ folder-hook . 'bind index,pager A delete-message'
 folder-hook 'Spam|Trash' 'bind index,pager A noop'
 folder-hook . 'macro index,pager d "<save-message>=Trash<enter>" "Mark message as trash"'
 folder-hook 'Spam|Trash' 'bind index,pager d delete-message'
+# Collapse all threads
+folder-hook 'PgSQL' 'push <collapse-all>'
 
 # ---------------------Color theme-----------------------------------
 color normal white default

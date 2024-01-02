@@ -26,4 +26,4 @@ sslcacertfile = /etc/ssl/certs/ca-certificates.crt
 #sslcacertfile = /opt/homebrew/etc/openssl@3/cert.pem
 nametrans = lambda foldername: re.sub('^\[Gmail\]/', '', foldername)
 folderfilter = lambda foldername: foldername in ['INBOX', '[Gmail]/Drafts',
-	'[Gmail]/Spam','[Gmail]/Trash']
+	'[Gmail]/Spam','[Gmail]/Trash', 'PgSQL']
