@@ -124,7 +124,7 @@ lists .*@vger.kernel.org
 set pgp_sign_as="0x2365E9762F39D84D"
 
 # PGP header
-my_hdr X-PGP-Key-ID: 0x2365E9762F39D84D
+#my_hdr X-PGP-Key-ID: 0x2365E9762F39D84D
 
 # Autosign hook
 #send-hook ~A "set pgp_autosign"
