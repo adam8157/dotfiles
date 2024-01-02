@@ -23,6 +23,7 @@ maxconnections = 2
 remoteuser = adam8157@gmail.com
 remotepassfile = ~/.mutt/passwd
 sslcacertfile = /etc/ssl/certs/ca-certificates.crt
+#sslcacertfile = /opt/homebrew/etc/openssl@3/cert.pem
 nametrans = lambda foldername: re.sub('^\[Gmail\]/', '', foldername)
 folderfilter = lambda foldername: foldername in ['INBOX', '[Gmail]/Drafts',
 	'[Gmail]/Spam','[Gmail]/Trash']
