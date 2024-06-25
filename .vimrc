@@ -68,7 +68,10 @@ colorscheme desert
 syntax on
 
 " Set the highlight color for search
-highlight Search term=reverse ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
+highlight Search term=reverse ctermfg=black ctermbg=yellow guifg=black guibg=yellow
+
+" Set the highlight color for special keys like tabs and spaces
+highlight SpecialKey ctermfg=darkgray guifg=darkgray
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Interface
@@ -88,6 +91,9 @@ set laststatus=2
 
 " Allow to display incomplete line
 set display=lastline
+
+" Set the strings to use in the 'list' mode
+set listchars=tab:>-,trail:·,extends:>,precedes:<,space:·
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Search
