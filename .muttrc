@@ -38,6 +38,7 @@ set sendmail="pre-sendmail"
 set mark_old=no
 set beep_new=yes
 set check_new=yes
+set uncollapse_new = no
 mailboxes =INBOX =PgSQL
 
 # Set timeout
@@ -194,6 +195,7 @@ bind pager j next-line
 bind pager k previous-line
 
 macro attach s "<save-entry><kill-line>~/downloads/<enter>a" "Save attachment"
+macro index zr "<collapse-all>" "Uncollapse all threads"
 macro index \cr "<tag-pattern>.\n<tag-prefix><clear-flag>N<untag-pattern>.\n" "Mark all messages as read"
 macro index gi "<change-folder>=INBOX<enter>" "Go to inbox"
 macro index gs "<change-folder>=Spam<enter>" "Go to spam"
