@@ -146,34 +146,11 @@ autocmd FileType mail set textwidth=72
 autocmd FileType python set expandtab shiftwidth=4 softtabstop=4
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Source code tagging
+" Tagging
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Autoload tags
 set tags=tags;
-
-" Use GLOBAL tags
-set cscopeprg=gtags-cscope
-
-" Use both GLOBAL and ctags
-set cscopetag
-
-" Search GLOBAL database first
-set cscopetagorder=0
-
-" Use quickfix window to show search results
-set cscopequickfix=s-,g-,d-,c-,t-,e-,f-,i-
-
-" Find the database file and load it automatically
-function! LoadDatabase()
-	let db = findfile("GTAGS", ".;")
-	if (!empty(db))
-		set nocscopeverbose " suppress 'duplicate connection' error
-		exe "cs add " . db
-		set cscopeverbose
-	endif
-endfunction
-autocmd BufEnter *.c,*.cc,*.cpp,*.h call LoadDatabase()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Mappings
@@ -193,20 +170,14 @@ nnoremap <C-k> <C-W>k
 nnoremap <C-l> <C-W>l
 
 " Fuzzy finder
-nnoremap <Leader>f :FzfFiles<CR>
-nnoremap <Leader>b :FzfBuffers<CR>
-nnoremap <Leader>m :FzfHistory<CR>
-nnoremap <Leader>g :FzfGitFiles<CR>
+nnoremap <Leader>h :FzfHistory<CR>
+nnoremap <Leader>f :FzfGitFiles<CR>
 
-" GLOBAL key mappings
-nnoremap <C-\>s :scs find s <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>g :scs find g <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>d :scs find d <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>c :scs find c <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>t :scs find t <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>e :scs find e <C-R>=expand("<cword>")<CR><CR>
-nnoremap <C-\>f :scs find f <C-R>=expand("<cfile>")<CR><CR>
-nnoremap <C-\>i :scs find i ^<C-R>=expand("<cfile>")<CR>$<CR>
+" Code navigation
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Display lines upward and downward
 nnoremap <Up> gk
@@ -216,7 +187,7 @@ nnoremap <Down> gj
 nnoremap <silent> <F2> :TagbarToggle<CR>
 
 " Searching tool
-nnoremap <F3> :Ag! <C-R>=expand("<cword>")<CR> ./
+nnoremap <F3> :FzfGGrep
 
 " Paste toggle
 set pastetoggle=<F4>
@@ -254,32 +225,6 @@ endif
 " Plugins
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" Set Tagbar width
-let tagbar_width = 32
-
-" Fzf command prefix
-let fzf_command_prefix = 'Fzf'
-
-" Vim-go plugin settings
-let go_fmt_fail_silently = 1
-let go_highlight_functions = 1
-let go_highlight_methods = 1
-let go_highlight_structs = 1
-let go_highlight_operators = 1
-let go_highlight_build_constraints = 1
-
-" Add extra spaces when (un)commenting
-let NERDSpaceDelims = 1
-
-" Use context to decide completion type
-let SuperTabDefaultCompletionType = "context"
-
-" Start interactive EasyAlign in visual mode (e.g. vipga)
-xmap ga <Plug>(EasyAlign)
-
-" Start interactive EasyAlign for a motion/text object (e.g. gaip)
-nmap ga <Plug>(EasyAlign)
-
 " Plugin manager
 if empty(glob('~/.vim/autoload/plug.vim'))
 	silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -289,26 +234,81 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-Plug 'vim-scripts/OmniCppComplete'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'benjifisher/matchit.zip'
 Plug 'editorconfig/editorconfig-vim'
-Plug 'ervandew/supertab'
 Plug 'junegunn/vim-easy-align'
 Plug 'lilydjwg/fcitx.vim'
 Plug 'Lokaltog/vim-easymotion'
 Plug 'majutsushi/tagbar'
-Plug 'rking/ag.vim'
-Plug 'scrooloose/nerdcommenter'
-Plug 'scrooloose/nerdtree'
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'preservim/nerdcommenter'
+Plug 'preservim/nerdtree'
+Plug 'honza/vim-snippets'
 Plug 'vim-airline/vim-airline'
 
 Plug 'fatih/vim-go', { 'for': 'go' }
 Plug 'nathanaelkane/vim-indent-guides', { 'for': 'python' }
-Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+Plug 'preservim/vim-markdown', { 'for': 'markdown' }
 
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 call plug#end()
+
+" Set Tagbar width
+let tagbar_width = 32
+
+" Fzf prefix and command
+let fzf_command_prefix = 'Fzf'
+
+command! -bang -nargs=* FzfGGrep
+  \ call fzf#vim#grep(
+  \   'git grep --line-number -- '.fzf#shellescape(<q-args>),
+  \   fzf#vim#with_preview({'dir': systemlist('git rev-parse --show-toplevel')[0]}), <bang>0)
+
+" Vim-go plugin settings
+let go_fmt_fail_silently = 1
+let go_highlight_functions = 1
+let go_highlight_methods = 1
+let go_highlight_structs = 1
+let go_highlight_operators = 1
+let go_highlight_build_constraints = 1
+
+" Automatically load coc extensions
+let coc_global_extensions = ['coc-clangd', 'coc-go', 'coc-snippets', 'coc-sql']
+
+" Add extra spaces when (un)commenting
+let NERDSpaceDelims = 1
+
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" Coc keybinding
+"
+" Use Tab to trigger completion and navigate suggestions:
+"   If the popup menu is visible, move to the next item
+"     Else if the cursor is at the start of the line or preceded by a space, insert a tab
+"       Else if the LSP is active, refresh completion
+"         Otherwise, trigger tag completion
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#status() ? coc#refresh() :
+      \ "\<C-x>\<C-]>"
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+" Make <CR> to accept selected completion item if the popup menu is visible,
+" otherwise insert a newline, trigger CoC’s possible on_enter handling, and ensure
+" proper undo behavior.
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" The helper function to check if the cursor is preceded by a space
+function! CheckBackspace() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
